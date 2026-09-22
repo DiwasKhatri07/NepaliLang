@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NepaliCode Showcase — Diwas Khatri</title>
+  <meta name="description" content="Watch NepaliCode in action: a modern programming language from Nepal by Diwas Khatri.">
+  <meta name="author" content="Diwas Khatri">
+  <meta name="keywords" content="NepaliCode, Nepali programming language, Diwas Khatri, programming Nepal, Nepali coding">
+  <meta property="og:title" content="NepaliCode Showcase — Programming from Nepal">
+  <meta property="og:description" content="Watch the NepaliCode language, editor workflow, Nepali keywords, and developer experience in action.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="showcase/nepalicode-video-poster.jpg">
+  <meta property="og:url" content="https://diwaskhatri07.github.io/NepaliLang/showcase.html">
+  <meta name="theme-color" content="#101827">
+  <style>
+    :root { color-scheme: dark; --bg:#0b1220; --panel:#111b2e; --panel2:#16243a; --text:#f8fafc; --muted:#a9b7ca; --red:#dc143c; --green:#4ade80; --border:#2b3c55; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; color:var(--text); background:radial-gradient(circle at 12% 0%, #243b5a 0, transparent 34rem), linear-gradient(135deg,#0b1220,#101827 55%,#0b1220); font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif; }
+    a { color:#fda4af; text-decoration:none; } a:hover { color:#fff; text-decoration:underline; }
+    .wrap { width:min(1180px,92vw); margin:auto; }
+    header { padding:28px 0 18px; display:flex; justify-content:space-between; align-items:center; gap:18px; }
+    .brand { display:flex; gap:12px; align-items:center; font-weight:800; font-size:1.2rem; letter-spacing:.01em; }
+    .mark { width:42px; height:42px; display:grid; place-items:center; border-radius:12px; color:#fff; background:linear-gradient(145deg,#dc143c,#7f1d3d); box-shadow:0 10px 28px #dc143c44; }
+    nav { display:flex; gap:16px; flex-wrap:wrap; font-size:.92rem; }
+    .hero { padding:56px 0 32px; text-align:center; }
+    .eyebrow { color:#fda4af; text-transform:uppercase; letter-spacing:.16em; font-size:.76rem; font-weight:800; }
+    h1 { margin:12px 0 14px; font-size:clamp(2.4rem,7vw,5.5rem); line-height:.98; letter-spacing:-.055em; background:linear-gradient(100deg,#fff,#fda4af 48%,#86efac); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .lead { max-width:700px; margin:0 auto; color:var(--muted); font-size:clamp(1rem,2vw,1.25rem); line-height:1.65; }
+    .player-shell { margin:34px auto 0; max-width:1040px; padding:10px; border:1px solid var(--border); border-radius:22px; background:linear-gradient(145deg,#1d2c46,#0d1525); box-shadow:0 24px 80px #0008; }
+    video { display:block; width:100%; aspect-ratio:16/9; border-radius:14px; background:#05080e; }
+    .player-note { display:flex; justify-content:space-between; gap:16px; align-items:center; padding:12px 6px 2px; color:var(--muted); font-size:.88rem; }
+    .live-dot { color:var(--green); }
+    .actions { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin:28px 0 10px; }
+    .button { display:inline-flex; align-items:center; gap:8px; padding:12px 18px; border:1px solid var(--border); border-radius:999px; background:var(--panel); color:var(--text); font-weight:700; }
+    .button.primary { border-color:#dc143c99; background:linear-gradient(135deg,#dc143c,#9f1239); }
+    .button:hover { text-decoration:none; transform:translateY(-1px); }
+    section { padding:58px 0 12px; } h2 { font-size:clamp(1.6rem,3vw,2.3rem); margin:0 0 10px; } .section-intro { color:var(--muted); margin:0 0 24px; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; } .card { overflow:hidden; border:1px solid var(--border); border-radius:16px; background:#111b2ecc; } .card img { display:block; width:100%; height:190px; object-fit:cover; } .card-body { padding:15px 16px 17px; } .card h3 { margin:0 0 6px; font-size:1rem; } .card p { margin:0; color:var(--muted); font-size:.9rem; line-height:1.5; }
+    .identity { display:grid; grid-template-columns:1.2fr .8fr; gap:22px; align-items:center; } .identity img { width:100%; border:1px solid var(--border); border-radius:18px; background:#0d1117; } .identity-copy { color:var(--muted); line-height:1.7; } .identity-copy strong { color:var(--text); }
+    footer { padding:54px 0 38px; text-align:center; color:var(--muted); font-size:.9rem; }
+    @media (max-width:760px) { header { align-items:flex-start; flex-direction:column; } .grid,.identity { grid-template-columns:1fr; } .card img { height:auto; } .player-note { align-items:flex-start; flex-direction:column; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="index.html" aria-label="NepaliCode home"><span class="mark">न</span><span>NepaliCode</span></a>
+      <nav aria-label="Primary navigation"><a href="index.html">Documentation</a><a href="https://github.com/DiwasKhatri07/NepaliLang">GitHub</a><a href="https://github.com/DiwasKhatri07">Diwas Khatri</a></nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow">🇳🇵 Programming from Nepal</div>
+        <h1>NepaliCode Showcase</h1>
+        <p class="lead">See a modern, Python-inspired programming language with Nepali keywords, Unicode support, developer tooling, and a bytecode VM in action.</p>
+        <div class="player-shell">
+          <video controls autoplay muted loop playsinline preload="metadata" poster="showcase/nepalicode-video-poster.jpg">
+            <source src="showcase/export-1790045658701.mp4" type="video/mp4">
+            <a href="showcase/export-1790045658701.mp4">Download the NepaliCode showcase video</a>
+          </video>
+          <div class="player-note"><span><span class="live-dot">●</span> Inline browser player · muted autoplay · loop</span><span>20-second demo · MP4</span></div>
+        </div>
+        <div class="actions"><a class="button primary" href="showcase/export-1790045658701.mp4" download>⬇ Download video</a><a class="button" href="https://github.com/DiwasKhatri07/NepaliLang">★ View source on GitHub</a><a class="button" href="index.html">← Back to docs</a></div>
+      </section>
+
+      <section>
+        <h2>Instant looping preview</h2>
+        <p class="section-intro">A lightweight GIF fallback for quick sharing and browsers that do not support inline video.</p>
+        <div class="player-shell"><img src="showcase/nepalicode-preview.gif" alt="Looping NepaliCode editor preview" style="display:block;width:100%;border-radius:14px"></div>
+      </section>
+
+      <section>
+        <h2>Inside the project</h2>
+        <p class="section-intro">Explore the editor experience, syntax highlighting, and language identity behind NepaliCode.</p>
+        <div class="grid">
+          <article class="card"><img src="showcase/editor-showcase.png" alt="NepaliCode syntax highlighting in the editor"><div class="card-body"><h3>Editor experience</h3><p>Write readable NepaliCode programs with an approachable developer workflow.</p></div></article>
+          <article class="card"><img src="showcase/language-showcase.png" alt="NepaliCode language showcase"><div class="card-body"><h3>Language in action</h3><p>Use familiar programming concepts with expressive Nepali keywords.</p></div></article>
+          <article class="card"><img src="showcase/mobile-showcase.png" alt="NepaliCode compact showcase"><div class="card-body"><h3>Shareable previews</h3><p>Compact visual assets make the project easy to discover and share.</p></div></article>
+        </div>
+      </section>
+
+      <section class="identity">
+        <div class="identity-copy"><h2>Programming in Nepali</h2><p><strong>NepaliCode</strong> is an open-source programming language project by <a href="https://github.com/DiwasKhatri">Diwas Khatri</a>. It is designed to make programming easier to understand while celebrating Nepali language and identity.</p><p>Read the <a href="https://github.com/DiwasKhatri07/NepaliLang#readme">README</a>, browse the <a href="https://github.com/DiwasKhatri07/NepaliLang/tree/main/examples">examples</a>, or contribute on <a href="https://github.com/DiwasKhatri07/NepaliLang">GitHub</a>.</p></div>
+        <img src="showcase/nepalicode-showcase.svg" alt="NepaliCode programming from Nepal branded banner">
+      </section>
+    </main>
+    <footer>Made with care in Nepal · <a href="https://github.com/DiwasKhatri07/NepaliLang">NepaliCode on GitHub</a></footer>
+  </div>
+</body>
+</html>

@@ -722,9 +722,9 @@ nepali.exe hello.np
 
 [![Watch the full NepaliCode demo](showcase/nepalicode-video-poster.jpg)](showcase/export-1790045658701.mp4)
 
-**[▶ Watch the full 20-second MP4 demo](showcase/export-1790045658701.mp4)** · **[Open all showcase assets](showcase/README.md)**
+**[▶ Open the browser video player](https://diwaskhatri07.github.io/NepaliLang/showcase.html)** · **[Watch/download the MP4](showcase/export-1790045658701.mp4)** · **[Open all showcase assets](showcase/README.md)**
 
-The poster above is a GitHub-friendly mini preview: click it to open the complete MP4. GitHub README pages do not reliably autoplay inline MP4 files, so the animated preview below provides the instant loop while the poster provides a clear video link.
+The poster above is a GitHub-friendly preview. For actual inline playback with controls, autoplay-muted preview, loop support, GIF fallback, screenshots, and the SVG hero, open the **[browser video player](https://diwaskhatri07.github.io/NepaliLang/showcase.html)**. GitHub README pages do not reliably autoplay inline MP4 files themselves.
 
 ### 🔁 Looping GIF preview
 

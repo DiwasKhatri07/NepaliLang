@@ -15,3 +15,7 @@ This folder contains the visual assets used in the repository README and GitHub 
 | [`language-showcase.png`](language-showcase.png) | Language and project experience showcase frame. |
 
 The original uploaded files are preserved alongside the optimized, URL-safe copies. The README uses the optimized assets so GitHub can load the preview quickly while the original GIF and MP4 remain available in the repository.
+
+## Live browser player
+
+For reliable inline MP4 playback with controls, muted autoplay, looping, a GIF fallback, and the complete screenshot gallery, open the [NepaliCode Showcase Player](https://diwaskhatri07.github.io/NepaliLang/showcase.html).
