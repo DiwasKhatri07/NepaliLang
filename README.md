@@ -70,6 +70,11 @@
 
 > **NepaliCode** is a modern programming language from Nepal with native keywords, Unicode support, and a bytecode VM. [Explore the docs](docs/) or [watch the demo](https://diwaskhatri07.github.io/NepaliLang/showcase.html).
 
+<p align="center">
+  <img src="showcase/editor-showcase.png" alt="NepaliCode editor with syntax highlighting" width="49%">
+  <img src="showcase/language-showcase.png" alt="NepaliCode language showcase" width="49%">
+</p>
+
 ---
 
 ## 🌟 A Modern, Simple Programming Language from Nepal

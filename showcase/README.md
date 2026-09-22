@@ -15,7 +15,7 @@ This folder contains the visual assets used in the repository README and GitHub 
 | [`mobile-showcase.png`](mobile-showcase.png) | Compact/mobile-oriented showcase frame. |
 | [`language-showcase.png`](language-showcase.png) | Language and project experience showcase frame. |
 
-The original uploaded files are preserved alongside the optimized, URL-safe copies. The README uses the optimized assets so GitHub can load the preview quickly while the original GIF and MP4 remain available in the repository.
+The original uploaded files are preserved alongside the optimized, URL-safe copies. The README uses a stable 800×422 GIF generated from the clean editor screenshot, plus two readable screenshots, so GitHub can load a crisp preview without transition blur while the full H.264 MP4 remains available in the player.
 
 ## Live browser player
 
