@@ -10,11 +10,17 @@
   <meta property="og:title" content="NepaliCode Showcase — Programming from Nepal">
   <meta property="og:description" content="Watch the NepaliCode language, editor workflow, Nepali keywords, and developer experience in action.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="showcase/nepalicode-video-poster.jpg">
+  <meta property="og:image" content="https://diwaskhatri07.github.io/NepaliLang/assets/social-preview.png">
   <meta property="og:url" content="https://diwaskhatri07.github.io/NepaliLang/showcase.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NepaliCode Showcase — Programming from Nepal">
+  <meta name="twitter:description" content="Watch NepaliCode in action with Nepali keywords, Unicode support, and developer tooling.">
+  <meta name="twitter:image" content="https://diwaskhatri07.github.io/NepaliLang/assets/social-preview.png">
+  <link rel="canonical" href="https://diwaskhatri07.github.io/NepaliLang/showcase.html">
   <meta name="theme-color" content="#101827">
   <style>
     :root { color-scheme: dark; --bg:#0b1220; --panel:#111b2e; --panel2:#16243a; --text:#f8fafc; --muted:#a9b7ca; --red:#dc143c; --green:#4ade80; --border:#2b3c55; }
+    [data-theme="light"] { color-scheme:light; --bg:#f5f7fb; --panel:#fff; --panel2:#e7edf6; --text:#172033; --muted:#536176; --red:#b31335; --green:#16834b; --border:#d6deea; }
     * { box-sizing:border-box; }
     body { margin:0; min-height:100vh; color:var(--text); background:radial-gradient(circle at 12% 0%, #243b5a 0, transparent 34rem), linear-gradient(135deg,#0b1220,#101827 55%,#0b1220); font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif; }
     a { color:#fda4af; text-decoration:none; } a:hover { color:#fff; text-decoration:underline; }
@@ -22,7 +28,8 @@
     header { padding:28px 0 18px; display:flex; justify-content:space-between; align-items:center; gap:18px; }
     .brand { display:flex; gap:12px; align-items:center; font-weight:800; font-size:1.2rem; letter-spacing:.01em; }
     .mark { width:42px; height:42px; display:grid; place-items:center; border-radius:12px; color:#fff; background:linear-gradient(145deg,#dc143c,#7f1d3d); box-shadow:0 10px 28px #dc143c44; }
-    nav { display:flex; gap:16px; flex-wrap:wrap; font-size:.92rem; }
+    nav { display:flex; gap:16px; flex-wrap:wrap; align-items:center; font-size:.92rem; }
+    .theme-toggle { cursor:pointer; border:1px solid var(--border); border-radius:999px; padding:8px 12px; color:var(--text); background:var(--panel); font:inherit; }
     .hero { padding:56px 0 32px; text-align:center; }
     .eyebrow { color:#fda4af; text-transform:uppercase; letter-spacing:.16em; font-size:.76rem; font-weight:800; }
     h1 { margin:12px 0 14px; font-size:clamp(2.4rem,7vw,5.5rem); line-height:.98; letter-spacing:-.055em; background:linear-gradient(100deg,#fff,#fda4af 48%,#86efac); -webkit-background-clip:text; background-clip:text; color:transparent; }
@@ -38,6 +45,12 @@
     section { padding:58px 0 12px; } h2 { font-size:clamp(1.6rem,3vw,2.3rem); margin:0 0 10px; } .section-intro { color:var(--muted); margin:0 0 24px; }
     .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; } .card { overflow:hidden; border:1px solid var(--border); border-radius:16px; background:#111b2ecc; } .card img { display:block; width:100%; height:190px; object-fit:cover; } .card-body { padding:15px 16px 17px; } .card h3 { margin:0 0 6px; font-size:1rem; } .card p { margin:0; color:var(--muted); font-size:.9rem; line-height:1.5; }
     .identity { display:grid; grid-template-columns:1.2fr .8fr; gap:22px; align-items:center; } .identity img { width:100%; border:1px solid var(--border); border-radius:18px; background:#0d1117; } .identity-copy { color:var(--muted); line-height:1.7; } .identity-copy strong { color:var(--text); }
+    .snippet-tabs { display:flex; gap:8px; flex-wrap:wrap; margin:20px 0 12px; }
+    .snippet-tab { cursor:pointer; padding:10px 15px; border:1px solid var(--border); border-radius:999px; color:var(--muted); background:var(--panel); font:inherit; font-weight:700; }
+    .snippet-tab[aria-selected="true"] { color:#fff; border-color:var(--red); background:var(--red); }
+    .snippet-panel { display:none; margin:0; padding:22px; overflow:auto; border:1px solid var(--border); border-radius:16px; color:#d7e2f1; background:#0d1117; font: .92rem/1.7 ui-monospace,SFMono-Regular,Menlo,monospace; }
+    .snippet-panel.active { display:block; }
+    [data-theme="light"] .snippet-panel { color:#d7e2f1; background:#172033; }
     footer { padding:54px 0 38px; text-align:center; color:var(--muted); font-size:.9rem; }
     @media (max-width:760px) { header { align-items:flex-start; flex-direction:column; } .grid,.identity { grid-template-columns:1fr; } .card img { height:auto; } .player-note { align-items:flex-start; flex-direction:column; } }
   </style>
@@ -46,7 +59,7 @@
   <div class="wrap">
     <header>
       <a class="brand" href="index.html" aria-label="NepaliCode home"><span class="mark">न</span><span>NepaliCode</span></a>
-      <nav aria-label="Primary navigation"><a href="index.html">Documentation</a><a href="https://github.com/DiwasKhatri07/NepaliLang">GitHub</a><a href="https://github.com/DiwasKhatri07">Diwas Khatri</a></nav>
+      <nav aria-label="Primary navigation"><a href="index.html">Documentation</a><a href="https://github.com/DiwasKhatri07/NepaliLang">GitHub</a><a href="https://github.com/DiwasKhatri07">Diwas Khatri</a><button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme">☀️ Light</button></nav>
     </header>
 
     <main>
@@ -80,6 +93,29 @@
         </div>
       </section>
 
+      <section>
+        <h2>Try the language</h2>
+        <p class="section-intro">Switch between practical NepaliCode snippets and see the language's readable syntax.</p>
+        <div class="snippet-tabs" role="tablist" aria-label="Language examples">
+          <button class="snippet-tab" role="tab" aria-selected="true" aria-controls="snippet-hello" data-snippet="snippet-hello">Hello World</button>
+          <button class="snippet-tab" role="tab" aria-selected="false" aria-controls="snippet-control" data-snippet="snippet-control">Conditions</button>
+          <button class="snippet-tab" role="tab" aria-selected="false" aria-controls="snippet-function" data-snippet="snippet-function">Functions</button>
+        </div>
+        <pre class="snippet-panel active" id="snippet-hello" role="tabpanel"># Hello World in NepaliCode
+print("Namaste Nepal!")
+print("Programming from Nepal 🇳🇵")</pre>
+        <pre class="snippet-panel" id="snippet-control" role="tabpanel">age = 21
+
+yedi age &gt;= 18:
+    print("Adult")
+natra:
+    print("Minor")</pre>
+        <pre class="snippet-panel" id="snippet-function" role="tabpanel">kaam greet(name):
+    firta f"Namaste, {name}!"
+
+print(greet("Diwas"))</pre>
+      </section>
+
       <section class="identity">
         <div class="identity-copy"><h2>Programming in Nepali</h2><p><strong>NepaliCode</strong> is an open-source programming language project by <a href="https://github.com/DiwasKhatri">Diwas Khatri</a>. It is designed to make programming easier to understand while celebrating Nepali language and identity.</p><p>Read the <a href="https://github.com/DiwasKhatri07/NepaliLang#readme">README</a>, browse the <a href="https://github.com/DiwasKhatri07/NepaliLang/tree/main/examples">examples</a>, or contribute on <a href="https://github.com/DiwasKhatri07/NepaliLang">GitHub</a>.</p></div>
         <img src="showcase/nepalicode-showcase.svg" alt="NepaliCode programming from Nepal branded banner">
@@ -87,5 +123,18 @@
     </main>
     <footer>Made with care in Nepal · <a href="https://github.com/DiwasKhatri07/NepaliLang">NepaliCode on GitHub</a></footer>
   </div>
+  <script>
+    const root = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('nepalicode-theme');
+    if (savedTheme) root.dataset.theme = savedTheme;
+    const updateThemeLabel = () => { toggle.textContent = root.dataset.theme === 'light' ? '🌙 Dark' : '☀️ Light'; };
+    updateThemeLabel();
+    toggle.addEventListener('click', () => { root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light'; localStorage.setItem('nepalicode-theme', root.dataset.theme); updateThemeLabel(); });
+    document.querySelectorAll('.snippet-tab').forEach(tab => tab.addEventListener('click', () => {
+      document.querySelectorAll('.snippet-tab').forEach(item => item.setAttribute('aria-selected', String(item === tab)));
+      document.querySelectorAll('.snippet-panel').forEach(panel => panel.classList.toggle('active', panel.id === tab.dataset.snippet));
+    }));
+  </script>
 </body>
 </html>

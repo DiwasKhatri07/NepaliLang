@@ -37,6 +37,17 @@
   <img src="https://img.shields.io/badge/Examples-50+-important.svg" alt="Examples">
 </p>
 
+<p align="center">
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=DiwasKhatri07.NepaliLang&left_text=Visitors&left_color=101827&right_color=dc143c" alt="Repository visitor counter">
+  <img src="https://img.shields.io/github/commit-activity/y/DiwasKhatri07/NepaliLang?label=Activity&color=2ea043" alt="Yearly commit activity">
+  <img src="https://img.shields.io/github/last-commit/DiwasKhatri07/NepaliLang?label=Updated&color=2b6cb0" alt="Last commit">
+  <img src="https://img.shields.io/github/repo-size/DiwasKhatri07/NepaliLang?label=Repo%20size&color=6f42c1" alt="Repository size">
+</p>
+
+<p align="center">
+  <a href="https://github.com/DiwasKhatri07/NepaliLang"><img src="https://github-readme-stats.vercel.app/api/pin/?username=DiwasKhatri07&repo=NepaliLang&theme=transparent&hide_border=true" alt="NepaliCode repository stats" width="420"></a>
+</p>
+
 ## 🎬 Visual Showcase
 
 <p align="center">
