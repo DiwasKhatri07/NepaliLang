@@ -37,52 +37,27 @@
   <img src="https://img.shields.io/badge/Examples-50+-important.svg" alt="Examples">
 </p>
 
-## 🎬 NepaliCode Visual Showcase
-
-> **See NepaliCode in action:** a programming language from Nepal with readable syntax, Nepali keywords, Unicode support, and a familiar developer workflow.
-
-### ▶️ Interactive preview
+## 🎬 Visual Showcase
 
 <p align="center">
-  <iframe src="https://diwaskhatri07.github.io/NepaliLang/player.html" title="NepaliCode mini video player" width="900" height="430" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-</p>
-
-> If GitHub hides the iframe for security, use the same **[mini player directly](https://diwaskhatri07.github.io/NepaliLang/player.html)** or the **[full showcase player](https://diwaskhatri07.github.io/NepaliLang/showcase.html)**.
-
-[![Watch the full NepaliCode demo](showcase/nepalicode-video-poster.jpg)](showcase/export-1790045658701.mp4)
-
-**[▶ Open the browser video player](https://diwaskhatri07.github.io/NepaliLang/showcase.html)** · **[Watch/download the MP4](showcase/export-1790045658701.mp4)** · **[Open all showcase assets](showcase/README.md)**
-
-The poster above is a GitHub-friendly preview. For actual inline playback with controls, autoplay-muted preview, loop support, GIF fallback, screenshots, and the SVG hero, open the **[browser video player](https://diwaskhatri07.github.io/NepaliLang/showcase.html)**. GitHub README pages do not reliably autoplay inline MP4 files themselves.
-
-### 🔁 Looping GIF preview
-
-<p align="center">
-  <img src="showcase/nepalicode-preview.gif" alt="Animated NepaliCode editor and language preview" width="800">
-</p>
-
-### 🖥️ Screenshots
-
-<p align="center">
-  <img src="showcase/editor-showcase.png" alt="NepaliCode syntax highlighting in the editor" width="800">
+  <a href="https://diwaskhatri07.github.io/NepaliLang/showcase.html">
+    <img src="showcase/nepalicode-preview.gif" alt="NepaliCode Preview" width="100%">
+  </a>
 </p>
 
 <p align="center">
-  <img src="showcase/language-showcase.png" alt="NepaliCode language showcase" width="800">
-  <img src="showcase/mobile-showcase.png" alt="NepaliCode compact showcase" width="260">
+  <a href="https://diwaskhatri07.github.io/NepaliLang/showcase.html">
+    <img src="https://img.shields.io/badge/▶_Watch_Full_Video-dc143c?style=for-the-badge" alt="Watch Video">
+  </a>
+  <a href="showcase/README.md">
+    <img src="https://img.shields.io/badge/🖼_View_Screenshots-2b3c55?style=for-the-badge" alt="Screenshots">
+  </a>
+  <a href="https://github.com/DiwasKhatri07/NepaliLang/archive/refs/heads/main.zip">
+    <img src="https://img.shields.io/badge/⬇_Download_Source-2ea043?style=for-the-badge" alt="Download">
+  </a>
 </p>
 
-### 🇳🇵 Project identity
-
-<p align="center">
-  <img src="showcase/nepalicode-showcase.svg" alt="NepaliCode — programming in Nepali" width="100%">
-</p>
-
-**NepaliCode** is an open-source programming language project by [Diwas Khatri](https://github.com/DiwasKhatri). It brings approachable, Python-inspired programming together with Nepali keywords and a Nepal-born developer identity. Explore the [documentation](docs/), browse the [50+ examples](examples/EXAMPLES_INDEX.md), or start with the [first program guide](docs/first_program.md).
-
-**Search keywords:** NepaliCode, Nepali programming language, Nepali coding, programming in Nepal, Diwas Khatri, Python-like language, Nepali keywords, Unicode programming language, bytecode VM, VS Code extension.
-
-> Media credits: showcase files are maintained in [`showcase/`](showcase/) and the full media inventory is documented in [`showcase/README.md`](showcase/README.md).
+> **NepaliCode** is a modern programming language from Nepal with native keywords, Unicode support, and a bytecode VM. [Explore the docs](docs/) or [watch the demo](https://diwaskhatri07.github.io/NepaliLang/showcase.html).
 
 ---
 
