@@ -405,7 +405,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Releases:** https://github.com/DiwasKhatri07/NepaliLang/releases
 - **Issues:** https://github.com/DiwasKhatri07/NepaliLang/issues
 - **Discussions:** https://github.com/DiwasKhatri07/NepaliLang/discussions
-- **Email:** dev@nepalcode.com
+- **Email:** diwaskhatri@proton.me
 
 ---
 
@@ -698,7 +698,7 @@ nepali.exe hello.np
 
 - 🐛 **Issues:** https://github.com/DiwasKhatri07/NepaliLang/issues
 - 💬 **Discussions:** https://github.com/DiwasKhatri07/NepaliLang/discussions
-- 📧 **Email:** dev@nepalcode.com
+- 📧 **Email:** diwaskhatri@proton.me
 
 ---
 
