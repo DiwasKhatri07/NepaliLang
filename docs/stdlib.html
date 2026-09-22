@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standard Library - NepaliCode</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/docs.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <span class="logo-np">NP</span>
+                    <span class="logo-text">NepaliCode</span>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="installation.html">Installation</a>
+                <a href="syntax.html">Syntax</a>
+                <a href="examples.html">Examples</a>
+                <a href="https://github.com/DiwasKhatri07/NepaliLang" target="_blank" class="github-btn">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <section class="docs-content">
+        <div class="container">
+            <div class="docs-header">
+                <a href="index.html" class="back-link">← Back to Home</a>
+                <h1>Standard Library</h1>
+                <p class="docs-subtitle">Built-in modules and functions</p>
+            </div>
+
+            <div class="docs-body">
+                <h2>Available Modules</h2>
+                
+                <h3>ganit - Mathematics</h3>
+                <div class="code-block">
+                    <pre><code>lyau ganit
+
+ganit.jod(a, b)        # Addition
+ganit.ghata(a, b)      # Subtraction
+ganit.guna(a, b)       # Multiplication
+ganit.bhag(a, b)       # Division
+ganit.sqrt(x)          # Square root
+ganit.power(x, y)      # Power</code></pre>
+                </div>
+
+                <h3>samaya - Date and Time</h3>
+                <div class="code-block">
+                    <pre><code>lyau samaya
+
+samaya.abay_time()      # Current time
+samaya.abay_date()      # Current date
+samaya.format_time()    # Format time
+samaya.add_days()       # Add days to date</code></pre>
+                </div>
+
+                <h3>randomlib - Random Numbers</h3>
+                <div class="code-block">
+                    <pre><code>lyau randomlib
+
+randomlib.number(min, max)    # Random integer
+randomlib.choice(items)        # Random choice
+randomlib.shuffle(items)       # Shuffle list</code></pre>
+                </div>
+
+                <h3>jsonlib - JSON Operations</h3>
+                <div class="code-block">
+                    <pre><code>lyau jsonlib
+
+jsonlib.parse(json_string)     # Parse JSON
+jsonlib.stringify(data)        # Convert to JSON</code></pre>
+                </div>
+
+                <h3>file - File Operations</h3>
+                <div class="code-block">
+                    <pre><code>lyau file
+
+file.read(filename)           # Read file
+file.write(filename, content)  # Write file
+file.exists(path)             # Check if exists
+file.list_directory(path)      # List directory</code></pre>
+                </div>
+
+                <h3>database - SQLite Database</h3>
+                <div class="code-block">
+                    <pre><code>lyau database
+
+db = database.connect("database.db")
+db.execute(sql, params)
+db.query(sql)
+db.close()</code></pre>
+                </div>
+
+                <h3>anurodh - HTTP Requests</h3>
+                <div class="code-block">
+                    <pre><code>lyau anurodh
+
+response = anurodh.get(url)
+print(response.status)
+print(response.text)
+print(response.json)</code></pre>
+                </div>
+
+                <h3>asyn - Async Programming</h3>
+                <div class="code-block">
+                    <pre><code>lyau asyn
+
+asyn kaam async_function():
+    await operation()
+
+asyn.run(async_function())</code></pre>
+                </div>
+
+                <h3>system - System Operations</h3>
+                <div class="code-block">
+                    <pre><code>lyau system
+
+system.platform()           # Platform info
+system.python_version()      # Python version
+system.current_directory()   # Current directory</code></pre>
+                </div>
+
+                <div class="note">
+                    <p><strong>Note:</strong> Some modules are foundations/experimental and may require additional dependencies or updates for full functionality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 NepaliCode by Diwas Khatri. Made with ❤️ in Nepal 🇳🇵</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

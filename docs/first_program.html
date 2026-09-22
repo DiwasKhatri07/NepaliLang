@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Program - NepaliCode</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/docs.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <span class="logo-np">NP</span>
+                    <span class="logo-text">NepaliCode</span>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="installation.html">Installation</a>
+                <a href="syntax.html">Syntax</a>
+                <a href="https://github.com/DiwasKhatri07/NepaliLang" target="_blank" class="github-btn">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <section class="docs-content">
+        <div class="container">
+            <div class="docs-header">
+                <a href="index.html" class="back-link">← Back to Home</a>
+                <h1>Your First Program</h1>
+                <p class="docs-subtitle">Write and run your first NepaliCode program</p>
+            </div>
+
+            <div class="docs-body">
+                <h2>Hello World</h2>
+                <p>Let's start with the classic "Hello World" program in NepaliCode:</p>
+                
+                <div class="code-block">
+                    <pre><code># hello.np
+print("Namaste Nepal!")</code></pre>
+                </div>
+
+                <h2>Running Your Program</h2>
+                <p>Save this code in a file called <code>hello.np</code> and run it:</p>
+                
+                <div class="code-block">
+                    <pre><code># Using Python
+python main.py hello.np
+
+# Using standalone executable
+nepali.exe hello.np</code></pre>
+                </div>
+
+                <h2>Variables</h2>
+                <p>Let's make it more interesting with variables:</p>
+                
+                <div class="code-block">
+                    <pre><code># variables.np
+name = "Diwas"
+age = 21
+city = "Kathmandu"
+
+print(f"Name: {name}")
+print(f"Age: {age}")
+print(f"City: {city}")</code></pre>
+                </div>
+
+                <h2>Conditions</h2>
+                <p>Add some logic with Nepali keywords:</p>
+                
+                <div class="code-block">
+                    <pre><code># conditions.np
+age = 18
+
+yedi age >= 18:
+    print("You are an adult")
+natra:
+    print("You are a minor")</code></pre>
+                </div>
+
+                <h2>Functions</h2>
+                <p>Create reusable functions:</p>
+                
+                <div class="code-block">
+                    <pre><code># functions.np
+kaam greet(name):
+    firta f"Namaste, {name}!"
+
+kaam calculate_age(birth_year):
+    current_year = 2024
+    firta current_year - birth_year
+
+print(greet("Nepal"))
+print(f"You are {calculate_age(2000)} years old")</code></pre>
+                </div>
+
+                <h2>Using Modules</h2>
+                <p>Import standard library modules:</p>
+                
+                <div class="code-block">
+                    <pre><code># modules.np
+lyau ganit
+
+print(f"5 + 3 = {ganit.jod(5, 3)}")
+print(f"Square root of 16 = {ganit.sqrt(16)}")</code></pre>
+                </div>
+
+                <div class="note">
+                    <p><strong>Next Steps:</strong> Check out the <a href="syntax.html">Syntax Reference</a> for more language features, or explore <a href="examples.html">50+ Examples</a> for practical programs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 NepaliCode by Diwas Khatri. Made with ❤️ in Nepal 🇳🇵</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

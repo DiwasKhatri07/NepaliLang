@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NepaliCode - Programming from Nepal 🇳🇵</title>
+    <meta name="description" content="A modern, simple programming language from Nepal that makes programming and automation easy to understand.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <span class="logo-np">NP</span>
+                    <span class="logo-text">NepaliCode</span>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#syntax">Syntax</a>
+                <a href="#examples">Examples</a>
+                <a href="#documentation">Documentation</a>
+                <a href="#installation">Installation</a>
+                <a href="https://github.com/DiwasKhatri07/NepaliLang" target="_blank" class="github-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="flag">🇳🇵</span>
+                    <span>Programming from Nepal</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="gradient-text">NepaliCode</span>
+                </h1>
+                <p class="hero-subtitle">
+                    A modern, simple programming language that makes programming and automation easy to understand
+                </p>
+                <div class="hero-description">
+                    <p>Programming should be simple enough that a Nepali beginner can understand what the code is doing.</p>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#installation" class="btn btn-primary">
+                        Get Started
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/DiwasKhatri07/NepaliLang" target="_blank" class="btn btn-secondary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        View Source
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Examples</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Libraries</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Open Source</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-code">
+                <div class="code-window">
+                    <div class="code-header">
+                        <div class="code-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="code-title">hello.np</div>
+                    </div>
+                    <pre class="code-content"><code><span class="comment"># Hello World in NepaliCode</span>
+<span class="keyword">kaam</span> <span class="function">greet</span>(name):
+    <span class="keyword">firta</span> <span class="string">f"Namaste, {name}!"</span>
+
+<span class="keyword">yedi</span> age >= <span class="number">18</span>:
+    <span class="function">print</span>(<span class="string">"Adult"</span>)
+<span class="keyword">natra</span>:
+    <span class="function">print</span>(<span class="string">"Minor"</span>)
+
+<span class="function">greet</span>(<span class="string">"Nepal"</span>)</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why NepaliCode?</h2>
+                <p class="section-subtitle">Simple, Expressive, Nepali</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        </svg>
+                    </div>
+                    <h3>Simple & Fast</h3>
+                    <p>Easy to learn and write with Python-like syntax. Get started in minutes, not hours.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Nepali Keywords</h3>
+                    <p>Native Nepali keywords like <code>yedi</code> (if), <code>kaam</code> (def), <code>firta</code> (return).</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M2 12h20"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                    </div>
+                    <h3>Full Unicode</h3>
+                    <p>Complete Unicode support for Nepali text, identifiers, and mixed scripts.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                        </svg>
+                    </div>
+                    <h3>Professional</h3>
+                    <p>Production-ready with bytecode VM, module system, and comprehensive standard library.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Community</h3>
+                    <p>Open source with MIT license. Join our growing community of Nepali developers.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                        </svg>
+                    </div>
+                    <h3>Developer Tools</h3>
+                    <p>VS Code extension, CLI, REPL, and comprehensive development tools included.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Syntax Section -->
+    <section id="syntax" class="syntax">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Simple Syntax</h2>
+                <p class="section-subtitle">Python-like with Nepali identity</p>
+            </div>
+            <div class="syntax-grid">
+                <div class="syntax-item">
+                    <div class="syntax-label">Variables</div>
+                    <pre class="syntax-code"><code>name = <span class="string">"Diwas"</span>
+age = <span class="number">21</span>
+is_student = <span class="keyword">sacho</span></code></pre>
+                </div>
+                <div class="syntax-item">
+                    <div class="syntax-label">Conditions</div>
+                    <pre class="syntax-code"><code><span class="keyword">yedi</span> age >= <span class="number">18</span>:
+    <span class="function">print</span>(<span class="string">"Adult"</span>)
+<span class="keyword">natra</span>:
+    <span class="function">print</span>(<span class="string">"Minor"</span>)</code></pre>
+                </div>
+                <div class="syntax-item">
+                    <div class="syntax-label">Loops</div>
+                    <pre class="syntax-code"><code><span class="keyword">ko_lagi</span> item <span class="keyword">ma</span> items:
+    <span class="function">print</span>(item)</code></pre>
+                </div>
+                <div class="syntax-item">
+                    <div class="syntax-label">Functions</div>
+                    <pre class="syntax-code"><code><span class="keyword">kaam</span> <span class="function">add</span>(a, b):
+    <span class="keyword">firta</span> a + b</code></pre>
+                </div>
+                <div class="syntax-item">
+                    <div class="syntax-label">Classes</div>
+                    <pre class="syntax-code"><code><span class="keyword">kakshya</span> Person:
+    <span class="keyword">kaam</span> <span class="function">__init__</span>(self, name):
+        self.name = name</code></pre>
+                </div>
+                <div class="syntax-item">
+                    <div class="syntax-label">Modules</div>
+                    <pre class="syntax-code"><code><span class="keyword">lyau</span> ganit
+<span class="function">print</span>(ganit.jod(<span class="number">5</span>, <span class="number">3</span>))</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Examples Section -->
+    <section id="examples" class="examples">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">50+ Examples</h2>
+                <p class="section-subtitle">From basics to advanced topics</p>
+            </div>
+            <div class="examples-list">
+                <div class="example-item">
+                    <div class="example-number">01</div>
+                    <div class="example-content">
+                        <h3>Hello World</h3>
+                        <p>Your first NepaliCode program</p>
+                    </div>
+                </div>
+                <div class="example-item">
+                    <div class="example-number">02</div>
+                    <div class="example-content">
+                        <h3>Variables & Types</h3>
+                        <p>Understanding data types</p>
+                    </div>
+                </div>
+                <div class="example-item">
+                    <div class="example-number">08</div>
+                    <div class="example-content">
+                        <h3>Conditions</h3>
+                        <p>If/elif/else statements</p>
+                    </div>
+                </div>
+                <div class="example-item">
+                    <div class="example-number">16</div>
+                    <div class="example-content">
+                        <h3>Classes</h3>
+                        <p>Object-oriented programming</p>
+                    </div>
+                </div>
+                <div class="example-item">
+                    <div class="example-number">26</div>
+                    <div class="example-content">
+                        <h3>Modules</h3>
+                        <p>Import system</p>
+                    </div>
+                </div>
+                <div class="example-item">
+                    <div class="example-number">31</div>
+                    <div class="example-content">
+                        <h3>Math Library</h3>
+                        <p>Mathematical operations</p>
+                    </div>
+                </div>
+                <div class="example-item">
+                    <div class="example-number">36</div>
+                    <div class="example-content">
+                        <h3>JSON Library</h3>
+                        <p>Data manipulation</p>
+                    </div>
+                </div>
+                <div class="example-item">
+                    <div class="example-number">50</div>
+                    <div class="example-content">
+                        <h3>Complete Summary</h3>
+                        <p>Full language overview</p>
+                    </div>
+                </div>
+            </div>
+            <div class="examples-cta">
+                <a href="https://github.com/DiwasKhatri07/NepaliLang/tree/main/examples" target="_blank" class="btn btn-primary">
+                    View All Examples
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                        <polyline points="15 3 21 3 21 9"/>
+                        <line x1="10" y1="14" x2="21" y2="3"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section id="installation" class="installation">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get Started</h2>
+                <p class="section-subtitle">Install NepaliCode in minutes</p>
+            </div>
+            <div class="installation-methods">
+                <div class="install-card">
+                    <div class="install-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10 9 9 9 8 9"/>
+                        </svg>
+                    </div>
+                    <h3>Using Python</h3>
+                    <div class="install-code">
+                        <code>git clone https://github.com/DiwasKhatri07/NepaliLang.git<br>cd NepaliLang<br>python main.py examples/01_hello_world.np</code>
+                    </div>
+                </div>
+                <div class="install-card">
+                    <div class="install-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h3>Standalone Executable</h3>
+                    <div class="install-code">
+                        <code># Download nepali.exe from releases<br>nepali.exe examples/01_hello_world.np</code>
+                    </div>
+                </div>
+                <div class="install-card">
+                    <div class="install-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <path d="M12 18v-6"/>
+                            <path d="M9 15l3 3 3-3"/>
+                        </svg>
+                    </div>
+                    <h3>VS Code Extension</h3>
+                    <div class="install-code">
+                        <code># Install from VS Code Marketplace<br># Search "NepaliCode" and install</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section id="documentation" class="documentation">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Documentation</h2>
+                <p class="section-subtitle">Everything you need to know</p>
+            </div>
+            <div class="docs-grid">
+                <a href="installation.html" class="doc-card">
+                    <div class="doc-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                    </div>
+                    <h3>Installation Guide</h3>
+                    <p>Setup NepaliCode on your system</p>
+                </a>
+                <a href="first_program.html" class="doc-card">
+                    <div class="doc-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10 9 9 9 8 9"/>
+                        </svg>
+                    </div>
+                    <h3>First Program</h3>
+                    <p>Write your first NepaliCode program</p>
+                </a>
+                <a href="syntax.html" class="doc-card">
+                    <div class="doc-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"/>
+                            <polyline points="8 6 2 12 8 18"/>
+                        </svg>
+                    </div>
+                    <h3>Syntax Reference</h3>
+                    <p>Complete syntax guide</p>
+                </a>
+                <a href="stdlib.html" class="doc-card">
+                    <div class="doc-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Standard Library</h3>
+                    <p>Built-in modules and functions</p>
+                </a>
+                <a href="examples.html" class="doc-card">
+                    <div class="doc-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="12" y1="18" x2="12" y2="12"/>
+                            <line x1="9" y1="15" x2="15" y2="15"/>
+                        </svg>
+                    </div>
+                    <h3>Examples</h3>
+                    <p>50+ practical examples</p>
+                </a>
+                <a href="https://github.com/DiwasKhatri07/NepaliLang" target="_blank" class="doc-card">
+                    <div class="doc-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </div>
+                    <h3>GitHub Repository</h3>
+                    <p>Source code and contributions</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-np">NP</span>
+                        <span class="logo-text">NepaliCode</span>
+                    </div>
+                    <p>Programming from Nepal, for the World</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Resources</h4>
+                        <a href="installation.html">Installation</a>
+                        <a href="syntax.html">Syntax</a>
+                        <a href="stdlib.html">Library</a>
+                        <a href="examples.html">Examples</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Community</h4>
+                        <a href="https://github.com/DiwasKhatri07/NepaliLang" target="_blank">GitHub</a>
+                        <a href="https://github.com/DiwasKhatri07/NepaliLang/issues" target="_blank">Issues</a>
+                        <a href="https://github.com/DiwasKhatri07/NepaliLang/discussions" target="_blank">Discussions</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>About</h4>
+                        <a href="https://github.com/DiwasKhatri07/NepaliLang/blob/main/LICENSE" target="_blank">License</a>
+                        <a href="https://github.com/DiwasKhatri07/NepaliLang/blob/main/CONTRIBUTING.md" target="_blank">Contributing</a>
+                        <a href="https://github.com/DiwasKhatri07" target="_blank">Author</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 NepaliCode by Diwas Khatri. Made with ❤️ in Nepal 🇳🇵</p>
+                <p>MIT License - Open Source</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

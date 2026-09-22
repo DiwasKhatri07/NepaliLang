@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installation Guide - NepaliCode</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/docs.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <span class="logo-np">NP</span>
+                    <span class="logo-text">NepaliCode</span>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="syntax.html">Syntax</a>
+                <a href="stdlib.html">Library</a>
+                <a href="examples.html">Examples</a>
+                <a href="https://github.com/DiwasKhatri07/NepaliLang" target="_blank" class="github-btn">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <section class="docs-content">
+        <div class="container">
+            <div class="docs-header">
+                <a href="index.html" class="back-link">← Back to Home</a>
+                <h1>Installation Guide</h1>
+                <p class="docs-subtitle">Get NepaliCode running on your system</p>
+            </div>
+
+            <div class="docs-body">
+                <h2>Requirements</h2>
+                <ul>
+                    <li>Python 3.6 or higher</li>
+                    <li>Windows, Linux, or macOS</li>
+                    <li>(Optional) Node.js for VS Code extension</li>
+                </ul>
+
+                <h2>Method 1: Using Python (Development)</h2>
+                <div class="code-block">
+                    <pre><code># Clone the repository
+git clone https://github.com/DiwasKhatri07/NepaliLang.git
+cd NepaliLang
+
+# Run an example
+python main.py examples/01_hello_world.np</code></pre>
+                </div>
+
+                <h2>Method 2: Standalone Executable (Windows)</h2>
+                <div class="code-block">
+                    <pre><code># Download nepali.exe from releases
+nepali.exe examples/01_hello_world.np</code></pre>
+                </div>
+
+                <h2>Method 3: VS Code Extension</h2>
+                <div class="code-block">
+                    <pre><code># Install from VS Code Marketplace
+# Search "NepaliCode" and install</code></pre>
+                </div>
+
+                <h2>Verification</h2>
+                <div class="code-block">
+                    <pre><code># Check version
+python main.py --version
+
+# Run REPL
+python main.py
+
+# Run example
+python main.py examples/01_hello_world.np</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 NepaliCode by Diwas Khatri. Made with ❤️ in Nepal 🇳🇵</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

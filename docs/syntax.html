@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syntax Reference - NepaliCode</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/docs.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <span class="logo-np">NP</span>
+                    <span class="logo-text">NepaliCode</span>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="installation.html">Installation</a>
+                <a href="stdlib.html">Library</a>
+                <a href="examples.html">Examples</a>
+                <a href="https://github.com/DiwasKhatri07/NepaliLang" target="_blank" class="github-btn">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <section class="docs-content">
+        <div class="container">
+            <div class="docs-header">
+                <a href="index.html" class="back-link">← Back to Home</a>
+                <h1>Syntax Reference</h1>
+                <p class="docs-subtitle">Complete NepaliCode syntax guide</p>
+            </div>
+
+            <div class="docs-body">
+                <h2>Variables and Types</h2>
+                <div class="code-block">
+                    <pre><code># Variables
+name = "Diwas"
+age = 21
+is_student = sacho
+price = 99.99
+
+# Data types
+text = "Hello"          # String
+number = 42            # Integer
+decimal = 3.14         # Float
+boolean = sacho        # Boolean
+nothing = khali        # None
+
+# Collections
+items = [1, 2, 3]      # List
+user = {"name": "Diwas"} # Map/Dictionary</code></pre>
+                </div>
+
+                <h2>Operators</h2>
+                <div class="code-block">
+                    <pre><code># Arithmetic
+addition = 5 + 3
+subtraction = 10 - 4
+multiplication = 6 * 7
+division = 20 / 4
+power = 2 ** 10
+
+# Comparison
+equal = 5 == 5
+not_equal = 5 != 3
+greater = 10 > 5
+less = 5 < 10
+
+# Logical
+and_result = sacho and jhut
+or_result = sacho or jhut
+not_result = hoina sacho</code></pre>
+                </div>
+
+                <h2>Control Flow</h2>
+                <div class="code-block">
+                    <pre><code># If/Else/Elif
+yedi age >= 18:
+    print("Adult")
+athawa age >= 13:
+    print("Teen")
+natra:
+    print("Child")
+
+# For Loop
+ko_lagi item ma items:
+    print(item)
+
+ko_lagi i ma range(10):
+    print(i)
+
+# While Loop
+jabasamma count < 10:
+    count += 1
+
+# Loop Control
+rok      # break
+agadi    # continue</code></pre>
+                </div>
+
+                <h2>Functions</h2>
+                <div class="code-block">
+                    <pre><code># Basic Function
+kaam add(a, b):
+    firta a + b
+
+# Default Parameters
+kaam greet(name="World"):
+    print(f"Namaste {name}!")
+
+# Keyword Arguments
+kaam create_user(name, age=21):
+    print(f"User: {name}, Age: {age}")
+
+# Recursion
+kaam factorial(n):
+    yedi n <= 1:
+        firta 1
+    firta n * factorial(n - 1)</code></pre>
+                </div>
+
+                <h2>Classes</h2>
+                <div class="code-block">
+                    <pre><code># Basic Class
+kakshya Person:
+    kaam __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    kaam greet(self):
+        firta f"Namaste, I am {self.name}"
+
+# Inheritance
+kakshya Student extends Person:
+    kaam __init__(self, name, age, grade):
+        super().__init__(name, age)
+        self.grade = grade</code></pre>
+                </div>
+
+                <h2>Error Handling</h2>
+                <div class="code-block">
+                    <pre><code># Try/Except/Finally
+koshish:
+    result = risky_operation()
+samau error:
+    print(f"Error: {error}")
+antya:
+    print("Cleanup")
+
+# Raise Exception
+uthau ValueError("Invalid input")</code></pre>
+                </div>
+
+                <h2>Modules</h2>
+                <div class="code-block">
+                    <pre><code># Import Module
+lyau ganit
+lyau jsonlib
+lyau file
+
+# Use Module
+print(ganit.jod(5, 3))
+data = jsonlib.parse('{"name": "Diwas"}')
+content = file.read("file.txt")</code></pre>
+                </div>
+
+                <h2>Nepali Keywords Reference</h2>
+                <table class="keyword-table">
+                    <thead>
+                        <tr>
+                            <th>English</th>
+                            <th>Nepali</th>
+                            <th>Meaning</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>def</td><td>kaam</td><td>function</td></tr>
+                        <tr><td>return</td><td>firta</td><td>return</td></tr>
+                        <tr><td>if</td><td>yedi</td><td>if</td></tr>
+                        <tr><td>else</td><td>natra</td><td>else</td></tr>
+                        <tr><td>elif</td><td>athawa</td><td>elif</td></tr>
+                        <tr><td>for</td><td>ko_lagi</td><td>for</td></tr>
+                        <tr><td>while</td><td>jabasamma</td><td>while</td></tr>
+                        <tr><td>in</td><td>ma</td><td>in</td></tr>
+                        <tr><td>class</td><td>kakshya</td><td>class</td></tr>
+                        <tr><td>import</td><td>lyau</td><td>import</td></tr>
+                        <tr><td>try</td><td>koshish</td><td>try</td></tr>
+                        <tr><td>except</td><td>samau</td><td>except</td></tr>
+                        <tr><td>finally</td><td>antya</td><td>finally</td></tr>
+                        <tr><td>raise</td><td>uthau</td><td>raise</td></tr>
+                        <tr><td>True</td><td>sacho</td><td>true</td></tr>
+                        <tr><td>False</td><td>jhut</td><td>false</td></tr>
+                        <tr><td>None</td><td>khali</td><td>none</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 NepaliCode by Diwas Khatri. Made with ❤️ in Nepal 🇳🇵</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
