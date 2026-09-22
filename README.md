@@ -712,3 +712,45 @@ nepali.exe hello.np
 **Made with ❤️ in Nepal** 🇳🇵
 
 *NepaliCode - Programming from Nepal, for the World*
+
+
+## 🎬 NepaliCode Visual Showcase
+
+> **See NepaliCode in action:** a programming language from Nepal with readable syntax, Nepali keywords, Unicode support, and a familiar developer workflow.
+
+### ▶️ Interactive preview
+
+[![Watch the full NepaliCode demo](showcase/nepalicode-video-poster.jpg)](showcase/export-1790045658701.mp4)
+
+**[▶ Watch the full 20-second MP4 demo](showcase/export-1790045658701.mp4)** · **[Open all showcase assets](showcase/README.md)**
+
+The poster above is a GitHub-friendly mini preview: click it to open the complete MP4. GitHub README pages do not reliably autoplay inline MP4 files, so the animated preview below provides the instant loop while the poster provides a clear video link.
+
+### 🔁 Looping GIF preview
+
+<p align="center">
+  <img src="showcase/nepalicode-preview.gif" alt="Animated NepaliCode editor and language preview" width="800">
+</p>
+
+### 🖥️ Screenshots
+
+<p align="center">
+  <img src="showcase/editor-showcase.png" alt="NepaliCode syntax highlighting in the editor" width="800">
+</p>
+
+<p align="center">
+  <img src="showcase/language-showcase.png" alt="NepaliCode language showcase" width="800">
+  <img src="showcase/mobile-showcase.png" alt="NepaliCode compact showcase" width="260">
+</p>
+
+### 🇳🇵 Project identity
+
+<p align="center">
+  <img src="showcase/nepalicode-showcase.svg" alt="NepaliCode — programming in Nepali" width="100%">
+</p>
+
+**NepaliCode** is an open-source programming language project by [Diwas Khatri](https://github.com/DiwasKhatri). It brings approachable, Python-inspired programming together with Nepali keywords and a Nepal-born developer identity. Explore the [documentation](docs/), browse the [50+ examples](examples/EXAMPLES_INDEX.md), or start with the [first program guide](docs/first_program.md).
+
+**Search keywords:** NepaliCode, Nepali programming language, Nepali coding, programming in Nepal, Diwas Khatri, Python-like language, Nepali keywords, Unicode programming language, bytecode VM, VS Code extension.
+
+> Media credits: showcase files are maintained in [`showcase/`](showcase/) and the full media inventory is documented in [`showcase/README.md`](showcase/README.md).
