@@ -6,7 +6,6 @@ __pycache__/
 .Python
 build/
 develop-eggs/
-dist/
 downloads/
 eggs/
 .eggs/
@@ -19,6 +18,10 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+
+# Keep installers for releases
+!dist/NepaliCode_Setup.exe
+!dist/nepali.exe
 
 # Virtual Environment
 venv/
@@ -44,9 +47,7 @@ desktop.ini
 *.tmp
 
 # Build artifacts
-dist/
 build/
-*.exe
 *.msi
 *.dmg
 *.app
