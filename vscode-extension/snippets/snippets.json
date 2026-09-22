@@ -1,0 +1,123 @@
+{
+  "Print Statement": {
+    "prefix": "print",
+    "body": "print(${1:value})",
+    "description": "Print statement"
+  },
+  "If Statement": {
+    "prefix": "if",
+    "body": [
+      "if ${1:condition}:",
+      "\t${2:# code}"
+    ],
+    "description": "If statement"
+  },
+  "If-Else Statement": {
+    "prefix": "ifelse",
+    "body": [
+      "if ${1:condition}:",
+      "\t${2:# code}",
+      "else:",
+      "\t${3:# code}"
+    ],
+    "description": "If-else statement"
+  },
+  "Elif Statement": {
+    "prefix": "elif",
+    "body": [
+      "elif ${1:condition}:",
+      "\t${2:# code}"
+    ],
+    "description": "Elif statement"
+  },
+  "For Loop": {
+    "prefix": "for",
+    "body": [
+      "for ${1:variable} in ${2:iterable}:",
+      "\t${3:# code}"
+    ],
+    "description": "For loop"
+  },
+  "While Loop": {
+    "prefix": "while",
+    "body": [
+      "while ${1:condition}:",
+      "\t${2:# code}"
+    ],
+    "description": "While loop"
+  },
+  "Function Definition": {
+    "prefix": "def",
+    "body": [
+      "def ${1:function_name}(${2:params}):",
+      "\t${3:# code}",
+      "\treturn ${4:value}"
+    ],
+    "description": "Function definition"
+  },
+  "Nepali If Statement": {
+    "prefix": "yedi",
+    "body": [
+      "yedi ${1:condition}:",
+      "\t${2:# code}"
+    ],
+    "description": "Nepali if statement"
+  },
+  "Nepali Else Statement": {
+    "prefix": "natra",
+    "body": [
+      "natra:",
+      "\t${1:# code}"
+    ],
+    "description": "Nepali else statement"
+  },
+  "Nepali Function Definition": {
+    "prefix": "kaam",
+    "body": [
+      "kaam ${1:function_name}(${2:params}):",
+      "\t${3:# code}",
+      "\tfirta ${4:value}"
+    ],
+    "description": "Nepali function definition"
+  },
+  "List": {
+    "prefix": "list",
+    "body": "[${1:items}]",
+    "description": "List literal"
+  },
+  "Map": {
+    "prefix": "map",
+    "body": "{\"${1:key}\": ${2:value}}",
+    "description": "Map literal"
+  },
+  "Import Statement": {
+    "prefix": "import",
+    "body": "import ${1:module}",
+    "description": "Import statement"
+  },
+  "From Import": {
+    "prefix": "from",
+    "body": "from ${1:module} import ${2:name}",
+    "description": "From import statement"
+  },
+  "Try-Except": {
+    "prefix": "try",
+    "body": [
+      "try:",
+      "\t${1:# code}",
+      "except ${2:Error}:",
+      "\t${3:# handle error}"
+    ],
+    "description": "Try-except block"
+  },
+  "Class Definition": {
+    "prefix": "class",
+    "body": [
+      "class ${1:ClassName}:",
+      "\tdef __init__(self, ${2:params}):",
+      "\t\t${3:# initialization}",
+      "\t\tself.${4:attr} = ${5:value}"
+    ],
+    "description": "Class definition"
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "name": "nepalilang",
+  "displayName": "NepaliLang",
+  "description": "NepaliLang - Programming Language from Nepal",
+  "version": "0.1.0",
+  "publisher": "NepaliSource",
+  "author": "Diwas Khatri",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NepaliSource/NepaliLang"
+  },
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "nepalilang",
+      "aliases": ["NepaliLang", "nepalilang", "np"],
+      "extensions": [".np"],
+      "configuration": "./language-configuration.json",
+      "icon": {
+        "light": "./icons/nepalilang-light.svg",
+        "dark": "./icons/nepalilang-dark.svg"
+      }
+    }],
+    "grammars": [{
+      "language": "nepalilang",
+      "scopeName": "source.np",
+      "path": "./syntaxes/nepalilang.tmLanguage.json"
+    }],
+    "snippets": [{
+      "language": "nepalilang",
+      "path": "./snippets/snippets.json"
+    }],
+    "fileIcons": {
+      "languageId": "nepalilang",
+      "light": "./icons/nepalilang-file-light.svg",
+      "dark": "./icons/nepalilang-file-dark.svg"
+    },
+    "configuration": {
+      "title": "NepaliLang",
+      "properties": {
+        "nepalilang.executablePath": {
+          "type": "string",
+          "default": "nepali.exe",
+          "description": "Path to the NepaliLang executable"
+        },
+        "nepalilang.enableLinting": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable NepaliLang linting"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "nepalilang.runFile",
+        "title": "Run NepaliLang File"
+      },
+      {
+        "command": "nepalilang.debugFile",
+        "title": "Debug NepaliLang File"
+      },
+      {
+        "command": "nepalilang.runSelection",
+        "title": "Run Selection in NepaliLang"
+      },
+      {
+        "command": "nepalilang.checkSyntax",
+        "title": "Check NepaliLang Syntax"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "nepalilang.runFile",
+        "key": "ctrl+f5",
+        "when": "editorLangId == nepalilang"
+      },
+      {
+        "command": "nepalilang.debugFile",
+        "key": "f5",
+        "when": "editorLangId == nepalilang"
+      },
+      {
+        "command": "nepalilang.runSelection",
+        "key": "ctrl+shift+f5",
+        "when": "editorLangId == nepalilang"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "nepalilang.runFile",
+          "when": "editorLangId == nepalilang",
+          "group": "navigation"
+        },
+        {
+          "command": "nepalilang.runSelection",
+          "when": "editorLangId == nepalilang && editorHasSelection",
+          "group": "navigation"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "nepalilang.runFile",
+          "when": "editorLangId == nepalilang"
+        },
+        {
+          "command": "nepalilang.debugFile",
+          "when": "editorLangId == nepalilang"
+        },
+        {
+          "command": "nepalilang.runSelection",
+          "when": "editorLangId == nepalilang"
+        }
+      ]
+    }
+  },
+  "activationEvents": [
+    "onLanguage:nepalilang",
+    "onCommand:nepalilang.runFile",
+    "onCommand:nepalilang.debugFile",
+    "onCommand:nepalilang.runSelection"
+  ],
+  "main": "./src/extension.js"
+}

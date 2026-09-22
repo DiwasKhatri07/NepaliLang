@@ -1,0 +1,35 @@
+# Lists - Creating and Manipulating Lists
+# List data structure operations
+
+# Creating lists
+numbers = [1, 2, 3, 4, 5]
+fruits = ["apple", "banana", "orange", "mango"]
+mixed = [1, "two", 3.0, sacho, khali]
+
+print("Numbers:", numbers)
+print("Fruits:", fruits)
+print("Mixed:", mixed)
+
+# List operations
+numbers.append(6)
+print("After append:", numbers)
+
+numbers.insert(0, 0)
+print("After insert:", numbers)
+
+numbers.remove(0)
+print("After remove:", numbers)
+
+# List indexing
+print("First element:", numbers[0])
+print("Last element:", numbers[-1])
+print("Slice:", numbers[1:4])
+
+# List methods
+print("Length:", len(numbers))
+print("Count of 5:", numbers.count(5))
+
+# List concatenation
+more_numbers = [6, 7, 8]
+combined = numbers + more_numbers
+print("Combined lists:", combined)

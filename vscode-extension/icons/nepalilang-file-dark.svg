@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+  <!-- File icon background -->
+  <path d="M 4 2 L 14 2 L 18 6 L 18 20 L 4 20 Z" fill="#DC143C" stroke="#4169E1" stroke-width="1"/>
+  
+  <!-- Folded corner -->
+  <path d="M 14 2 L 14 6 L 18 6" fill="#B22222" stroke="#4169E1" stroke-width="1"/>
+  
+  <!-- NP text -->
+  <text x="11" y="14" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle">NP</text>
+  
+  <!-- Small decorative elements -->
+  <circle cx="7" cy="16" r="1" fill="white"/>
+  <circle cx="15" cy="16" r="1" fill="white"/>
+</svg>

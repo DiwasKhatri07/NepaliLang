@@ -1,0 +1,7 @@
+# Hello World - First Program in NepaliCode
+# The simplest introduction to the language
+
+print("Namaste Nepal!")
+print("Welcome to NepaliCode!")
+print("Made by Diwas Khatri")
+print("NepaliSource")

@@ -1,0 +1,35 @@
+{
+  "comments": {
+    "lineComment": "#"
+  },
+  "brackets": [
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"]
+  ],
+  "autoClosingPairs": [
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"],
+    ["\"", "\""],
+    ["'", "'"]
+  ],
+  "surroundingPairs": [
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"],
+    ["\"", "\""],
+    ["'", "'"]
+  ],
+  "folding": {
+    "markers": {
+      "start": "^\\s*#\\s*region\\b",
+      "end": "^\\s*#\\s*endregion\\b"
+    }
+  },
+  "wordPattern": "(\\w+|[\\u0900-\\u097F]+)",
+  "indentationRules": {
+    "increaseIndentPattern": "^\\s*(def|kaam|if|yedi|else|natra|elif|natabhaye|for|ko_lagi|while|jabasamma|class|kakshya).*:\\s*$",
+    "decreaseIndentPattern": "^\\s*(return|firta|elif|natabhaye|else|natra)\\b.*$"
+  }
+}

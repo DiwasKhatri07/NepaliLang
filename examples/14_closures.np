@@ -1,0 +1,60 @@
+# Closures - Functions that capture variables
+# Nested functions and variable capture
+
+# Basic closure
+kaam make_multiplier(factor):
+    kaam multiply(number):
+        firta number * factor
+    firta multiply
+
+times_2 = make_multiplier(2)
+times_3 = make_multiplier(3)
+
+print("5 * 2 =", times_2(5))
+print("5 * 3 =", times_3(5))
+
+# Closure with multiple captured variables
+kaam make_counter():
+    count = 0
+    kaam increment():
+        count += 1
+        firta count
+    firta increment
+
+counter1 = make_counter()
+counter2 = make_counter()
+
+print("Counter 1:", counter1())
+print("Counter 1:", counter1())
+print("Counter 2:", counter2())
+print("Counter 1:", counter1())
+
+# Closure for memoization
+kaam memoize():
+    cache = {}
+    kaam get_fib(n):
+        yedi n in cache:
+            firta cache[n]
+        yedi n <= 1:
+            cache[n] = n
+        natra:
+            cache[n] = get_fib(n - 1) + get_fib(n - 2)
+        firta cache[n]
+    firta get_fib
+
+fast_fib = memoize()
+print("Memoized Fibonacci(30):", fast_fib(30))
+
+# Closure for filtering
+kaam make_filter(threshold):
+    kaam filter_greater(numbers):
+        result = []
+        ko_lagi num ma numbers:
+            yedi num > threshold:
+                result.append(num)
+        firta result
+    firta filter_greater
+
+filter_above_10 = make_filter(10)
+nums = [5, 15, 3, 20, 8, 25]
+print("Numbers > 10:", filter_above_10(nums))

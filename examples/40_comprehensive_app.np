@@ -1,0 +1,195 @@
+# Comprehensive Application Example
+# Building a complete application using multiple NepaliCode features
+
+# This example demonstrates a complete CLI application
+# that uses various NepaliCode features together
+
+lyau jsonlib
+lyau file
+lyau samaya
+lyau randomlib
+lyau ganit
+
+kakshya TaskManager:
+    kaam __init__(self):
+        self.tasks = []
+        self.completed = []
+    
+    kaam add_task(self, task):
+        self.tasks.append({
+            "id": len(self.tasks) + 1,
+            "task": task,
+            "created": samaya.abay_datetime(),
+            "completed": jhut
+        })
+        print("Task added:", task)
+    
+    kaam complete_task(self, task_id):
+        ko_lagi task ma self.tasks:
+            yedi task["id"] == task_id:
+                task["completed"] = sacho
+                task["completed_at"] = samaya.abay_datetime()
+                self.completed.append(task)
+                self.tasks.remove(task)
+                print("Task completed:", task["task"])
+                firta sacho
+        print("Task not found:", task_id)
+        firta jhut
+    
+    kaam list_tasks(self):
+        print("\n=== Tasks ===")
+        yedi hoina self.tasks:
+            print("No pending tasks")
+        natra:
+            ko_lagi task ma self.tasks:
+                status = "✓" yedi task["completed"] natra "○"
+                print(status, task["id"], "-", task["task"])
+    
+    kaam save_to_file(self, filename):
+        data = {
+            "tasks": self.tasks,
+            "completed": self.completed,
+            "saved_at": samaya.abay_datetime()
+        }
+        json_string = jsonlib.stringify(data)
+        file.write(filename, json_string)
+        print("Tasks saved to:", filename)
+    
+    kaam load_from_file(self, filename):
+        koshish:
+            content = file.read(filename)
+            data = jsonlib.parse(content)
+            self.tasks = data["tasks"]
+            self.completed = data["completed"]
+            print("Tasks loaded from:", filename)
+        samau error:
+            print("Error loading tasks:", error)
+
+kakshya TaskApp:
+    kaam __init__(self):
+        self.manager = TaskManager()
+        self.running = sacho
+    
+    kaam show_menu(self):
+        print("\n=== NepaliCode Task Manager ===")
+        print("1. Add task")
+        print("2. Complete task")
+        print("3. List tasks")
+        print("4. Save tasks")
+        print("5. Load tasks")
+        print("6. Statistics")
+        print("7. Exit")
+        print("Choice:", end=" ")
+    
+    kaam add_task(self):
+        print("Enter task:")
+        # task = input()  # Would use input in real app
+        task = "Sample task " + str(randomlib.number(1, 100))
+        self.manager.add_task(task)
+    
+    kaam complete_task(self):
+        print("Enter task ID:")
+        # task_id = int(input())
+        yedi self.manager.tasks:
+            task_id = self.manager.tasks[0]["id"]
+            self.manager.complete_task(task_id)
+        natra:
+            print("No tasks to complete")
+    
+    kaam show_statistics(self):
+        print("\n=== Statistics ===")
+        total = len(self.manager.tasks) + len(self.manager.completed)
+        completed = len(self.manager.completed)
+        pending = len(self.manager.tasks)
+        
+        print("Total tasks:", total)
+        print("Completed:", completed)
+        print("Pending:", pending)
+        
+        yedi total > 0:
+            completion_rate = (completed / total) * 100
+            print("Completion rate: {:.1f}%".format(completion_rate))
+    
+    kaam run(self):
+        print("Starting Task Manager...")
+        print("Type 'help' for commands")
+        
+        # Demo: Add some tasks
+        self.manager.add_task("Learn NepaliCode")
+        self.manager.add_task("Build an application")
+        self.manager.add_task("Write documentation")
+        
+        # Demo: Complete a task
+        self.manager.complete_task(1)
+        
+        # Demo: List tasks
+        self.manager.list_tasks()
+        
+        # Demo: Show statistics
+        self.show_statistics()
+        
+        # Demo: Save to file
+        self.manager.save_to_file("tasks.json")
+        
+        print("\n=== Demo Complete ===")
+        print("This demonstrates a complete application using:")
+        print("  - Classes and objects")
+        print("  - JSON library")
+        print("  - File library")
+        print("  - Time library")
+        print("  - Random library")
+        print("  - Math library")
+        print("  - Error handling")
+        print("  - Data structures")
+
+# Run the application
+kaam main():
+    app = TaskApp()
+    app.run()
+
+main()
+
+# Additional utility functions
+kaam generate_report(manager):
+    print("\n=== Task Report ===")
+    print("Generated at:", samaya.abay_datetime())
+    
+    total = len(manager.tasks) + len(manager.completed)
+    print("Total tasks processed:", total)
+    
+    yedi manager.completed:
+        print("\nCompleted tasks:")
+        ko_lagi task ma manager.completed:
+            print("  -", task["task"], "(completed at:", task["completed_at"], ")")
+
+# Practical example: Data processing pipeline
+kaam data_pipeline():
+    print("\n=== Data Processing Pipeline ===")
+    
+    # Step 1: Generate data
+    data = []
+    ko_lagi i ma range(10):
+        data.append({
+            "id": i,
+            "value": randomlib.number(1, 100),
+            "timestamp": samaya.abay_datetime()
+        })
+    
+    print("Generated", len(data), "data points")
+    
+    # Step 2: Process data
+    processed = []
+    ko_lagi item ma data:
+        processed.append({
+            "id": item["id"],
+            "squared": item["value"] ** 2,
+            "sqrt": ganit.sqrt(item["value"])
+        })
+    
+    print("Processed data")
+    
+    # Step 3: Save results
+    json_data = jsonlib.stringify(processed)
+    print("Data ready for export")
+
+data_pipeline()

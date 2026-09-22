@@ -1,0 +1,239 @@
+# CLI and REPL Usage
+# Command-line interface and REPL patterns
+
+# CLI argument handling simulation
+kaam parse_arguments(args):
+    print("=== CLI Argument Parser ===")
+    print("Arguments:", args)
+    
+    options = {
+        "file": khali,
+        "verbose": jhut,
+        "output": khali
+    }
+    
+    ko_lagi arg ma args:
+        yedi arg.startswith("--"):
+            key_value = arg[2:].split("=")
+            yedi len(key_value) == 2:
+                key, value = key_value
+                options[key] = value
+        athawa arg.startswith("-"):
+            options[arg[1:]] = sacho
+    
+    print("Parsed options:", options)
+    firta options
+
+parse_arguments(["--file=input.np", "--verbose", "--output=result.txt"])
+
+# Command pattern for CLI
+kakshya Command:
+    kaam execute(self):
+        pass
+
+kakshya HelpCommand extends Command:
+    kaam execute(self):
+        print("NepaliCode CLI Help:")
+        print("  run <file>     - Run a .np file")
+        print("  repl           - Start interactive REPL")
+        print("  compile <file> - Compile to bytecode")
+        print("  --version      - Show version")
+
+kakshya VersionCommand extends Command:
+    kaam execute(self):
+        print("NepaliCode Version: 0.1.0-alpha")
+        print("Platform: Windows")
+        print("Python-based runtime")
+
+kakshya RunCommand extends Command:
+    kaam __init__(self, filename):
+        self.filename = filename
+    
+    kaam execute(self):
+        print("Running file:", self.filename)
+        print("Execution simulated")
+
+print("\n=== Command Pattern ===")
+help_cmd = HelpCommand()
+help_cmd.execute()
+
+version_cmd = VersionCommand()
+version_cmd.execute()
+
+run_cmd = RunCommand("example.np")
+run_cmd.execute()
+
+# REPL simulation
+kakshya REPL:
+    kaam __init__(self):
+        self.running = sacho
+        self.history = []
+    
+    kaam start(self):
+        print("NepaliCode REPL 0.1.0-alpha")
+        print("Type 'exit' to quit")
+        print()
+        
+        ko_lagi i ma range(5):  # Simulate 5 inputs
+            self.prompt()
+    
+    kaam prompt(self):
+        print("NP>", end=" ")
+        # In real REPL, this would wait for input
+        commands = ["print('Hello')", "1 + 1", "x = 5", "x * 2", "exit"]
+        command = commands[len(self.history)]
+        
+        self.history.append(command)
+        print(command)
+        
+        yedi command == "exit":
+            print("Goodbye!")
+            self.running = jhut
+        natra:
+            self.execute(command)
+    
+    kaam execute(self, command):
+        print("Output:", command, "-> executed")
+
+print("\n=== REPL Simulation ===")
+repl = REPL()
+repl.start()
+
+# Interactive menu system
+kaam interactive_menu():
+    print("\n=== Interactive Menu ===")
+    
+    options = [
+        "1. Run File",
+        "2. Compile File",
+        "3. Check Syntax",
+        "4. View AST",
+        "5. Exit"
+    ]
+    
+    ko_lagi option ma options:
+        print(option)
+    
+    print("\nSimulating selection: 1")
+    print("Selected: Run File")
+
+interactive_menu()
+
+# Configuration management
+kakshya Config:
+    kaam __init__(self):
+        self.settings = {
+            "verbose": jhut,
+            "optimize": sacho,
+            "output_dir": "output",
+            "max_errors": 10
+        }
+    
+    kaam get(self, key):
+        firta self.settings.get(key, khali)
+    
+    kaam set(self, key, value):
+        self.settings[key] = value
+    
+    kaam load_from_file(self, filename):
+        print("Loading config from:", filename)
+        # Would load from JSON file
+    
+    kaam save_to_file(self, filename):
+        print("Saving config to:", filename)
+        # Would save to JSON file
+
+print("\n=== Configuration Management ===")
+config = Config()
+print("Verbose mode:", config.get("verbose"))
+config.set("verbose", sacho)
+print("Verbose mode after change:", config.get("verbose"))
+
+# Logging system
+kakshya Logger:
+    kaam __init__(self, level="INFO"):
+        self.level = level
+        self.levels = ["DEBUG", "INFO", "WARNING", "ERROR"]
+    
+    kaam log(self, level, message):
+        yedi self.levels.index(level) >= self.levels.index(self.level):
+            timestamp = "2024-01-01 00:00:00"  # Would use real time
+            print(f"[{timestamp}] [{level}] {message}")
+    
+    kaam debug(self, message):
+        self.log("DEBUG", message)
+    
+    kaam info(self, message):
+        self.log("INFO", message)
+    
+    kaam warning(self, message):
+        self.log("WARNING", message)
+    
+    kaam error(self, message):
+        self.log("ERROR", message)
+
+print("\n=== Logging System ===")
+logger = Logger("DEBUG")
+logger.debug("Debug message")
+logger.info("Info message")
+logger.warning("Warning message")
+logger.error("Error message")
+
+# Progress indicator
+kakshya ProgressBar:
+    kaam __init__(self, total):
+        self.total = total
+        self.current = 0
+    
+    kaam update(self, amount=1):
+        self.current += amount
+        self.display()
+    
+    kaam display(self):
+        percent = (self.current / self.total) * 100
+        bar_length = 30
+        filled = int(bar_length * self.current / self.total)
+        bar = "=" * filled + "-" * (bar_length - filled)
+        print(f"\r[{bar}] {percent:.1f}%", end="")
+
+print("\n=== Progress Bar ===")
+progress = ProgressBar(100)
+ko_lagi i ma range(10):
+    progress.update(10)
+print()  # New line after progress
+
+# CLI output formatting
+kaam format_table(headers, rows):
+    print("\n=== Table Formatting ===")
+    
+    # Calculate column widths
+    widths = []
+    ko_lagi i ma range(len(headers)):
+        max_width = len(headers[i])
+        ko_lagi row ma rows:
+            yedi len(str(row[i])) > max_width:
+                max_width = len(str(row[i]))
+        widths.append(max_width + 2)
+    
+    # Print header
+    header_row = ""
+    ko_lagi i ma range(len(headers)):
+        header_row += headers[i].ljust(widths[i])
+    print(header_row)
+    print("-" * len(header_row))
+    
+    # Print rows
+    ko_lagi row ma rows:
+        row_str = ""
+        ko_lagi i ma range(len(row)):
+            row_str += str(row[i]).ljust(widths[i])
+        print(row_str)
+
+format_table(
+    ["Name", "Age", "City"],
+    [
+        ["Diwas", 21, "Kathmandu"],
+        ["Ram", 25, "Pokhara"],
+        ["Sita", 23, "Lalitpur"]
+    ]
+)

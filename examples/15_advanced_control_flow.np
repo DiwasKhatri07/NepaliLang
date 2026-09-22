@@ -1,0 +1,62 @@
+# Advanced Control Flow Patterns
+# Complex flow control and patterns
+
+# List comprehension-style pattern
+print("Squares:")
+squares = []
+ko_lagi x ma range(5):
+    squares.append(x * x)
+print(squares)
+
+# Filter pattern
+print("Even numbers:")
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+evens = []
+ko_lagi num ma numbers:
+    yedi num % 2 == 0:
+        evens.append(num)
+print(evens)
+
+# Map pattern
+print("Doubled:")
+doubled = []
+ko_lagi num ma numbers:
+    doubled.append(num * 2)
+print(doubled)
+
+# Reduce pattern
+print("Sum:")
+total = 0
+ko_lagi num ma numbers:
+    total += num
+print(total)
+
+# Nested conditions with early returns
+kaam classify_number(n):
+    yedi n < 0:
+        firta "negative"
+    yedi n == 0:
+        firta "zero"
+    yedi n % 2 == 0:
+        firta "positive even"
+    firta "positive odd"
+
+print("Classify -5:", classify_number(-5))
+print("Classify 0:", classify_number(0))
+print("Classify 4:", classify_number(4))
+print("Classify 7:", classify_number(7))
+
+# Loop with state machine
+states = ["start", "processing", "complete"]
+current_state = "start"
+ko_lagi i ma range(10):
+    yedi current_state == "start":
+        print("Starting")
+        current_state = "processing"
+    athawa current_state == "processing":
+        print("Processing:", i)
+        yedi i >= 5:
+            current_state = "complete"
+    athawa current_state == "complete":
+        print("Complete")
+        rok

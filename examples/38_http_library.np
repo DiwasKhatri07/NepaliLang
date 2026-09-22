@@ -1,0 +1,148 @@
+# HTTP Library (anurodh) - HTTP Requests
+# Making HTTP requests and handling responses
+
+lyau anurodh
+
+# Basic GET request
+print("HTTP Operations:")
+print("  Note: This example shows the intended API")
+print("  Full functionality requires network access")
+
+# Basic GET request example
+kaam simple_get_request():
+    print("\n=== Simple GET Request ===")
+    koshish:
+        response = anurodh.get("https://httpbin.org/get")
+        print("Status:", response.status)
+        print("Response:", response.text)
+    samau error:
+        print("Request failed:", error)
+
+# simple_get_request()
+
+# POST request with data
+kaam post_request_example():
+    print("\n=== POST Request ===")
+    koshish:
+        data = {
+            "name": "Diwas",
+            "email": "diwas@example.com"
+        }
+        response = anurodh.post("https://httpbin.org/post", data)
+        print("Status:", response.status)
+        print("Response:", response.json)
+    samau error:
+        print("Request failed:", error)
+
+# post_request_example()
+
+# Request with headers
+kaam request_with_headers():
+    print("\n=== Request with Headers ===")
+    koshish:
+        headers = {
+            "User-Agent": "NepaliCode/0.1.0",
+            "Accept": "application/json"
+        }
+        response = anurodh.get("https://httpbin.org/headers", headers=headers)
+        print("Status:", response.status)
+        print("Response:", response.json)
+    samau error:
+        print("Request failed:", error)
+
+# request_with_headers()
+
+# Request with parameters
+kaam request_with_params():
+    print("\n=== Request with Parameters ===")
+    koshish:
+        params = {
+            "param1": "value1",
+            "param2": "value2"
+        }
+        response = anurodh.get("https://httpbin.org/get", params=params)
+        print("Status:", response.status)
+        print("Response:", response.json)
+    samau error:
+        print("Request failed:", error)
+
+# request_with_params()
+
+# Error handling
+kaam http_error_handling():
+    print("\n=== HTTP Error Handling ===")
+    koshish:
+        response = anurodh.get("https://invalid-url-that-does-not-exist.com")
+        yedi response.status >= 400:
+            print("HTTP Error:", response.status)
+        natra:
+            print("Success:", response.status)
+    samau error:
+        print("Connection error:", error)
+
+# http_error_handling()
+
+# Practical example: API client
+kaam api_client():
+    print("\n=== API Client Pattern ===")
+    
+    koshish:
+        # Simulate API call
+        print("Making API request to JSONPlaceholder...")
+        # response = anurodh.get("https://jsonplaceholder.typicode.com/users/1")
+        # user = response.json
+        # print("User:", user["name"])
+        # print("Email:", user["email"])
+        
+        print("API client pattern:")
+        print("  - GET: Retrieve data")
+        print("  - POST: Create data")
+        print("  - PUT: Update data")
+        print("  - DELETE: Remove data")
+        print("  - Headers: Custom headers")
+        print("  - Params: Query parameters")
+        print("  - JSON: Automatic JSON parsing")
+        
+    samau error:
+        print("API error:", error)
+
+api_client()
+
+# Practical example: Weather API (concept)
+kaam weather_api(city):
+    print("\n=== Weather API Example ===")
+    print("Getting weather for:", city)
+    
+    koshish:
+        # url = "https://api.openweathermap.org/data/2.5/weather"
+        # params = {"q": city, "appid": "YOUR_API_KEY"}
+        # response = anurodh.get(url, params=params)
+        # weather = response.json
+        # print("Temperature:", weather["main"]["temp"])
+        # print("Description:", weather["weather"][0]["description"])
+        
+        print("Weather API pattern:")
+        print("  - Endpoint: /weather")
+        print("  - Parameters: city, API key")
+        print("  - Response: temperature, description")
+        
+    samau error:
+        print("Weather API error:", error)
+
+weather_api("Kathmandu")
+
+# Practical example: File download
+kaam download_file(url, filename):
+    print("\n=== File Download ===")
+    print("Downloading:", url)
+    print("Saving as:", filename)
+    
+    koshish:
+        # response = anurodh.get(url)
+        # file.write(filename, response.content)
+        print("Download complete")
+        
+    samau error:
+        print("Download failed:", error)
+
+# download_file("https://example.com/file.pdf", "downloaded.pdf")

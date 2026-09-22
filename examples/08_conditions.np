@@ -1,0 +1,49 @@
+# Conditional Statements - if, elif, else
+# Nepali and English condition keywords
+
+# Using English keywords
+age = 18
+
+yedi age >= 18:
+    print("You are an adult")
+natra:
+    print("You are a minor")
+
+# Using Nepali keywords
+umra = 20
+
+yedi umra >= 60:
+    print("Senior citizen")
+athawa umra >= 18:
+    print("Adult")
+natra:
+    print("Minor")
+
+# Nested conditions
+score = 85
+
+yedi score >= 90:
+    print("Grade: A")
+natra:
+    yedi score >= 80:
+        print("Grade: B")
+    natra:
+        yedi score >= 70:
+            print("Grade: C")
+        natra:
+            yedi score >= 60:
+                print("Grade: D")
+            natra:
+                print("Grade: F")
+
+# Multiple conditions with logical operators
+has_license = sacho
+has_car = jhut
+
+yedi has_license and has_car:
+    print("You can drive")
+natra:
+    yedi has_license:
+        print("You have license but no car")
+    natra:
+        print("You need a license")

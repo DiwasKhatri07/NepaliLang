@@ -1,0 +1,89 @@
+╔══════════════════════════════════════════════════════════════════╗
+║        🇳🇵 NEPALICODE - UNBLOCK EXECUTABLE INSTRUCTIONS 🇳🇵         ║
+╚══════════════════════════════════════════════════════════════════╝
+
+⚠️ WINDOWS SECURITY BLOCKING nepali.exe
+
+═══════════════════════════════════════════════════════════════════
+
+🔒 PROBLEM:
+Windows SmartScreen and Defender are blocking nepali.exe because
+it's a newly created executable without digital signature.
+
+═══════════════════════════════════════════════════════════════════
+
+✅ SOLUTION 1: USE BATCH SCRIPT (RECOMMENDED)
+
+The VS Code extension now uses run_np.bat as the primary method.
+This bypasses the security blocking.
+
+1. Restart VS Code
+2. The extension will automatically use run_np.bat
+3. Files should run without security issues
+
+═══════════════════════════════════════════════════════════════════
+
+✅ SOLUTION 2: UNBLOCK THE EXECUTABLE
+
+If you want to use nepali.exe directly:
+
+Method A: Properties Unblock
+────────────────────────────────────────────────────────────────────
+1. Right-click on: dist\nepali.exe
+2. Select "Properties"
+3. Check "Unblock" at the bottom
+4. Click "Apply"
+5. Click "OK"
+
+Method B: PowerShell Unblock
+────────────────────────────────────────────────────────────────────
+Open PowerShell as Administrator and run:
+
+powershell -Command "Unblock-File -Path 'C:\Users\Diwas\Desktop\.np lannguage\dist\nepali.exe'"
+
+Method C: Windows Defender Exclusion
+────────────────────────────────────────────────────────────────────
+1. Open Windows Security
+2. Go to "Virus & threat protection"
+3. Click "Manage settings"
+4. Scroll to "Exclusions"
+5. Click "Add or remove exclusions"
+6. Add: C:\Users\Diwas\Desktop\.np lannguage\dist\nepali.exe
+
+═══════════════════════════════════════════════════════════════════
+
+✅ SOLUTION 3: DIGITALLY SIGN THE EXECUTABLE (FUTURE)
+
+For production release, the executable should be digitally signed:
+- Purchase code signing certificate
+- Sign the executable with signtool.exe
+- This will prevent Windows security blocking
+
+═══════════════════════════════════════════════════════════════════
+
+🎯 CURRENT STATUS:
+
+VS Code Extension: ✅ FIXED
+- Now uses run_np.bat as primary method
+- Bypasses Windows security blocks
+- Should work immediately after restart
+
+Direct nepali.exe: ⚠️ BLOCKED
+- Requires manual unblocking
+- See instructions above
+
+═══════════════════════════════════════════════════════════════════
+
+🚀 RECOMMENDED ACTIONS:
+
+1. Restart VS Code (fixes VS Code integration)
+2. Try running files with Ctrl+F5
+3. If still blocked, unblock nepali.exe using Method A above
+4. For future releases, consider code signing
+
+═══════════════════════════════════════════════════════════════════
+
+Made with ❤️ in Nepal 🇳🇵
+NepaliSource - Programming for Everyone
+
+═══════════════════════════════════════════════════════════════════

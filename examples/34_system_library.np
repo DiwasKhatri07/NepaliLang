@@ -1,0 +1,127 @@
+# System Library (system) - System and OS Operations
+# Interacting with the operating system and environment
+
+lyau system
+
+# System information
+print("System Information:")
+print("  Platform:", system.platform())
+print("  OS:", system.os_name())
+print("  Python version:", system.python_version())
+print("  Machine:", system.machine())
+
+# Environment variables
+print("\nEnvironment Variables:")
+print("  HOME:", system.get_env("HOME"))
+print("  PATH:", system.get_env("PATH"))
+print("  USER:", system.get_env("USER"))
+
+# Current working directory
+print("\nDirectory Operations:")
+print("  Current directory:", system.current_directory())
+print("  Home directory:", system.home_directory())
+
+# User information
+print("\nUser Information:")
+print("  Username:", system.username())
+print("  User ID:", system.user_id())
+
+# System resources
+print("\nSystem Resources:")
+print("  CPU count:", system.cpu_count())
+print("  Total memory:", system.total_memory())
+print("  Available memory:", system.available_memory())
+
+# Process information
+print("\nProcess Information:")
+print("  Process ID:", system.process_id())
+print("  Parent process ID:", system.parent_process_id())
+
+# System time
+print("\nSystem Time:")
+print("  System time:", system.system_time())
+print("  System uptime:", system.uptime())
+
+# Practical example: System health check
+kaam system_health_check():
+    print("\n=== System Health Check ===")
+    
+    cpu_count = system.cpu_count()
+    print("CPU Cores:", cpu_count)
+    
+    total_mem = system.total_memory()
+    available_mem = system.available_memory()
+    mem_percent = (available_mem / total_mem) * 100
+    print("Memory: {:.1f}% available".format(mem_percent))
+    
+    platform = system.platform()
+    print("Platform:", platform)
+    
+    yedi mem_percent < 20:
+        print("WARNING: Low memory!")
+    natra:
+        print("System health: OK")
+
+system_health_check()
+
+# Practical example: Environment checker
+kaam check_environment():
+    print("\n=== Environment Check ===")
+    
+    path = system.get_env("PATH")
+    yedi path:
+        print("PATH is set")
+        print("  PATH entries:", len(path.split(system.path_separator())))
+    natra:
+        print("WARNING: PATH not set")
+    
+    home = system.get_env("HOME")
+    yedi home:
+        print("HOME directory:", home)
+    natra:
+        print("WARNING: HOME not set")
+    
+    user = system.get_env("USER")
+    yedi user:
+        print("Current user:", user)
+    natra:
+        print("WARNING: USER not set")
+
+check_environment()
+
+# Practical example: System monitor
+kaam system_monitor():
+    print("\n=== System Monitor ===")
+    
+    print("Time:", system.system_time())
+    print("Uptime:", system.uptime(), "seconds")
+    print("CPU:", system.cpu_count(), "cores")
+    print("Memory:", system.available_memory(), "available")
+    print("Process:", system.process_id())
+
+system_monitor()
+
+# Command execution (if available)
+print("\nCommand Execution:")
+print("  Note: Command execution requires proper permissions")
+# result = system.execute("echo 'Hello from system'")
+# print("  Command result:", result)
+
+# Practical example: Path operations
+kaam path_operations():
+    print("\n=== Path Operations ===")
+    
+    current = system.current_directory()
+    print("Current path:", current)
+    
+    parent = system.parent_directory(current)
+    print("Parent directory:", parent)
+    
+    # Check if path exists
+    exists = system.path_exists(current)
+    print("Path exists:", exists)
+    
+    # Get path components
+    print("Path separator:", system.path_separator())
+
+path_operations()

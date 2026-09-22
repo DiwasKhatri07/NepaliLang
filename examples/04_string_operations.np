@@ -1,0 +1,39 @@
+# String Operations
+# String manipulation and methods
+
+# String concatenation
+first_name = "Diwas"
+last_name = "Khatri"
+full_name = first_name + " " + last_name
+print("Full name:", full_name)
+
+# String repetition
+separator = "-" * 20
+print(separator)
+
+# String slicing
+text = "NepaliCode Programming"
+print("First 7 chars:", text[0:7])
+print("Last 7 chars:", text[-7:])
+
+# String methods
+text_upper = text.upper()
+text_lower = text.lower()
+print("Uppercase:", text_upper)
+print("Lowercase:", text_lower)
+
+# String formatting with f-strings
+age = 21
+message = f"I am {age} years old"
+print(message)
+
+# Multi-line string
+multiline = """
+This is a
+multi-line
+string example
+"""
+print(multiline)
+
+# String length
+print("Length:", len(text))

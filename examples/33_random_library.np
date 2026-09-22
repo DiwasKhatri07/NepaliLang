@@ -1,0 +1,92 @@
+# Random Library (randomlib) - Random Number Generation
+# Generating random numbers and making random selections
+
+lyau randomlib
+
+# Basic random numbers
+print("Basic Random Numbers:")
+print("  Random integer (1-10):", randomlib.number(1, 10))
+print("  Random integer (1-100):", randomlib.number(1, 100))
+
+# Generate multiple random numbers
+print("\nMultiple Random Numbers:")
+random_numbers = []
+ko_lagi i ma range(5):
+    random_numbers.append(randomlib.number(1, 100))
+print("  5 random numbers:", random_numbers)
+
+# Random selection from list
+print("\nRandom Selection:")
+fruits = ["apple", "banana", "orange", "mango", "grape"]
+print("  Fruits:", fruits)
+print("  Random fruit:", randomlib.choice(fruits))
+
+# Random shuffle
+print("\nRandom Shuffle:")
+cards = ["A", "K", "Q", "J", "10", "9", "8", "7"]
+print("  Original cards:", cards)
+shuffled = randomlib.shuffle(cards)
+print("  Shuffled cards:", shuffled)
+
+# Practical example: Dice rolling
+kaam roll_dice(sides=6):
+    firta randomlib.number(1, sides)
+
+print("\nDice Rolling:")
+print("  Roll 6-sided die:", roll_dice(6))
+print("  Roll 20-sided die:", roll_dice(20))
+
+# Roll multiple dice
+kaam roll_multiple_dice(count, sides=6):
+    rolls = []
+    ko_lagi i ma range(count):
+        rolls.append(roll_dice(sides))
+    firta rolls
+
+print("  Roll 3 dice:", roll_multiple_dice(3, 6))
+
+# Practical example: Coin flip
+kaam flip_coin():
+    result = randomlib.number(0, 1)
+    yedi result == 0:
+        firta "Heads"
+    natra:
+        firta "Tails"
+
+print("\nCoin Flips:")
+print("  Flip 1:", flip_coin())
+print("  Flip 2:", flip_coin())
+print("  Flip 3:", flip_coin())
+
+# Practical example: Random password generator
+kaam generate_password(length=12):
+    uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    lowercase = "abcdefghijklmnopqrstuvwxyz"
+    digits = "0123456789"
+    special = "!@#$%^&*"
+    
+    all_chars = uppercase + lowercase + digits + special
+    password = ""
+    
+    ko_lagi i ma range(length):
+        index = randomlib.number(0, len(all_chars) - 1)
+        password += all_chars[index]
+    
+    firta password
+
+print("\nPassword Generator:")
+print("  8-char password:", generate_password(8))
+print("  12-char password:", generate_password(12))
+print("  16-char password:", generate_password(16))
+
+# Practical example: Random color generator
+kaam random_color():
+    r = randomlib.number(0, 255)
+    g = randomlib.number(0, 255)
+    b = randomlib.number(0, 255)
+    firta "RGB(" + str(r) + ", " + str(g) + ", " + str(b) + ")"
+
+print("\nRandom Colors:")
+print("  Color 1:", random_color())
+print("  Color 2:", random_color())
+print("  Color 3:", random_color())

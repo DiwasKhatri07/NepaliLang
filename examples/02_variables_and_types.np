@@ -1,0 +1,35 @@
+# Variables and Data Types
+# Demonstrates all basic data types in NepaliCode
+
+# Numbers
+age = 21
+price = 99.99
+count = 1000000
+
+# Strings
+name = "Diwas Khatri"
+greeting = 'Namaste Nepal'
+message = """Multiline
+string
+example"""
+
+# Booleans
+is_student = sacho
+is_working = jhut
+has_license = false
+
+# Null (khali)
+nothing = khali
+
+# Type checking with type() function
+print("Name:", name)
+print("Age:", age)
+print("Price:", price)
+print("Is student:", is_student)
+print("Nothing:", nothing)
+
+# Operations
+total = age + 5
+discount = price * 0.9
+print("Total:", total)
+print("Discount:", discount)

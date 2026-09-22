@@ -1,0 +1,33 @@
+# Boolean and Comparison Operations
+# Logical operations and comparisons
+
+# Comparison operators
+x = 10
+y = 20
+
+print("x == y:", x == y)
+print("x != y:", x != y)
+print("x < y:", x < y)
+print("x <= y:", x <= y)
+print("x > y:", x > y)
+print("x >= y:", x >= y)
+
+# Boolean operators
+is_true = sacho
+is_false = jhut
+
+print("AND operation:", is_true and is_false)
+print("OR operation:", is_true or is_false)
+print("NOT operation:", hoina is_true)
+
+# Complex boolean expressions
+age = 18
+has_id = sacho
+is_adult = age >= 18 and has_id
+print("Is adult with ID:", is_adult)
+
+# Boolean conversion
+truthy = 5
+falsy = 0
+print("Truthy value is true:", truthy)
+print("Falsy value is false:", falsy)

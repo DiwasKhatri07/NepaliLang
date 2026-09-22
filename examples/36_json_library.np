@@ -1,0 +1,140 @@
+# JSON Library (jsonlib) - JSON Data Handling
+# Parsing, stringifying, and working with JSON data
+
+lyau jsonlib
+
+# Parse JSON string
+print("JSON Parsing:")
+json_string = '{"name": "Diwas", "age": 21, "city": "Kathmandu"}'
+parsed_data = jsonlib.parse(json_string)
+print("  Parsed data:", parsed_data)
+print("  Name:", parsed_data["name"])
+print("  Age:", parsed_data["age"])
+
+# Stringify to JSON
+print("\nJSON Stringifying:")
+data = {
+    "product": "Laptop",
+    "price": 999.99,
+    "in_stock": sacho,
+    "features": ["fast", "reliable", "portable"]
+}
+json_output = jsonlib.stringify(data)
+print("  Stringified:", json_output)
+
+# Working with arrays
+print("\nJSON Arrays:")
+json_array = '[1, 2, 3, 4, 5]'
+numbers = jsonlib.parse(json_array)
+print("  Parsed array:", numbers)
+print("  Sum:", sum(numbers))
+
+# Nested JSON
+print("\nNested JSON:")
+nested_json = '''
+{
+    "user": {
+        "name": "Diwas",
+        "email": "diwas@example.com"
+    },
+    "settings": {
+        "theme": "dark",
+        "notifications": true
+    }
+}
+'''
+nested_data = jsonlib.parse(nested_json)
+print("  User name:", nested_data["user"]["name"])
+print("  Theme:", nested_data["settings"]["theme"])
+
+# Practical example: Configuration file
+kaam load_config():
+    config_json = '''
+    {
+        "app_name": "NepaliCode",
+        "version": "0.1.0",
+        "debug": false,
+        "max_connections": 100,
+        "features": ["json", "math", "time"]
+    }
+    '''
+    config = jsonlib.parse(config_json)
+    print("\n=== Application Config ===")
+    print("  App:", config["app_name"])
+    print("  Version:", config["version"])
+    print("  Debug mode:", config["debug"])
+    print("  Max connections:", config["max_connections"])
+    print("  Features:", config["features"])
+    firta config
+
+load_config()
+
+# Practical example: Data export
+kaam export_data(data):
+    json_string = jsonlib.stringify(data)
+    print("\n=== Exported Data ===")
+    print(json_string)
+    firta json_string
+
+users = [
+    {"id": 1, "name": "Diwas", "role": "admin"},
+    {"id": 2, "name": "Ram", "role": "user"},
+    {"id": 3, "name": "Sita", "role": "user"}
+]
+export_data(users)
+
+# Practical example: API response simulation
+kaam simulate_api_response():
+    response = {
+        "status": "success",
+        "code": 200,
+        "data": {
+            "users": [
+                {"id": 1, "name": "Diwas"},
+                {"id": 2, "name": "Ram"}
+            ],
+            "total": 2
+        },
+        "timestamp": "2024-01-01T00:00:00Z"
+    }
+    json_response = jsonlib.stringify(response)
+    print("\n=== Simulated API Response ===")
+    print(json_response)
+    
+    parsed = jsonlib.parse(json_response)
+    print("Status:", parsed["status"])
+    print("Total users:", parsed["data"]["total"])
+
+simulate_api_response()
+
+# Practical example: Data validation
+kaam validate_json(json_string):
+    koshish:
+        data = jsonlib.parse(json_string)
+        print("\n=== JSON Validation ===")
+        print("Valid JSON")
+        print("Keys:", list(data.keys()))
+        firta sacho
+    samau error:
+        print("Invalid JSON:", error)
+        firta jhut
+
+validate_json('{"valid": true}')
+
+# Practical example: Data transformation
+kaam transform_data(data):
+    print("\n=== Data Transformation ===")
+    print("Original:", data)
+    
+    json_string = jsonlib.stringify(data)
+    transformed = jsonlib.parse(json_string)
+    
+    # Add new field
+    transformed["processed"] = sacho
+    transformed["timestamp"] = "2024-01-01"
+    
+    print("Transformed:", transformed)
+    firta transformed
+
+original_data = {"name": "Test", "value": 42}
+transform_data(original_data)

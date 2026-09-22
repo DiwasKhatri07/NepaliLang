@@ -1,0 +1,226 @@
+# Best Practices and Code Quality
+# Writing clean, maintainable, and efficient code
+
+# Function naming conventions
+kaam calculate_area(length, width):
+    firta length * width
+
+kaam get_user_by_id(user_id):
+    firta {"id": user_id, "name": "User"}
+
+kaam is_valid_email(email):
+    firta "@" ma email and "." ma email
+
+print("Function Naming:")
+print("Area:", calculate_area(5, 3))
+print("User:", get_user_by_id(1))
+print("Valid email:", is_valid_email("test@example.com"))
+
+# Variable naming conventions
+user_name = "Diwas"
+user_age = 21
+is_active = sacho
+max_retries = 3
+
+print("\nVariable Naming:")
+print("User:", user_name, user_age, is_active)
+
+# Constants (uppercase convention)
+MAX_CONNECTIONS = 100
+DEFAULT_TIMEOUT = 30
+API_VERSION = "0.1.0"
+
+print("\nConstants:")
+print("Max connections:", MAX_CONNECTIONS)
+print("Default timeout:", DEFAULT_TIMEOUT)
+
+# DRY principle - Don't Repeat Yourself
+kaam format_person(name, age, city):
+    firta name + " (" + str(age) + ") from " + city
+
+print("\nDRY Principle:")
+print(format_person("Diwas", 21, "Kathmandu"))
+print(format_person("Ram", 25, "Pokhara"))
+
+# Single Responsibility Principle
+kakshya Validator:
+    kaam validate_email(self, email):
+        firta "@" ma email and "." ma email
+    
+    kaam validate_phone(self, phone):
+        firta len(phone) >= 10 and phone.isdigit()
+
+kakshya Formatter:
+    kaam format_phone(self, phone):
+        firta phone  # Would format nicely
+    
+    kaam format_email(self, email):
+        firta email.lower()
+
+print("\nSingle Responsibility:")
+validator = Validator()
+formatter = Formatter()
+print("Valid email:", validator.validate_email("test@example.com"))
+print("Valid phone:", validator.validate_phone("1234567890"))
+
+# Error handling best practices
+kaam safe_divide(a, b):
+    koshish:
+        firta a / b
+    samau error:
+        print("Division error:", error)
+        firta khali
+
+print("\nError Handling:")
+print("10 / 2 =", safe_divide(10, 2))
+print("10 / 0 =", safe_divide(10, 0))
+
+# Documentation comments
+kaam calculate_compound_interest(principal, rate, time):
+    """
+    Calculate compound interest
+    
+    Args:
+        principal: Initial amount
+        rate: Interest rate (as decimal)
+        time: Time period in years
+    
+    Returns:
+        Final amount after compound interest
+    """
+    firta principal * (1 + rate) ** time
+
+print("\nDocumentation:")
+print("Compound interest:", calculate_compound_interest(1000, 0.05, 5))
+
+# Input validation
+kaam process_age(age):
+    yedi type(age) != "int":
+        uthai ValueError("Age must be an integer")
+    yedi age < 0:
+        uthai ValueError("Age cannot be negative")
+    yedi age > 150:
+        uthai ValueError("Age is unrealistic")
+    firta age
+
+print("\nInput Validation:")
+koshish:
+    print("Valid age:", process_age(25))
+samau error:
+    print("Error:", error)
+
+# Defensive programming
+kaam get_list_item(items, index, default=khali):
+    yedi hoina items:
+        firta default
+    yedi index < 0 or index >= len(items):
+        firta default
+    firta items[index]
+
+print("\nDefensive Programming:")
+items = [1, 2, 3]
+print("Valid index:", get_list_item(items, 1))
+print("Invalid index:", get_list_item(items, 10, "default"))
+
+# Code organization
+kakshya UserService:
+    kaam __init__(self):
+        self.users = []
+    
+    kaam add_user(self, user):
+        self.users.append(user)
+    
+    kaam get_user(self, user_id):
+        ko_lagi user ma self.users:
+            yedi user["id"] == user_id:
+                firta user
+        firta khali
+    
+    kaam delete_user(self, user_id):
+        self.users = [u for u in self.users if u["id"] != user_id]
+
+print("\nCode Organization:")
+service = UserService()
+service.add_user({"id": 1, "name": "Diwas"})
+print("User:", service.get_user(1))
+
+# Magic numbers - use constants instead
+# Bad: circle_area = 3.14159 * radius * radius
+# Good:
+PI = 3.14159
+
+kaam circle_area(radius):
+    firta PI * radius * radius
+
+print("\nAvoid Magic Numbers:")
+print("Circle area:", circle_area(5))
+
+# Early returns for clarity
+kaam get_user_status(user):
+    yedi hoina user:
+        firta "No user"
+    yedi hoina user["active"]:
+        firta "Inactive"
+    yedi user["admin"]:
+        firta "Admin"
+    firta "User"
+
+print("\nEarly Returns:")
+print(get_user_status({"id": 1, "active": sacho, "admin": jhut}))
+print(get_user_status({"id": 1, "active": sacho, "admin": sacho}))
+
+# Meaningful variable names
+# Bad: x = 5, y = 10, z = x + y
+# Good:
+width = 5
+height = 10
+area = width * height
+
+print("\nMeaningful Names:")
+print("Area:", area)
+
+# Commenting best practices
+# Calculate the factorial of a number recursively
+kaam factorial(n):
+    yedi n <= 1:
+        firta 1
+    firta n * factorial(n - 1)
+
+print("\nComments:")
+print("Factorial of 5:", factorial(5))
+
+# Function length - keep functions short
+kaam very_long_function():
+    # Bad: Functions should be short and focused
+    # Good: Break into smaller functions
+    pass
+
+# Instead, use smaller functions
+kaam validate_input(input_data):
+    return input_data != khali
+
+kaam process_data(data):
+    return data.upper()
+
+kaam save_result(result):
+    print("Saved:", result)
+
+print("\nFunction Length:")
+input_data = "hello"
+yedi validate_input(input_data):
+    processed = process_data(input_data)
+    save_result(processed)
+
+# Type hints (concept)
+# def add(a: int, b: int) -> int:
+#     return a + b
+
+print("\nBest Practices Summary:")
+print("1. Use meaningful names")
+print("2. Keep functions short")
+print("3. Handle errors properly")
+print("4. Document your code")
+print("5. Follow conventions")
+print("6. Don't repeat yourself")
+print("7. Validate inputs")
+print("8. Use constants instead of magic numbers")

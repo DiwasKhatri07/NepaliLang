@@ -1,0 +1,29 @@
+# Arithmetic Operations
+# All mathematical operations in NepaliCode
+
+# Basic operations
+a = 10
+b = 5
+
+print("Addition:", a + b)
+print("Subtraction:", a - b)
+print("Multiplication:", a * b)
+print("Division:", a / b)
+print("Modulo:", a % b)
+print("Power:", a ** b)
+
+# Complex expressions
+result = (a + b) * 2 - 5
+print("Complex expression:", result)
+
+# Operator precedence
+result2 = a + b * 2
+print("Operator precedence:", result2)
+
+# Integer division
+result3 = 10 // 3
+print("Integer division:", result3)
+
+# Negation
+negative = -a
+print("Negation:", negative)

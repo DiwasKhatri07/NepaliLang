@@ -1,0 +1,54 @@
+# While Loops - Conditional iteration
+# Using jabasamma and while keywords
+
+# Basic while loop
+count = 0
+jabasamma count < 5:
+    print("Count:", count)
+    count += 1
+
+# Using English 'while' keyword
+counter = 5
+while counter > 0:
+    print("Countdown:", counter)
+    counter -= 1
+
+print("Liftoff!")
+
+# While loop with conditions
+total = 0
+number = 1
+
+jabasamma total < 100:
+    total += number
+    number += 1
+
+print("Sum exceeded 100 at:", total)
+
+# Infinite loop prevention
+max_attempts = 3
+attempts = 0
+
+jabasamma attempts < max_attempts:
+    print("Attempt:", attempts + 1)
+    attempts += 1
+
+print("Max attempts reached")
+
+# While loop with break
+i = 0
+jabasamma sacho:
+    print(i)
+    i += 1
+    yedi i >= 5:
+        rok
+
+print("Loop terminated with break")
+
+# While loop with continue
+j = 0
+jabasamma j < 10:
+    j += 1
+    yedi j % 2 == 0:
+        agadi
+    print("Odd number:", j)

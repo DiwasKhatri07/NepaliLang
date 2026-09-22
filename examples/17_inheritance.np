@@ -1,0 +1,63 @@
+# Class Inheritance - Extending classes
+# Parent and child class relationships
+
+# Base class
+kakshya Animal:
+    kaam __init__(self, name):
+        self.name = name
+    
+    kaam speak(self):
+        firta "Some sound"
+    
+    kaam info(self):
+        firta "This is " + self.name
+
+# Derived class
+kakshya Dog extends Animal:
+    kaam speak(self):
+        firta "Woof!"
+    
+    kaam fetch(self):
+        firta self.name + " is fetching"
+
+# Another derived class
+kakshya Cat extends Animal:
+    kaam speak(self):
+        firta "Meow!"
+    
+    kaam climb(self):
+        firta self.name + " is climbing"
+
+# Create objects
+dog = Dog("Buddy")
+cat = Cat("Whiskers")
+
+print(dog.info())
+print("Dog says:", dog.speak())
+print(dog.fetch())
+
+print()
+print(cat.info())
+print("Cat says:", cat.speak())
+print(cat.climb())
+
+# Multiple levels of inheritance
+kakshya Vehicle:
+    kaam __init__(self, brand):
+        self.brand = brand
+    
+    kaam start(self):
+        firta self.brand + " starting"
+
+kakshya Car extends Vehicle:
+    kaam drive(self):
+        firta "Driving " + self.brand
+
+kakshya ElectricCar extends Car:
+    kaam charge(self):
+        firta "Charging " + self.brand
+
+tesla = ElectricCar("Tesla")
+print(tesla.start())
+print(tesla.drive())
+print(tesla.charge())

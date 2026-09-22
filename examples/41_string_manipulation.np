@@ -1,0 +1,178 @@
+# String Manipulation - Text Processing
+# Advanced string operations and text processing
+
+# Basic string operations
+text = "NepaliCode Programming Language"
+
+print("String Operations:")
+print("  Original:", text)
+print("  Length:", len(text))
+print("  Upper:", text.upper())
+print("  Lower:", text.lower())
+print("  Title:", text.title())
+
+# String slicing
+print("\nString Slicing:")
+print("  First 5 chars:", text[:5])
+print("  Last 5 chars:", text[-5:])
+print("  Middle:", text[5:15])
+
+# String searching
+print("\nString Searching:")
+print("  Find 'Code':", text.find("Code"))
+print("  Contains 'Language':", "Language" ma text)
+print("  Starts with 'Nepali':", text.startswith("Nepali"))
+print("  Ends with 'Language':", text.endswith("Language"))
+
+# String splitting and joining
+print("\nString Splitting and Joining:")
+words = text.split(" ")
+print("  Split by space:", words)
+print("  Join with '-':", "-".join(words))
+
+# String replacement
+print("\nString Replacement:")
+replaced = text.replace("Programming", "Coding")
+print("  Replaced:", replaced)
+
+# String stripping
+print("\nString Stripping:")
+whitespace = "  Hello World  "
+print("  Original:", whitespace)
+print("  Stripped:", whitespace.strip())
+
+# Practical example: Text processing
+kaam process_text(text):
+    print("\n=== Text Processing ===")
+    
+    # Normalize
+    normalized = text.lower().strip()
+    print("Normalized:", normalized)
+    
+    # Remove extra spaces
+    words = normalized.split()
+    cleaned = " ".join(words)
+    print("Cleaned:", cleaned)
+    
+    # Count words
+    word_count = len(words)
+    print("Word count:", word_count)
+    
+    # Find longest word
+    longest = max(words, key=len)
+    print("Longest word:", longest, "(", len(longest), "chars)")
+    
+    firta cleaned
+
+process_text("  Hello   World   This is   a Test  ")
+
+# Practical example: String validation
+kaam validate_email(email):
+    print("\n=== Email Validation ===")
+    print("Email:", email)
+    
+    # Basic validation
+    yedi "@" hoina ma email:
+        print("Invalid: missing @")
+        firta jhut
+    
+    yedi "." hoina ma email:
+        print("Invalid: missing .")
+        firta jhut
+    
+    yedi email.count("@") != 1:
+        print("Invalid: too many @")
+        firta jhut
+    
+    parts = email.split("@")
+    yedi len(parts[0]) < 1 or len(parts[1]) < 1:
+        print("Invalid: empty parts")
+        firta jhut
+    
+    print("Valid email format")
+    firta sacho
+
+validate_email("diwas@example.com")
+validate_email("invalid-email")
+validate_email("@missing.com")
+
+# Practical example: Text statistics
+kaam text_statistics(text):
+    print("\n=== Text Statistics ===")
+    
+    char_count = len(text)
+    word_count = len(text.split())
+    line_count = text.count("\n") + 1
+    
+    print("Characters:", char_count)
+    print("Words:", word_count)
+    print("Lines:", line_count)
+    
+    # Count spaces
+    space_count = text.count(" ")
+    print("Spaces:", space_count)
+    
+    # Count vowels
+    vowels = "aeiouAEIOU"
+    vowel_count = 0
+    ko_lagi char ma text:
+        yedi char ma vowels:
+            vowel_count += 1
+    print("Vowels:", vowel_count)
+
+text_statistics("NepaliCode is a programming language from Nepal.")
+
+# Practical example: String patterns
+kaam find_patterns(text):
+    print("\n=== Pattern Finding ===")
+    
+    # Find numbers
+    numbers = []
+    ko_lagi i ma range(len(text)):
+        yedi text[i].isdigit():
+            numbers.append(text[i])
+    print("Numbers found:", numbers)
+    
+    # Find uppercase letters
+    uppercase = []
+    ko_lagi char ma text:
+        yedi char.isupper():
+            uppercase.append(char)
+    print("Uppercase letters:", uppercase)
+    
+    # Find special characters
+    special = []
+    ko_lagi char ma text:
+        yedi hoina char.isalnum() and hoina char.isspace():
+            special.append(char)
+    print("Special characters:", special)
+
+find_patterns("Hello World! 123 Test @2024")
+
+# Practical example: Text transformation
+kaam transform_text(text, transformation):
+    print("\n=== Text Transformation ===")
+    print("Original:", text)
+    
+    yedi transformation == "reverse":
+        result = text[::-1]
+    athawa transformation == "uppercase":
+        result = text.upper()
+    athawa transformation == "lowercase":
+        result = text.lower()
+    athawa transformation == "title":
+        result = text.title()
+    athawa transformation == "camel":
+        words = text.split()
+        result = words[0].lower()
+        ko_lagi i ma range(1, len(words)):
+            result += words[i].title()
+    natra:
+        result = text
+    
+    print("Transformed:", result)
+    firta result
+
+transform_text("hello world", "reverse")
+transform_text("hello world", "uppercase")
+transform_text("hello world", "camel")

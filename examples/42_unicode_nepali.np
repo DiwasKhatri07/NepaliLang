@@ -1,0 +1,170 @@
+# Unicode and Nepali Text
+# Working with Unicode characters and Nepali text
+
+# Unicode strings
+print("Unicode Operations:")
+nepali_text = "नमस्ते नेपाल"
+print("  Nepali text:", nepali_text)
+print("  Length:", len(nepali_text))
+
+# String concatenation with Unicode
+greeting = "नमस्ते"
+name = "दिवास"
+message = greeting + " " + name
+print("  Combined:", message)
+
+# Unicode character codes
+print("\nUnicode Character Codes:")
+ko_lagi char ma nepali_text:
+    code = ord(char)
+    print("  Character:", char, "Code:", code)
+
+# Working with mixed scripts
+mixed_text = "Hello नमस्ते World नेपाल"
+print("\nMixed Scripts:")
+print("  Text:", mixed_text)
+print("  Length:", len(mixed_text))
+
+# Practical example: Nepali greeting generator
+kaam nepali_greeting(name):
+    greetings = [
+        "नमस्ते",
+        "नमस्कार",
+        "जय नेपाल",
+        "सुस्वागतम"
+    ]
+    random_index = randomlib.number(0, len(greetings) - 1)
+    greeting = greetings[random_index]
+    firta greeting + " " + name
+
+lyau randomlib
+
+print("\nNepali Greetings:")
+print(nepali_greeting("दिवास"))
+print(nepali_greeting("राम"))
+print(nepali_greeting("सीता"))
+
+# Practical example: Text direction
+kaam check_text_direction(text):
+    print("\n=== Text Direction ===")
+    print("Text:", text)
+    
+    # Check for Devanagari characters (Nepali/Hindi)
+    devanagari_range = (0x0900, 0x097F)
+    has_devanagari = jhut
+    
+    ko_lagi char ma text:
+        code = ord(char)
+        yedi code >= devanagari_range[0] and code <= devanagari_range[1]:
+            has_devanagari = sacho
+            break
+    
+    yedi has_devanagari:
+        print("Contains Devanagari script (left-to-right)")
+    natra:
+        print("Latin script (left-to-right)")
+
+check_text_direction("Hello World")
+check_text_direction("नमस्ते नेपाल")
+check_text_direction("Hello नमस्ते")
+
+# Practical example: Unicode normalization
+kaam normalize_unicode(text):
+    print("\n=== Unicode Normalization ===")
+    print("Original:", text)
+    
+    # Remove diacritics (simplified)
+    normalized = ""
+    ko_lagi char ma text:
+        code = ord(char)
+        # Skip combining diacritical marks (simplified approach)
+        yedi code < 0x0300 or code > 0x036F:
+            normalized += char
+    
+    print("Normalized:", normalized)
+    firta normalized
+
+normalize_unicode("café")
+normalize_unicode("naïve")
+
+# Practical example: Character classification
+kaam classify_characters(text):
+    print("\n=== Character Classification ===")
+    
+    categories = {
+        "Letters": 0,
+        "Digits": 0,
+        "Spaces": 0,
+        "Punctuation": 0,
+        "Other": 0
+    }
+    
+    ko_lagi char ma text:
+        yedi char.isalpha():
+            categories["Letters"] += 1
+        athawa char.isdigit():
+            categories["Digits"] += 1
+        athawa char.isspace():
+            categories["Spaces"] += 1
+        athawa char in ".,!?;:'\"-()[]{}":
+            categories["Punctuation"] += 1
+        natra:
+            categories["Other"] += 1
+    
+    ko_lagi category, count ma categories:
+        print(category, ":", count)
+
+classify_characters("Hello नमस्ते 123! World.")
+
+# Practical example: Nepali number words
+kaam nepali_number_word(number):
+    print("\n=== Nepali Number Words ===")
+    
+    nepali_numbers = {
+        0: "शून्य",
+        1: "एक",
+        2: "दुई",
+        3: "तीन",
+        4: "चार",
+        5: "पाँच",
+        6: "छ",
+        7: "सात",
+        8: "आठ",
+        9: "नौ",
+        10: "दश"
+    }
+    
+    yedi number in nepali_numbers:
+        word = nepali_numbers[number]
+        print(number, "=", word)
+        firta word
+    natra:
+        print("Number not in dictionary")
+        firta str(number)
+
+nepali_number_word(1)
+nepali_number_word(5)
+nepali_number_word(10)
+
+# Practical example: Mixed script processing
+kaam process_mixed_script(text):
+    print("\n=== Mixed Script Processing ===")
+    print("Input:", text)
+    
+    nepali_chars = []
+    latin_chars = []
+    
+    ko_lagi char ma text:
+        code = ord(char)
+        # Devanagari range
+        yedi code >= 0x0900 and code <= 0x097F:
+            nepali_chars.append(char)
+        athawa char.isalpha():
+            latin_chars.append(char)
+    
+    print("Nepali characters:", "".join(nepali_chars))
+    print("Latin characters:", "".join(latin_chars))
+    print("Nepali count:", len(nepali_chars))
+    print("Latin count:", len(latin_chars))
+
+process_mixed_script("Hello नमस्ते World नेपाल Programming")

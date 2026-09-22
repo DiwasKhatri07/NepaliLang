@@ -1,0 +1,203 @@
+# Regular Expressions - Pattern Matching
+# Text pattern matching and validation
+
+# Basic pattern matching (concept)
+print("Regular Expression Patterns:")
+print("  Note: Full regex support requires regex library")
+
+# Simple pattern matching simulation
+kaam simple_match(pattern, text):
+    print("\n=== Pattern Matching ===")
+    print("Pattern:", pattern)
+    print("Text:", text)
+    
+    # Simulated pattern matching
+    yedi pattern == "email":
+        yedi "@" ma text and "." ma text:
+            print("Match: Email pattern found")
+            firta sacho
+    athawa pattern == "phone":
+        digits = 0
+        ko_lagi char ma text:
+            yedi char.isdigit():
+                digits += 1
+        yedi digits >= 10:
+            print("Match: Phone pattern found")
+            firta sacho
+    athawa pattern == "url":
+        yedi "http" ma text or "www" ma text:
+            print("Match: URL pattern found")
+            firta sacho
+    
+    print("No match")
+    firta jhut
+
+simple_match("email", "diwas@example.com")
+simple_match("phone", "9876543210")
+simple_match("url", "https://nepalcode.com")
+
+# Practical example: Text search
+kaam search_text(text, pattern):
+    print("\n=== Text Search ===")
+    print("Searching for:", pattern)
+    print("In:", text)
+    
+    occurrences = []
+    index = 0
+    jabasamma index < len(text):
+        yedi text[index:index+len(pattern)] == pattern:
+            occurrences.append(index)
+        index += 1
+    
+    print("Found", len(occurrences), "occurrences")
+    print("Positions:", occurrences)
+    firta occurrences
+
+search_text("hello world hello universe hello", "hello")
+
+# Practical example: Text replacement
+kaam replace_pattern(text, pattern, replacement):
+    print("\n=== Pattern Replacement ===")
+    print("Original:", text)
+    print("Pattern:", pattern)
+    print("Replacement:", replacement)
+    
+    result = text.replace(pattern, replacement)
+    print("Result:", result)
+    firta result
+
+replace_pattern("hello world hello universe", "hello", "hi")
+
+# Practical example: Token extraction
+kaam extract_tokens(text, token_type):
+    print("\n=== Token Extraction ===")
+    print("Extracting:", token_type)
+    print("From:", text)
+    
+    tokens = []
+    
+    yedi token_type == "words":
+        current_word = ""
+        ko_lagi char ma text:
+            yedi char.isalpha():
+                current_word += char
+            natra:
+                yedi current_word:
+                    tokens.append(current_word)
+                current_word = ""
+        yedi current_word:
+            tokens.append(current_word)
+    
+    athawa token_type == "numbers":
+        current_number = ""
+        ko_lagi char ma text:
+            yedi char.isdigit():
+                current_number += char
+            natra:
+                yedi current_number:
+                    tokens.append(current_number)
+                current_number = ""
+        yedi current_number:
+            tokens.append(current_number)
+    
+    athawa token_type == "emails":
+        # Simple email extraction
+        parts = text.split()
+        ko_lagi part ma parts:
+            yedi "@" ma part and "." ma part:
+                tokens.append(part)
+    
+    print("Extracted tokens:", tokens)
+    firta tokens
+
+extract_tokens("hello123 world456 test@example.com", "words")
+extract_tokens("hello123 world456 test@example.com", "numbers")
+extract_tokens("hello123 world456 test@example.com", "emails")
+
+# Practical example: Data validation
+kaam validate_data(data, validation_type):
+    print("\n=== Data Validation ===")
+    print("Data:", data)
+    print("Type:", validation_type)
+    
+    yedi validation_type == "numeric":
+        yedi data.isdigit():
+            print("Valid: Numeric")
+            firta sacho
+        natra:
+            print("Invalid: Not numeric")
+            firta jhut
+    
+    athawa validation_type == "alphanumeric":
+        is_alnum = sacho
+        ko_lagi char ma data:
+            yedi hoina char.isalnum():
+                is_alnum = jhut
+                break
+        yedi is_alnum:
+            print("Valid: Alphanumeric")
+            firta sacho
+        natra:
+            print("Invalid: Contains special characters")
+            firta jhut
+    
+    athawa validation_type == "username":
+        yedi len(data) >= 3 and len(data) <= 20 and data.isalnum():
+            print("Valid: Username")
+            firta sacho
+        natra:
+            print("Invalid: Username requirements not met")
+            firta jhut
+
+validate_data("12345", "numeric")
+validate_data("user123", "alphanumeric")
+validate_data("ab", "username")
+validate_data("valid_user123", "username")
+
+# Practical example: Text splitting by delimiters
+kaam split_by_delimiters(text, delimiters):
+    print("\n=== Split by Delimiters ===")
+    print("Text:", text)
+    print("Delimiters:", delimiters)
+    
+    result = [text]
+    ko_lagi delimiter ma delimiters:
+        new_result = []
+        ko_lagi part ma result:
+            new_result.extend(part.split(delimiter))
+        result = new_result
+    
+    # Remove empty strings
+    result = [part for part in result if part]
+    
+    print("Split result:", result)
+    firta result
+
+split_by_delimiters("apple,banana;orange|mango", [",", ";", "|"])
+
+# Practical example: Pattern-based categorization
+kaam categorize_text(text):
+    print("\n=== Text Categorization ===")
+    print("Text:", text)
+    
+    category = "unknown"
+    
+    yedi "@" ma text and "." ma text:
+        category = "email"
+    athawa "http" ma text or "www" ma text:
+        category = "url"
+    athawa text.isdigit():
+        category = "phone"
+    athawa len(text.split()) == 1:
+        category = "single_word"
+    natra:
+        category = "sentence"
+    
+    print("Category:", category)
+    firta category
+
+categorize_text("diwas@example.com")
+categorize_text("https://nepalcode.com")
+categorize_text("9876543210")
+categorize_text("Hello")
+categorize_text("Hello world this is a test")

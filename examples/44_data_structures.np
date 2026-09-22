@@ -1,0 +1,253 @@
+# Data Structures and Algorithms
+# Common data structures and algorithm implementations
+
+# Stack implementation
+kakshya Stack:
+    kaam __init__(self):
+        self.items = []
+    
+    kaam push(self, item):
+        self.items.append(item)
+    
+    kaam pop(self):
+        yedi hoina self.items:
+            firta khali
+        firta self.items.pop()
+    
+    kaam peek(self):
+        yedi hoina self.items:
+            firta khali
+        firta self.items[-1]
+    
+    kaam is_empty(self):
+        firta len(self.items) == 0
+    
+    kaam size(self):
+        firta len(self.items)
+
+print("Stack Operations:")
+stack = Stack()
+stack.push(1)
+stack.push(2)
+stack.push(3)
+print("Pushed: 1, 2, 3")
+print("Pop:", stack.pop())
+print("Peek:", stack.peek())
+print("Size:", stack.size())
+
+# Queue implementation
+kakshya Queue:
+    kaam __init__(self):
+        self.items = []
+    
+    kaam enqueue(self, item):
+        self.items.append(item)
+    
+    kaam dequeue(self):
+        yedi hoina self.items:
+            firta khali
+        firta self.items.pop(0)
+    
+    kaam is_empty(self):
+        firta len(self.items) == 0
+    
+    kaam size(self):
+        firta len(self.items)
+
+print("\nQueue Operations:")
+queue = Queue()
+queue.enqueue("first")
+queue.enqueue("second")
+queue.enqueue("third")
+print("Enqueued: first, second, third")
+print("Dequeue:", queue.dequeue())
+print("Size:", queue.size())
+
+# Linked List node
+kakshya Node:
+    kaam __init__(self, data):
+        self.data = data
+        self.next = khali
+
+kakshya LinkedList:
+    kaam __init__(self):
+        self.head = khali
+    
+    kaam append(self, data):
+        new_node = Node(data)
+        yedi hoina self.head:
+            self.head = new_node
+        natra:
+            current = self.head
+            jabasamma current.next:
+                current = current.next
+            current.next = new_node
+    
+    kaam display(self):
+        current = self.head
+        elements = []
+        jabasamma current:
+            elements.append(str(current.data))
+            current = current.next
+        print("Linked List:", " -> ".join(elements))
+
+print("\nLinked List Operations:")
+linked_list = LinkedList()
+linked_list.append(10)
+linked_list.append(20)
+linked_list.append(30)
+linked_list.display()
+
+# Binary Search Tree
+kakshya TreeNode:
+    kaam __init__(self, value):
+        self.value = value
+        self.left = khali
+        self.right = khali
+
+kakshya BinarySearchTree:
+    kaam __init__(self):
+        self.root = khali
+    
+    kaam insert(self, value):
+        yedi hoina self.root:
+            self.root = TreeNode(value)
+        natra:
+            self._insert_recursive(self.root, value)
+    
+    kaam _insert_recursive(self, node, value):
+        yedi value < node.value:
+            yedi hoina node.left:
+                node.left = TreeNode(value)
+            natra:
+                self._insert_recursive(node.left, value)
+        natra:
+            yedi hoina node.right:
+                node.right = TreeNode(value)
+            natra:
+                self._insert_recursive(node.right, value)
+    
+    kaam inorder_traversal(self):
+        result = []
+        self._inorder_recursive(self.root, result)
+        firta result
+    
+    kaam _inorder_recursive(self, node, result):
+        yedi node:
+            self._inorder_recursive(node.left, result)
+            result.append(node.value)
+            self._inorder_recursive(node.right, result)
+
+print("\nBinary Search Tree:")
+bst = BinarySearchTree()
+bst.insert(50)
+bst.insert(30)
+bst.insert(70)
+bst.insert(20)
+bst.insert(40)
+print("Inorder traversal:", bst.inorder_traversal())
+
+# Sorting algorithms
+kaam bubble_sort(arr):
+    print("\nBubble Sort:")
+    print("Original:", arr)
+    n = len(arr)
+    ko_lagi i ma range(n):
+        ko_lagi j ma range(n - i - 1):
+            yedi arr[j] > arr[j + 1]:
+                temp = arr[j]
+                arr[j] = arr[j + 1]
+                arr[j + 1] = temp
+    print("Sorted:", arr)
+    firta arr
+
+bubble_sort([64, 34, 25, 12, 22, 11, 90])
+
+# Search algorithms
+kaam binary_search(arr, target):
+    print("\nBinary Search:")
+    print("Array:", arr)
+    print("Target:", target)
+    
+    low = 0
+    high = len(arr) - 1
+    
+    jabasamma low <= high:
+        mid = (low + high) // 2
+        yedi arr[mid] == target:
+            print("Found at index:", mid)
+            firta mid
+        athawa arr[mid] < target:
+            low = mid + 1
+        natra:
+            high = mid - 1
+    
+    print("Not found")
+    firta -1
+
+binary_search([1, 3, 5, 7, 9, 11, 13, 15], 7)
+
+# Hash Map implementation
+kakshya HashMap:
+    kaam __init__(self, size=10):
+        self.size = size
+        self.buckets = [[] ko_lagi i ma range(size)]
+    
+    kaam _hash(self, key):
+        firta hash(key) % self.size
+    
+    kaam set(self, key, value):
+        index = self._hash(key)
+        bucket = self.buckets[index]
+        
+        ko_lagi i ma range(len(bucket)):
+            yedi bucket[i][0] == key:
+                bucket[i] = (key, value)
+                firta
+        
+        bucket.append((key, value))
+    
+    kaam get(self, key):
+        index = self._hash(key)
+        bucket = self.buckets[index]
+        
+        ko_lagi k, v ma bucket:
+            yedi k == key:
+                firta v
+        
+        firta khali
+
+print("\nHash Map Operations:")
+hash_map = HashMap()
+hash_map.set("name", "Diwas")
+hash_map.set("age", 21)
+hash_map.set("city", "Kathmandu")
+print("Get name:", hash_map.get("name"))
+print("Get age:", hash_map.get("age"))
+
+# Graph representation
+kakshya Graph:
+    kaam __init__(self):
+        self.vertices = {}
+    
+    kaam add_vertex(self, vertex):
+        yedi vertex hoina ma self.vertices:
+            self.vertices[vertex] = []
+    
+    kaam add_edge(self, vertex1, vertex2):
+        yedi vertex1 ma self.vertices and vertex2 ma self.vertices:
+            self.vertices[vertex1].append(vertex2)
+            self.vertices[vertex2].append(vertex1)
+    
+    kaam display(self):
+        ko_lagi vertex, neighbors ma self.vertices:
+            print(vertex, ":", neighbors)
+
+print("\nGraph Operations:")
+graph = Graph()
+graph.add_vertex("A")
+graph.add_vertex("B")
+graph.add_vertex("C")
+graph.add_edge("A", "B")
+graph.add_edge("B", "C")
+graph.display()

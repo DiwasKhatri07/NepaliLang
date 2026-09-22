@@ -1,0 +1,58 @@
+# Break and Continue - Loop Control
+# Using rok and agadi keywords
+
+# Break example - stop loop when condition met
+print("Break example:")
+ko_lagi i ma range(10):
+    yedi i == 5:
+        print("Breaking at", i)
+        rok
+    print(i)
+
+print()
+
+# Continue example - skip certain iterations
+print("Continue example:")
+ko_lagi i ma range(10):
+    yedi i % 2 == 0:
+        agadi
+    print("Odd:", i)
+
+print()
+
+# Break in nested loops
+print("Nested loop break:")
+ko_lagi i ma range(3):
+    ko_lagi j ma range(3):
+        yedi i == 1 and j == 1:
+            print("Breaking at", i, j)
+            rok
+        print(i, j)
+    yedi i == 1:
+        rok
+
+print()
+
+# Continue in nested loops
+print("Nested loop continue:")
+ko_lagi i ma range(3):
+    ko_lagi j ma range(3):
+        yedi i == j:
+            agadi
+        print(i, j)
+
+print()
+
+# Practical example - search
+numbers = [3, 7, 2, 9, 4, 6]
+target = 9
+found = jhut
+
+ko_lagi num ma numbers:
+    yedi num == target:
+        found = sacho
+        print("Found", target, "at index", numbers.index(num))
+        rok
+
+yedi hoina found:
+    print("Target not found")

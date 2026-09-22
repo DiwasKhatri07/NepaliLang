@@ -1,0 +1,73 @@
+# From Import - Selective importing
+# Importing specific functions from modules
+
+# Import specific functions (concept)
+# bata ganit lyau pi, sqrt, sin
+# print(pi)
+# print(sqrt(16))
+
+# Using standard library with selective access
+lyau ganit
+
+# Selective usage pattern
+kaam geometry_calculations():
+    # Only use what we need from ganit
+    radius = 5
+    area = ganit.pi * radius * radius
+    circumference = 2 * ganit.pi * radius
+    
+    print("Circle calculations:")
+    print("  Radius:", radius)
+    print("  Area:", area)
+    print("  Circumference:", circumference)
+
+geometry_calculations()
+
+# Import from multiple modules
+lyau samaya
+lyau randomlib
+lyau system
+
+kaam get_system_info():
+    # Using specific functions from different modules
+    time_info = samaya.abay_time()
+    platform_info = system.platform()
+    random_id = randomlib.number(1000, 9999)
+    
+    print("System Info:")
+    print("  Time:", time_info)
+    print("  Platform:", platform_info)
+    print("  Random ID:", random_id)
+
+get_system_info()
+
+# Selective import pattern for efficiency
+kaam math_operations():
+    # Simulate importing only needed functions
+    needed_functions = {
+        "add": ganit.jod,
+        "subtract": ganit.ghata,
+        "multiply": ganit.guna,
+        "divide": ganit.bhag
+    }
+    
+    print("Math operations:")
+    print("  5 + 3 =", needed_functions["add"](5, 3))
+    print("  10 - 4 =", needed_functions["subtract"](10, 4))
+    print("  6 * 7 =", needed_functions["multiply"](6, 7))
+    print("  20 / 4 =", needed_functions["divide"](20, 4))
+
+math_operations()
+
+# Import with error handling
+kaam safe_import_module(module_name):
+    koshish:
+        # In real implementation, this would import the module
+        print("Simulating import of:", module_name)
+        firta sacho
+    samau error:
+        print("Failed to import", module_name, ":", error)
+        firta jhut
+
+print("Import test:", safe_import_module("ganit"))
+print("Import test:", safe_import_module("nonexistent_module"))

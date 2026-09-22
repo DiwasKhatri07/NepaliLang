@@ -1,0 +1,73 @@
+# Module Aliases and Namespaces
+# Managing module names and avoiding conflicts
+
+# Import with alias concept (simulated)
+# lyau ganit as math
+# math.jod(5, 3)
+
+# Using standard modules with clear namespace
+lyau ganit
+lyau samaya
+lyau randomlib
+
+# Using modules with full namespace
+pi_value = ganit.pi
+current_time = samaya.abay_time()
+random_num = randomlib.number(1, 100)
+
+print("Math (ganit) Pi:", pi_value)
+print("Time (samaya) Now:", current_time)
+print("Random (randomlib) Number:", random_num)
+
+# Avoiding namespace conflicts
+kaam calculate_stats(numbers):
+    total = 0
+    ko_lagi num ma numbers:
+        total += num
+    average = total / len(numbers)
+    
+    print("Stats using ganit:")
+    print("  Total:", total)
+    print("  Average:", average)
+    print("  Max:", ganit.max_val(numbers))
+    print("  Min:", ganit.min_val(numbers))
+
+calculate_stats([10, 20, 30, 40, 50])
+
+# Module organization pattern
+kaam create_calculator():
+    kaam add(a, b):
+        firta a + b
+    
+    kaam subtract(a, b):
+        firta a - b
+    
+    kaam multiply(a, b):
+        firta a * b
+    
+    kaam divide(a, b):
+        firta a / b
+    
+    firta {
+        "add": add,
+        "subtract": subtract,
+        "multiply": multiply,
+        "divide": divide
+    }
+
+calculator = create_calculator()
+print("Calculator add:", calculator["add"](10, 5))
+print("Calculator divide:", calculator["divide"](20, 4))
+
+# Using different modules for same operation
+kaam power_ganit(base, exp):
+    firta ganit.power(base, exp)
+
+kaam power_manual(base, exp):
+    result = 1
+    ko_lagi i ma range(exp):
+        result *= base
+    firta result
+
+print("Power (ganit):", power_ganit(2, 10))
+print("Power (manual):", power_manual(2, 10))

@@ -1,0 +1,47 @@
+# Classes and Objects - Object-Oriented Programming
+# Using kakshya and class keywords
+
+# Basic class definition
+kakshya Person:
+    kaam __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    kaam greet(self):
+        firta "Namaste, I am " + self.name
+    
+    kaam have_birthday(self):
+        self.age += 1
+        firta self.age
+
+# Creating objects
+person1 = Person("Diwas", 21)
+person2 = Person("Ram", 25)
+
+print(person1.greet())
+print(person2.greet())
+
+print(person1.name, "is", person1.age, "years old")
+print("After birthday:", person1.have_birthday())
+
+# Class with methods
+kakshya Calculator:
+    kaam add(self, a, b):
+        firta a + b
+    
+    kaam subtract(self, a, b):
+        firta a - b
+    
+    kaam multiply(self, a, b):
+        firta a * b
+    
+    kaam divide(self, a, b):
+        yedi b == 0:
+            firta "Cannot divide by zero"
+        firta a / b
+
+calc = Calculator()
+print("5 + 3 =", calc.add(5, 3))
+print("10 - 4 =", calc.subtract(10, 4))
+print("6 * 7 =", calc.multiply(6, 7))
+print("20 / 4 =", calc.divide(20, 4))

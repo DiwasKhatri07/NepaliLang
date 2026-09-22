@@ -1,0 +1,47 @@
+# For Loops - Iterating over sequences
+# Using ko_lagi and for keywords
+
+# Loop over a list
+fruits = ["apple", "banana", "orange", "mango"]
+
+ko_lagi fruit ma fruits:
+    print("Fruit:", fruit)
+
+# Using English 'for' keyword
+numbers = [1, 2, 3, 4, 5]
+
+for num ma numbers:
+    print("Number:", num)
+
+# Loop with range
+ko_lagi i ma range(5):
+    print("Index:", i)
+
+# Loop over a map (dictionary)
+person = {
+    "name": "Diwas",
+    "age": 21,
+    "city": "Kathmandu"
+}
+
+ko_lagi key ma person:
+    print(key, ":", person[key])
+
+# Loop with index and value
+items = ["first", "second", "third"]
+index = 0
+ko_lagi item ma items:
+    print(index, ":", item)
+    index += 1
+
+# Nested loops
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+ko_lagi row ma matrix:
+    ko_lagi value ma row:
+        print(value, end=" ")
+    print()

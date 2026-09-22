@@ -1,0 +1,205 @@
+# Functional Programming Patterns
+# Functional programming concepts and patterns
+
+# Higher-order functions
+kaam apply_operation(operation, value):
+    firta operation(value)
+
+kaam square(x):
+    firta x * x
+
+kaam cube(x):
+    firta x * x * x
+
+print("Higher-Order Functions:")
+print("Square of 5:", apply_operation(square, 5))
+print("Cube of 3:", apply_operation(cube, 3))
+
+# Map pattern
+kaam map_function(func, items):
+    result = []
+    ko_lagi item ma items:
+        result.append(func(item))
+    firta result
+
+print("\nMap Pattern:")
+numbers = [1, 2, 3, 4, 5]
+squared = map_function(square, numbers)
+print("Squared:", squared)
+
+# Filter pattern
+kaam filter_function(predicate, items):
+    result = []
+    ko_lagi item ma items:
+        yedi predicate(item):
+            result.append(item)
+    firta result
+
+kaam is_even(x):
+    firta x % 2 == 0
+
+print("\nFilter Pattern:")
+evens = filter_function(is_even, numbers)
+print("Even numbers:", evens)
+
+# Reduce pattern
+kaam reduce_function(func, items, initial):
+    result = initial
+    ko_lagi item ma items:
+        result = func(result, item)
+    firta result
+
+kaam add(a, b):
+    firta a + b
+
+print("\nReduce Pattern:")
+total = reduce_function(add, numbers, 0)
+print("Sum:", total)
+
+# Function composition
+kaam compose(f, g):
+    kaam composed(x):
+        firta f(g(x))
+    firta composed
+
+kaam increment(x):
+    firta x + 1
+
+kaam double(x):
+    firta x * 2
+
+print("\nFunction Composition:")
+increment_then_double = compose(double, increment)
+print("Increment then double (5):", increment_then_double(5))
+
+double_then_increment = compose(increment, double)
+print("Double then increment (5):", double_then_increment(5))
+
+# Currying
+kaam curry_add(a):
+    kaam add_b(b):
+        firta a + b
+    firta add_b
+
+print("\nCurrying:")
+add_five = curry_add(5)
+print("Add 5 to 10:", add_five(10))
+print("Add 5 to 20:", add_five(20))
+
+# Partial application
+kaam partial_apply(func, *fixed_args):
+    kaam partial(*remaining_args):
+        firta func(*fixed_args, *remaining_args)
+    firta partial
+
+kaam multiply(a, b, c):
+    firta a * b * c
+
+print("\nPartial Application:")
+multiply_by_2_3 = partial_apply(multiply, 2, 3)
+print("2 * 3 * 4 =", multiply_by_2_3(4))
+
+# Lazy evaluation pattern
+kakshya LazyValue:
+    kaam __init__(self, func):
+        self.func = func
+        self.value = khali
+        self.evaluated = jhut
+    
+    kaam get(self):
+        yedi hoina self.evaluated:
+            self.value = self.func()
+            self.evaluated = sacho
+        firta self.value
+
+print("\nLazy Evaluation:")
+kaam expensive_computation():
+    print("Computing...")
+    firta 42
+
+lazy_value = LazyValue(expensive_computation)
+print("Lazy value created")
+print("Getting value:", lazy_value.get())
+print("Getting value again:", lazy_value.get())
+
+# Memoization
+kakshya Memoizer:
+    kaam __init__(self):
+        self.cache = {}
+    
+    kaam memoize(self, func):
+        kaam memoized(*args):
+            yedi args in self.cache:
+                firta self.cache[args]
+            result = func(*args)
+            self.cache[args] = result
+            firta result
+        firta memoized
+
+print("\nMemoization:")
+memoizer = Memoizer()
+
+kaam fibonacci(n):
+    yedi n <= 1:
+        firta n
+    firta fibonacci(n - 1) + fibonacci(n - 2)
+
+# Without memoization (slow)
+print("Fibonacci without memoization (30):")
+# This would be slow without memoization
+# print(fibonacci(30))
+
+# With memoization
+fib_memo = memoizer.memoize(fibonacci)
+print("Fibonacci with memoization (30):", fib_memo(30))
+print("Fibonacci with memoization (35):", fib_memo(35))
+
+# Pipeline pattern
+kaam pipeline(data, *functions):
+    result = data
+    ko_lagi func ma functions:
+        result = func(result)
+    firta result
+
+print("\nPipeline Pattern:")
+kaam to_uppercase(s):
+    firta s.upper()
+
+kaam reverse_string(s):
+    firta s[::-1]
+
+kaam add_exclamation(s):
+    firta s + "!"
+
+result = pipeline("hello", to_uppercase, reverse_string, add_exclamation)
+print("Pipeline result:", result)
+
+# Immutable operations
+kaam immutable_append(items, new_item):
+    new_items = []
+    ko_lagi item ma items:
+        new_items.append(item)
+    new_items.append(new_item)
+    firta new_items
+
+print("\nImmutable Operations:")
+original = [1, 2, 3]
+new_list = immutable_append(original, 4)
+print("Original:", original)
+print("New:", new_list)
+
+# Functional error handling
+kaam safe_divide(a, b):
+    yedi b == 0:
+        firta khali
+    firta a / b
+
+kaam maybe_operation(value, operation):
+    result = operation(value)
+    yedi result == khali:
+        firta "Operation failed"
+    firta result
+
+print("\nFunctional Error Handling:")
+print("10 / 2:", maybe_operation(10, lambda x: safe_divide(x, 2)))
+print("10 / 0:", maybe_operation(10, lambda x: safe_divide(x, 0)))

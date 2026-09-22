@@ -1,0 +1,50 @@
+# Basic Functions - Defining and calling functions
+# Using kaam and def keywords
+
+# Simple function using Nepali keyword
+kaam greet():
+    print("Namaste Nepal!")
+
+greet()
+
+# Function with parameters
+kaam greet_person(name):
+    print("Namaste", name, "!")
+
+greet_person("Diwas")
+greet_person("World")
+
+# Function with return value
+kaam add(a, b):
+    firta a + b
+
+result = add(10, 20)
+print("10 + 20 =", result)
+
+# Multiple return values
+kaam get_coordinates():
+    firta [10, 20]
+
+coords = get_coordinates()
+print("Coordinates:", coords)
+
+# Function with default parameters
+kaam power(base, exponent=2):
+    firta base ** exponent
+
+print("5^2 =", power(5))
+print("5^3 =", power(5, 3))
+
+# Function with multiple parameters
+kaam calculate_area(length, width):
+    firta length * width
+
+area = calculate_area(10, 5)
+print("Area:", area)
+
+# Calling function with keyword arguments
+kaam create_user(name, age, city):
+    print("User:", name, "Age:", age, "City:", city)
+
+create_user(name="Diwas", age=21, city="Kathmandu")
+create_user(age=25, city="Pokhara", name="Ram")

@@ -1,0 +1,74 @@
+# Context Managers - Resource Management
+# Using bhitra keyword (with statement)
+
+# Context manager concept (bhitra)
+kakshya FileManager:
+    kaam __init__(self, filename, mode):
+        self.filename = filename
+        self.mode = mode
+        self.file = khali
+    
+    kaam __enter__(self):
+        print("Opening file:", self.filename)
+        self.file = "simulated_file_content"
+        firta self
+    
+    kaam __exit__(self, exc_type, exc_val, exc_tb):
+        print("Closing file:", self.filename)
+        yedi exc_type:
+            print("Exception occurred:", exc_val)
+        firta jhut
+
+# Using context manager
+bhitra FileManager("test.txt", "r") as f:
+    print("File content:", f)
+    print("Processing file")
+
+# Context manager with error handling
+kakshya DatabaseConnection:
+    kaam __init__(self, db_name):
+        self.db_name = db_name
+        self.connected = jhut
+    
+    kaam __enter__(self):
+        print("Connecting to database:", self.db_name)
+        self.connected = sacho
+        firta self
+    
+    kaam __exit__(self, exc_type, exc_val, exc_tb):
+        print("Disconnecting from database:", self.db_name)
+        self.connected = jhut
+        firta jhut
+    
+    kaam query(self, sql):
+        yedi hoina self.connected:
+            uthai ValueError("Not connected to database")
+        print("Executing query:", sql)
+        firta "query_result"
+
+bhitra DatabaseConnection("mydb") as db:
+    result = db.query("SELECT * FROM users")
+    print("Query result:", result)
+
+# Nested context managers
+kakshya Lock:
+    kaam __init__(self, name):
+        self.name = name
+        self.locked = jhut
+    
+    kaam __enter__(self):
+        print("Acquiring lock:", self.name)
+        self.locked = sacho
+        firta self
+    
+    kaam __exit__(self, exc_type, exc_val, exc_tb):
+        print("Releasing lock:", self.name)
+        self.locked = jhut
+        firta jhut
+
+bhitra Lock("resource1") as lock1:
+    print("Locked resource1")
+    bhitra Lock("resource2") as lock2:
+        print("Locked both resources")
+    print("Released resource2")
+print("Released resource1")

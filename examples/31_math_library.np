@@ -1,0 +1,42 @@
+# Math Library (ganit) - Mathematical Operations
+# Comprehensive math functions and constants
+
+lyau ganit
+
+# Basic arithmetic operations
+print("Basic Arithmetic:")
+print("  Addition (5 + 3):", ganit.jod(5, 3))
+print("  Subtraction (10 - 4):", ganit.ghata(10, 4))
+print("  Multiplication (6 * 7):", ganit.guna(6, 7))
+print("  Division (20 / 4):", ganit.bhag(20, 4))
+
+# Advanced operations
+print("\nAdvanced Operations:")
+print("  Power (2^10):", ganit.power(2, 10))
+print("  Square root of 16:", ganit.sqrt(16))
+print("  Square root of 2:", ganit.sqrt(2))
+
+# Practical example: Circle calculations
+kaam circle_calculations(radius):
+    pi = 3.14159
+    area = pi * radius * radius
+    circumference = 2 * pi * radius
+    diameter = 2 * radius
+    print("\nCircle with radius", radius, ":")
+    print("  Area:", area)
+    print("  Circumference:", circumference)
+    print("  Diameter:", diameter)
+
+circle_calculations(5)
+circle_calculations(10)
+
+# Practical example: Right triangle
+kaam right_triangle(base, height):
+    hypotenuse = ganit.sqrt(ganit.power(base, 2) + ganit.power(height, 2))
+    area = 0.5 * base * height
+    print("\nRight triangle (base:", base, "height:", height, "):")
+    print("  Hypotenuse:", hypotenuse)
+    print("  Area:", area)
+
+right_triangle(3, 4)
+right_triangle(5, 12)

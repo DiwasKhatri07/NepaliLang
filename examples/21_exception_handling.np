@@ -1,0 +1,59 @@
+# Exception Handling - Try, Except, Finally
+# Using koshish, samau, antya keywords
+
+# Basic try-except
+koshish:
+    result = 10 / 0
+samau error:
+    print("Error:", error)
+
+# Try-except with specific handling
+koshish:
+    numbers = [1, 2, 3]
+    print(numbers[10])
+samau error:
+    print("Index error occurred:", error)
+
+# Try-except-finally
+koshish:
+    file_content = "Some data"
+    print("Processing:", file_content)
+samau error:
+    print("Error processing:", error)
+antya:
+    print("Cleanup complete")
+
+# Multiple exception types
+koshish:
+    value = int("not a number")
+samau error:
+    print("Conversion error:", error)
+
+# Try with else block (concept)
+koshish:
+    result = 10 + 5
+samau error:
+    print("Error:", error)
+natra:
+    print("No error occurred, result:", result)
+
+# Nested try-except
+koshish:
+    koshish:
+        result = 10 / 0
+    samau inner_error:
+        print("Inner error:", inner_error)
+        uthau ValueError("Nested error")
+samau outer_error:
+    print("Outer error:", outer_error)
+
+# Practical example - safe division
+kaam safe_divide(a, b):
+    koshish:
+        firta a / b
+    samau error:
+        print("Division error:", error)
+        firta khali
+
+print("Division result:", safe_divide(10, 2))
+print("Division result:", safe_divide(10, 0))

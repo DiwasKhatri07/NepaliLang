@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background - Nepal flag red with blue border -->
+  <rect x="0" y="0" width="512" height="512" fill="#DC143C" rx="64"/>
+  <rect x="16" y="16" width="480" height="480" fill="none" stroke="#003893" stroke-width="16" rx="56"/>
+  
+  <!-- NP text in white -->
+  <text x="256" y="320" font-family="Arial, sans-serif" font-size="180" font-weight="bold" fill="white" text-anchor="middle">NP</text>
+  
+  <!-- Nepal flag symbol (sun and moon) -->
+  <circle cx="150" cy="120" r="30" fill="white"/>
+  <circle cx="362" cy="120" r="25" fill="white"/>
+  
+  <!-- Decorative elements -->
+  <path d="M 100 380 L 150 420 L 200 380" fill="none" stroke="white" stroke-width="8"/>
+  <path d="M 312 380 L 362 420 L 412 380" fill="none" stroke="white" stroke-width="8"/>
+</svg>

@@ -1,0 +1,101 @@
+# Advanced Error Handling Patterns
+# Complex error handling strategies
+
+# Error logging pattern
+errors = []
+
+kaam safe_operation(operation, value):
+    koshish:
+        firta operation(value)
+    samau error:
+        errors.append("Error in " + str(operation) + ": " + str(error))
+        firta khali
+
+# Define operations
+kaam square(n):
+    firta n * n
+
+kaam reciprocal(n):
+    firta 1 / n
+
+kaam sqrt(n):
+    firta n ** 0.5
+
+# Test with various values
+operations = [square, reciprocal, sqrt]
+values = [2, 0, -4]
+
+ko_lagi op ma operations:
+    ko_lagi val ma values:
+        result = safe_operation(op, val)
+        yedi result != khali:
+            print(str(op) + "(" + str(val) + ") =", result)
+
+print("Errors collected:", errors)
+
+# Retry pattern
+kaam retry_operation(operation, max_attempts=3):
+    attempts = 0
+    jabasamma attempts < max_attempts:
+        koshish:
+            firta operation()
+        samau error:
+            attempts += 1
+            print("Attempt", attempts, "failed:", error)
+            yedi attempts >= max_attempts:
+                uthai ValueError("Max retries exceeded")
+        natra:
+            firta khali
+
+kaam unreliable_operation():
+    uthai ValueError("Operation failed")
+
+koshish:
+    retry_operation(unreliable_operation)
+samau error:
+    print("Final error:", error)
+
+# Fallback pattern
+kaam get_data(source):
+    koshish:
+        yedi source == "database":
+            print("Fetching from database")
+            firta "data_from_db"
+        athawa source == "cache":
+            print("Fetching from cache")
+            firta "data_from_cache"
+        athawa source == "api":
+            print("Fetching from API")
+            uthai ValueError("API unavailable")
+    samau error:
+        print("Source failed, using fallback")
+        firta "default_data"
+
+print("Data from database:", get_data("database"))
+print("Data from cache:", get_data("cache"))
+print("Data from API:", get_data("api"))
+
+# Error chaining
+kaam process_stage1(data):
+    yedi hoina data:
+        uthai ValueError("No data provided")
+    firta data.upper()
+
+kaam process_stage2(data):
+    yedi len(data) < 3:
+        uthai ValueError("Data too short")
+    firta data + "_processed"
+
+kaam pipeline(data):
+    koshish:
+        stage1 = process_stage1(data)
+        stage2 = process_stage2(stage1)
+        firta stage2
+    samau error:
+        print("Pipeline error:", error)
+        uthai
+
+koshish:
+    result = pipeline("ab")
+samau error:
+    print("Pipeline failed:", error)

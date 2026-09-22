@@ -1,0 +1,119 @@
+# Database Library (database) - SQLite Operations
+# Working with SQLite databases
+
+lyau database
+
+# Connect to database
+print("Database Operations:")
+db = database.connect(":memory:")  # In-memory database for demo
+
+# Create table
+print("\nCreating table...")
+db.execute("""
+    CREATE TABLE users (
+        id INTEGER PRIMARY KEY,
+        name TEXT NOT NULL,
+        email TEXT UNIQUE,
+        age INTEGER
+    )
+""")
+print("Table created successfully")
+
+# Insert data
+print("\nInserting data...")
+db.execute("INSERT INTO users (name, email, age) VALUES (?, ?, ?)", ["Diwas", "diwas@example.com", 21])
+db.execute("INSERT INTO users (name, email, age) VALUES (?, ?, ?)", ["Ram", "ram@example.com", 25])
+db.execute("INSERT INTO users (name, email, age) VALUES (?, ?, ?)", ["Sita", "sita@example.com", 23])
+print("Data inserted successfully")
+
+# Query data
+print("\nQuerying data...")
+users = db.query("SELECT * FROM users")
+print("All users:")
+ko_lagi user ma users:
+    print("  ID:", user["id"], "Name:", user["name"], "Email:", user["email"], "Age:", user["age"])
+
+# Query with parameters
+print("\nQuery with parameters...")
+result = db.query("SELECT * FROM users WHERE age > ?", [22])
+print("Users older than 22:")
+ko_lagi user ma result:
+    print("  Name:", user["name"], "Age:", user["age"])
+
+# Update data
+print("\nUpdating data...")
+db.execute("UPDATE users SET age = ? WHERE name = ?", [22, "Diwas"])
+print("Update successful")
+
+# Verify update
+updated = db.query("SELECT * FROM users WHERE name = ?", ["Diwas"])
+print("Updated user:", updated)
+
+# Delete data
+print("\nDeleting data...")
+db.execute("DELETE FROM users WHERE name = ?", ["Ram"])
+print("Delete successful")
+
+# Verify delete
+remaining = db.query("SELECT * FROM users")
+print("Remaining users:", len(remaining))
+
+# Transaction example
+print("\nTransaction example...")
+koshish:
+    db.execute("BEGIN TRANSACTION")
+    db.execute("INSERT INTO users (name, email, age) VALUES (?, ?, ?)", ["Hari", "hari@example.com", 30])
+    db.execute("INSERT INTO users (name, email, age) VALUES (?, ?, ?)", ["Gita", "gita@example.com", 28])
+    db.execute("COMMIT")
+    print("Transaction committed successfully")
+samau error:
+    db.execute("ROLLBACK")
+    print("Transaction rolled back:", error)
+
+# Final query
+print("\nFinal database state:")
+all_users = db.query("SELECT * FROM users")
+print("Total users:", len(all_users))
+ko_lagi user ma all_users:
+    print("  -", user["name"], "(", user["age"], "years)")
+
+# Close connection
+db.close()
+print("\nDatabase connection closed")
+
+# Practical example: User management system
+kaam create_user_management():
+    print("\n=== User Management System ===")
+    
+    # Create new connection
+    user_db = database.connect(":memory:")
+    
+    # Create users table
+    user_db.execute("""
+        CREATE TABLE users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            username TEXT UNIQUE NOT NULL,
+            email TEXT UNIQUE NOT NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
+    
+    # Add users
+    users_to_add = [
+        ["diwas", "diwas@nepalcode.com"],
+        ["ram", "ram@nepalcode.com"],
+        ["sita", "sita@nepalcode.com"]
+    ]
+    
+    ko_lagi user_info ma users_to_add:
+        user_db.execute("INSERT INTO users (username, email) VALUES (?, ?)", user_info)
+    
+    # List all users
+    all_users = user_db.query("SELECT * FROM users")
+    print("Registered users:", len(all_users))
+    ko_lagi user ma all_users:
+        print("  -", user["username"], ":", user["email"])
+    
+    user_db.close()
+
+create_user_management()

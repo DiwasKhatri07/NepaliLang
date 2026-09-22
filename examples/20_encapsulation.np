@@ -1,0 +1,71 @@
+# Encapsulation and Data Hiding
+# Private attributes and controlled access
+
+kakshya Student:
+    kaam __init__(self, name, age, grade):
+        self.name = name  # Public
+        self._age = age    # Protected (convention)
+        self.__grade = grade  # Private (convention)
+    
+    kaam get_age(self):
+        firta self._age
+    
+    kaam set_age(self, age):
+        yedi age >= 0:
+            self._age = age
+        natra:
+            print("Invalid age")
+    
+    kaam get_grade(self):
+        firta self.__grade
+    
+    kaam set_grade(self, grade):
+        yedi grade >= 0 and grade <= 100:
+            self.__grade = grade
+        natra:
+            print("Invalid grade")
+    
+    kaam __str__(self):
+        firta "Student: " + self.name + ", Age: " + str(self._age) + ", Grade: " + str(self.__grade)
+
+# Create student
+student = Student("Diwas", 21, 85)
+print(student)
+
+# Access public attribute
+print("Name:", student.name)
+
+# Access protected via methods
+print("Age:", student.get_age())
+student.set_age(22)
+print("New age:", student.get_age())
+
+# Access private via methods
+print("Grade:", student.get_grade())
+student.set_grade(90)
+print("New grade:", student.get_grade())
+
+# Invalid values
+student.set_age(-5)
+student.set_grade(150)
+
+# Class with read-only properties
+kakshya Config:
+    kaam __init__(self):
+        self._settings = {
+            "api_key": "secret123",
+            "timeout": 30,
+            "retries": 3
+        }
+    
+    kaam get(self, key):
+        yedi key in self._settings:
+            firta self._settings[key]
+        firta khali
+    
+    kaam __str__(self):
+        return "Config: " + str(self._settings)
+
+config = Config()
+print("Timeout:", config.get("timeout"))
+print("API Key:", config.get("api_key"))

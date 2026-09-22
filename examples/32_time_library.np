@@ -1,0 +1,88 @@
+# Time Library (samaya) - Date and Time Operations
+# Working with dates, times, and timestamps
+
+lyau samaya
+
+# Current time
+print("Current Time Information:")
+print("  Current time:", samaya.abay_time())
+print("  Current date:", samaya.abay_date())
+print("  Date and time:", samaya.abay_datetime())
+
+# Time components
+print("\nTime Components:")
+current = samaya.abay_time()
+print("  Hour:", samaya.hour(current))
+print("  Minute:", samaya.minute(current))
+print("  Second:", samaya.second(current))
+
+# Date components
+print("\nDate Components:")
+today = samaya.abay_date()
+print("  Year:", samaya.year(today))
+print("  Month:", samaya.month(today))
+print("  Day:", samaya.day(today))
+
+# Time formatting
+print("\nTime Formatting:")
+print("  Formatted time:", samaya.format_time(current))
+print("  Formatted date:", samaya.format_date(today))
+
+# Time calculations
+print("\nTime Calculations:")
+# Add seconds
+future = samaya.add_seconds(current, 3600)
+print("  Current + 1 hour:", samaya.format_time(future))
+
+# Add days
+future_date = samaya.add_days(today, 7)
+print("  Today + 7 days:", samaya.format_date(future_date))
+
+# Time differences
+print("\nTime Differences:")
+start = samaya.abay_time()
+# Simulate some work
+end = samaya.abay_time()
+duration = samaya.difference(end, start)
+print("  Duration:", duration, "seconds")
+
+# Timestamp operations
+print("\nTimestamp Operations:")
+timestamp = samaya.timestamp()
+print("  Current timestamp:", timestamp)
+print("  Timestamp to time:", samaya.from_timestamp(timestamp))
+
+# Sleep operation (if available)
+print("\nSleep Operation:")
+print("  Sleeping for 1 second...")
+# samaya.sleep(1)  # Uncomment if sleep is available
+print("  Done!")
+
+# Practical example: Age calculator
+kaam calculate_age(birth_year, birth_month, birth_day):
+    today = samaya.abay_date()
+    current_year = samaya.year(today)
+    current_month = samaya.month(today)
+    current_day = samaya.day(today)
+    
+    age = current_year - birth_year
+    yedi current_month < birth_month or (current_month == birth_month and current_day < birth_day):
+        age -= 1
+    
+    firta age
+
+print("\nAge Calculator:")
+print("  Age if born in 2000:", calculate_age(2000, 1, 1))
+print("  Age if born in 1995:", calculate_age(1995, 6, 15))
+
+# Practical example: Meeting scheduler
+kaam schedule_meeting(duration_minutes):
+    now = samaya.abay_time()
+    end_time = samaya.add_seconds(now, duration_minutes * 60)
+    print("\nMeeting Schedule:")
+    print("  Start:", samaya.format_time(now))
+    print("  Duration:", duration_minutes, "minutes")
+    print("  End:", samaya.format_time(end_time))
+
+schedule_meeting(60)
+schedule_meeting(90)

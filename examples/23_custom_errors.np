@@ -1,0 +1,75 @@
+# Custom Error Classes
+# Defining and using custom exception types
+
+# Custom error class (concept)
+kakshya CustomError:
+    kaam __init__(self, message):
+        self.message = message
+    
+    kaam __str__(self):
+        firta "CustomError: " + self.message
+
+# Using custom error
+kaam validate_username(username):
+    yedi len(username) < 3:
+        uthai ValueError("Username too short")
+    yedi len(username) > 20:
+        uthai ValueError("Username too long")
+    yedi " " ma username:
+        uthai ValueError("Username cannot contain spaces")
+    firta sacho
+
+koshish:
+    validate_username("ab")
+samau error:
+    print("Username validation failed:", error)
+
+# Validation with detailed errors
+kakshya ValidationError:
+    kaam __init__(self, field, message):
+        self.field = field
+        self.message = message
+    
+    kaam __str__(self):
+        firta "Validation failed for " + self.field + ": " + self.message
+
+kaam validate_user(user):
+    yedi hoina user["name"]:
+        uthai ValueError("name", "Name is required")
+    yedi hoina user["email"]:
+        uthai ValueError("email", "Email is required")
+    yedi user["age"] < 18:
+        uthai ValueError("age", "Must be 18 or older")
+    firta sacho
+
+koshish:
+    validate_user({"name": "Diwas", "age": 17})
+samau error:
+    print("User validation error:", error)
+
+# Resource management pattern
+kakshya Resource:
+    kaam __init__(self, name):
+        self.name = name
+        self.is_open = jhut
+    
+    kaam open(self):
+        self.is_open = sacho
+        print("Resource opened:", self.name)
+    
+    kaam close(self):
+        self.is_open = jhut
+        print("Resource closed:", self.name)
+    
+    kaam __del__(self):
+        yedi self.is_open:
+            print("Warning: Resource not closed:", self.name)
+
+koshish:
+    res = Resource("database")
+    res.open()
+    print("Using resource")
+samau error:
+    print("Error:", error)
+antya:
+    res.close()

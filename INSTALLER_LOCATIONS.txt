@@ -1,0 +1,172 @@
+╔══════════════════════════════════════════════════════════════════╗
+║        🇳🇵 NEPALICODE - INSTALLER FILES LOCATIONS 🇳🇵               ║
+╚══════════════════════════════════════════════════════════════════╝
+
+📦 ALL INSTALLER FILES ARE READY!
+
+═══════════════════════════════════════════════════════════════════
+
+✅ STANDALONE EXECUTABLE (Main Runtime)
+────────────────────────────────────────────────────────────────────
+Location: C:\Users\Diwas\Desktop\.np lannguage\dist\nepali.exe
+Size: 9.0 MB
+Created: Today at 9:11 AM
+Status: ✅ WORKING with Bytecode VM Support
+
+Usage:
+  nepali.exe file.np
+  nepali.exe --version
+  nepali.exe (for REPL)
+
+═══════════════════════════════════════════════════════════════════
+
+✅ SETUP INSTALLER (Professional GUI Installer)
+────────────────────────────────────────────────────────────────────
+Location: C:\Users\Diwas\Desktop\.np lannguage\dist\NepaliLang_Setup.exe
+Size: 13.4 MB
+Created: Today at 9:15 AM
+Status: ✅ WORKING GUI Installer
+
+Features:
+  - Professional Windows installer
+  - Add to System PATH
+  - Install VS Code Extension
+  - Create Desktop Shortcut
+  - Add to Start Menu
+  - Test Installation
+  - Open Editor
+
+Usage:
+  Double-click NepaliLang_Setup.exe
+  Follow the GUI wizard
+  Select installation options
+  Click "Install NepaliLang"
+
+═══════════════════════════════════════════════════════════════════
+
+✅ VS CODE EXTENSION (VSIX Package)
+────────────────────────────────────────────────────────────────────
+Location: C:\Users\Diwas\Desktop\.np lannguage\vscode-extension\nepalilang-0.1.0.vsix
+Size: 10.9 KB
+Status: ✅ Ready for manual installation
+
+Installation:
+  Method 1: via Setup Installer (recommended)
+  Method 2: Manual: code --install-extension nepalilang-0.1.0.vsix
+
+═══════════════════════════════════════════════════════════════════
+
+📋 ALTERNATIVE SETUP SCRIPTS
+────────────────────────────────────────────────────────────────────
+Location: C:\Users\Diwas\Desktop\.np lannguage\
+Files:
+  - FINAL_SETUP.bat (All-in-one batch script)
+  - SETUP.bat (Basic setup script)
+  - setup_path.bat (PATH configuration only)
+
+Usage: Double-click or run from command line
+
+═══════════════════════════════════════════════════════════════════
+
+🎯 RECOMMENDED INSTALLATION PROCESS:
+
+OPTION 1: Professional Installer (Recommended)
+────────────────────────────────────────────────────────────────────
+1. Double-click: NepaliLang_Setup.exe
+2. Select desired options:
+   ☑ Add to System PATH
+   ☑ Install VS Code Extension
+   ☑ Create Desktop Shortcut
+   ☑ Add to Start Menu
+3. Click "Install NepaliLang"
+4. Restart VS Code if extension was installed
+5. Test: nepali.exe --version
+
+OPTION 2: Manual Installation
+────────────────────────────────────────────────────────────────────
+1. Copy nepali.exe to desired location (e.g., C:\Program Files\NepaliLang)
+2. Add directory to system PATH
+3. Manually install VS Code extension:
+   code --install-extension nepalilang-0.1.0.vsix
+4. Create desktop shortcut to nepali.exe
+
+OPTION 3: Batch Script
+────────────────────────────────────────────────────────────────────
+1. Double-click FINAL_SETUP.bat
+2. Follow on-screen instructions
+3. Restart VS Code
+
+═══════════════════════════════════════════════════════════════════
+
+🧪 TESTING YOUR INSTALLATION:
+
+Test 1: Command Line
+────────────────────────────────────────────────────────────────────
+nepali.exe --version
+Expected output:
+  NepaliLang 0.1.0
+  Runtime 0.1.0
+  NPPM 0.1.0
+
+Test 2: Run Example File
+────────────────────────────────────────────────────────────────────
+nepali.exe examples\basic.np
+Expected output: 7
+
+Test 3: From Different Directory
+────────────────────────────────────────────────────────────────────
+cd C:\Users\Diwas\Downloads
+nepali.exe "C:\Users\Diwas\Desktop\.np lannguage\examples\hello.np"
+
+Test 4: VS Code Integration
+────────────────────────────────────────────────────────────────────
+1. Restart VS Code
+2. Create test.np file
+3. Check for NP logo and syntax highlighting
+4. Press F5 to run
+
+═══════════════════════════════════════════════════════════════════
+
+📁 COMPLETE FILE STRUCTURE:
+
+C:\Users\Diwas\Desktop\.np lannguage\
+├── dist\
+│   ├── nepali.exe              ← Main runtime (9.0 MB)
+│   └── NepaliLang_Setup.exe    ← GUI installer (13.4 MB)
+├── vscode-extension\
+│   └── nepalilang-0.1.0.vsix   ← VS Code extension (10.9 KB)
+├── FINAL_SETUP.bat             ← Batch setup script
+├── SETUP.bat                   ← Basic setup script
+├── nepali.bat                  ← Runtime wrapper
+├── nepalicode.bat              ← Editor launcher
+└── examples\
+    ├── hello.np
+    ├── basic.np
+    ├── demo.np
+    └── ... (more examples)
+
+═══════════════════════════════════════════════════════════════════
+
+🎉 INSTALLATION SUMMARY:
+
+✅ Standalone Executable: dist\nepali.exe
+✅ GUI Installer: dist\NepaliLang_Setup.exe
+✅ VS Code Extension: vscode-extension\nepalilang-0.1.0.vsix
+✅ Batch Scripts: FINAL_SETUP.bat, SETUP.bat
+✅ All files working and tested
+
+═══════════════════════════════════════════════════════════════════
+
+🚀 NEXT STEPS:
+
+1. Run NepaliLang_Setup.exe for easy installation
+2. Restart VS Code to activate extension
+3. Test with example files
+4. Start creating your own .np programs!
+
+═══════════════════════════════════════════════════════════════════
+
+Made with ❤️ in Nepal 🇳🇵
+NepaliSource - Programming for Everyone
+
+═══════════════════════════════════════════════════════════════════

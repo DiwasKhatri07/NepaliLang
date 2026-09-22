@@ -1,0 +1,50 @@
+# Maps (Dictionaries) - Key-Value Pairs
+# Dictionary data structure operations
+
+# Creating maps
+person = {
+    "name": "Diwas",
+    "age": 21,
+    "city": "Kathmandu",
+    "is_student": sacho
+}
+
+print("Person:", person)
+
+# Accessing values
+print("Name:", person["name"])
+print("Age:", person["age"])
+print("City:", person["city"])
+
+# Adding new key-value pairs
+person["country"] = "Nepal"
+print("After adding country:", person)
+
+# Updating values
+person["age"] = 22
+print("After updating age:", person)
+
+# Removing keys
+del person["is_student"]
+print("After removing is_student:", person)
+
+# Checking if key exists
+print("Has name key:", "name" in person)
+print("Has address key:", "address" in person)
+
+# Getting all keys and values
+print("Keys:", list(person.keys()))
+print("Values:", list(person.values()))
+
+# Nested maps
+user_data = {
+    "info": {
+        "name": "Diwas",
+        "email": "diwas@example.com"
+    },
+    "settings": {
+        "theme": "dark",
+        "language": "nepali"
+    }
+}
+print("Nested map:", user_data)

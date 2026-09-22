@@ -1,0 +1,156 @@
+# Async/Await - Asynchronous Programming
+# Using asyn library for async operations
+
+lyau asyn
+
+# Basic async function
+asyn kaam simple_async():
+    print("Starting async operation")
+    # await asyn.sleep(1)  # Simulate async work
+    print("Async operation complete")
+    firta "Result"
+
+# Running async functions
+kaam run_basic_async():
+    print("\n=== Basic Async ===")
+    # asyn.run(simple_async())
+    print("Async pattern demonstration")
+
+run_basic_async()
+
+# Multiple async tasks
+asyn kaam fetch_data(url):
+    print("Fetching:", url)
+    # await asyn.sleep(1)  # Simulate network request
+    firta "Data from " + url
+
+asyn kaam main_async():
+    print("\n=== Multiple Async Tasks ===")
+    
+    # Run multiple tasks concurrently
+    # results = await asyn.gather([
+    #     fetch_data("https://api1.com"),
+    #     fetch_data("https://api2.com"),
+    #     fetch_data("https://api3.com")
+    # ])
+    
+    # ko_lagi result ma results:
+    #     print(result)
+    
+    print("Concurrent async pattern")
+
+# asyn.run(main_async())
+
+# Async with error handling
+asyn kaam async_with_error():
+    print("\n=== Async Error Handling ===")
+    
+    koshish:
+        # await risky_async_operation()
+        print("Async operation completed")
+    samau error:
+        print("Async error:", error)
+
+# asyn.run(async_with_error())
+
+# Practical example: Async HTTP client
+asyn kaam async_http_client():
+    print("\n=== Async HTTP Client ===")
+    
+    urls = [
+        "https://api1.com/data",
+        "https://api2.com/data",
+        "https://api3.com/data"
+    ]
+    
+    # Fetch all URLs concurrently
+    # responses = await asyn.gather([
+    #     anurodh.get_async(url) ko_lagi url ma urls
+    # ])
+    
+    # ko_lagi response ma responses:
+    #     print("Status:", response.status)
+    
+    print("Async HTTP pattern:")
+    print("  - Concurrent requests")
+    print("  - Non-blocking I/O")
+    print("  - Efficient resource usage")
+
+# asyn.run(async_http_client())
+
+# Practical example: Async file operations
+asyn kaam async_file_operations():
+    print("\n=== Async File Operations ===")
+    
+    # Read multiple files concurrently
+    files = ["file1.txt", "file2.txt", "file3.txt"]
+    
+    # contents = await asyn.gather([
+    #     file.read_async(f) ko_lagi f ma files
+    # ])
+    
+    # ko_lagi content ma contents:
+    #     print("File content:", content[:50])
+    
+    print("Async file pattern:")
+    print("  - Concurrent file reads")
+    print("  - Non-blocking I/O")
+    print("  - Better performance")
+
+# asyn.run(async_file_operations())
+
+# Practical example: Async database operations
+asyn kaam async_database():
+    print("\n=== Async Database ===")
+    
+    # Execute multiple queries concurrently
+    # queries = [
+    #     "SELECT * FROM users WHERE id = 1",
+    #     "SELECT * FROM users WHERE id = 2",
+    #     "SELECT * FROM users WHERE id = 3"
+    # ]
+    
+    # results = await asyn.gather([
+    #     db.query_async(q) ko_lagi q ma queries
+    # ])
+    
+    # ko_lagi result ma results:
+    #     print("Query result:", result)
+    
+    print("Async database pattern:")
+    print("  - Concurrent queries")
+    print("  - Connection pooling")
+    print("  - Scalable operations")
+
+# asyn.run(async_database())
+
+# Practical example: Async timeout
+asyn kaam async_with_timeout():
+    print("\n=== Async Timeout ===")
+    
+    koshish:
+        # result = await asyn.with_timeout(
+        #     slow_operation(),
+        #     timeout=5.0
+        # )
+        print("Operation completed")
+    samau error:
+        print("Operation timed out")
+
+# asyn.run(async_with_timeout())
+
+# Async generator pattern
+asyn kaam async_generator():
+    ko_lagi i ma range(5):
+        # await asyn.sleep(0.1)
+        firta i
+
+asyn kaam consume_async():
+    print("\n=== Async Generator ===")
+    
+    # async for value ma async_generator():
+    #     print("Value:", value)
+    
+    print("Async generator pattern")
+
+# asyn.run(consume_async())

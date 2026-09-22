@@ -1,0 +1,36 @@
+# Basic Import System
+# Using lyau and import keywords
+
+# Import standard library modules
+lyau ganit
+
+print("Math functions:")
+print("Add (5 + 3):", ganit.jod(5, 3))
+print("Subtract (10 - 4):", ganit.ghata(10, 4))
+print("Multiply (6 * 7):", ganit.guna(6, 7))
+print("Divide (20 / 4):", ganit.bhag(20, 4))
+print("Square root of 16:", ganit.sqrt(16))
+print("Power (2^10):", ganit.power(2, 10))
+
+# Import multiple modules
+lyau randomlib
+
+print("Random number:", randomlib.number(1, 100))
+
+# Import with namespace
+lyau jsonlib
+
+data = jsonlib.parse('{"name": "Diwas", "age": 21}')
+print("Parsed JSON:", data)
+
+json_string = jsonlib.stringify(data)
+print("Stringified JSON:", json_string)
+
+# Display available functions in imported module
+print("Ganit module available functions:")
+print("  jod - addition")
+print("  ghata - subtraction")
+print("  guna - multiplication")
+print("  bhag - division")
+print("  sqrt - square root")
+print("  power - exponentiation")

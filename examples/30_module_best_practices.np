@@ -1,0 +1,97 @@
+# Module System Best Practices
+# Organizing and using modules effectively
+
+# Practice 1: Import at the top
+lyau ganit
+lyau samaya
+lyau randomlib
+lyau system
+lyau file
+
+# Practice 2: Use descriptive names
+kaam calculate_circle_properties(radius):
+    kaam area(r):
+        firta ganit.pi * r * r
+    
+    kaam circumference(r):
+        firta 2 * ganit.pi * r
+    
+    kaam diameter(r):
+        firta 2 * r
+    
+    firta {
+        "area": area(radius),
+        "circumference": circumference(radius),
+        "diameter": diameter(radius)
+    }
+
+circle = calculate_circle_properties(10)
+print("Circle properties:", circle)
+
+# Practice 3: Handle module errors gracefully
+kaam safe_module_operation(module, operation, *args):
+    koshish:
+        firta operation(*args)
+    samau error:
+        print("Module operation failed:", error)
+        firta khali
+
+result = safe_module_operation(ganit, ganit.sqrt, 16)
+print("Safe operation result:", result)
+
+# Practice 4: Module organization
+kakshya ModuleManager:
+    kaam __init__(self):
+        self.modules = {}
+    
+    kaam register(self, name, module):
+        self.modules[name] = module
+        print("Registered module:", name)
+    
+    kaam get(self, name):
+        yedi name in self.modules:
+            firta self.modules[name]
+        print("Module not found:", name)
+        firta khali
+    
+    kaam list_all(self):
+        firta list(self.modules.keys())
+
+manager = ModuleManager()
+manager.register("math", ganit)
+manager.register("time", samaya)
+manager.register("random", randomlib)
+
+print("Available modules:", manager.list_all())
+print("Get math module:", manager.get("math"))
+
+# Practice 5: Lazy loading concept
+kaam get_lazy_module(module_name):
+    print("Lazy loading:", module_name)
+    # In real implementation, load module only when needed
+    yedi module_name == "math":
+        firta ganit
+    athawa module_name == "time":
+        firta samaya
+    firta khali
+
+lazy_math = get_lazy_module("math")
+print("Lazy math pi:", lazy_math.pi)
+
+# Practice 6: Module versioning (concept)
+kakshya ModuleInfo:
+    kaam __init__(self, name, version):
+        self.name = name
+        self.version = version
+    
+    kaam __str__(self):
+        firta self.name + " v" + self.version
+
+modules_info = [
+    ModuleInfo("ganit", "1.0.0"),
+    ModuleInfo("samaya", "1.0.0"),
+    ModuleInfo("randomlib", "1.0.0")
+]
+
+ko_lagi info ma modules_info:
+    print(info)

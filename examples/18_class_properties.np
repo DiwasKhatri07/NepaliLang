@@ -1,0 +1,52 @@
+# Class Properties and Methods
+# Getters, setters, and special methods
+
+kakshya BankAccount:
+    kaam __init__(self, owner, balance=0):
+        self.owner = owner
+        self._balance = balance
+    
+    kaam get_balance(self):
+        firta self._balance
+    
+    kaam deposit(self, amount):
+        yedi amount > 0:
+            self._balance += amount
+            firta sacho
+        firta jhut
+    
+    kaam withdraw(self, amount):
+        yedi amount > 0 and amount <= self._balance:
+            self._balance -= amount
+            firta sacho
+        firta jhut
+    
+    kaam __str__(self):
+        firta "Account: " + self.owner + ", Balance: " + str(self._balance)
+
+# Create account
+account = BankAccount("Diwas", 1000)
+print(account)
+
+# Deposit
+account.deposit(500)
+print("After deposit:", account.get_balance())
+
+# Withdraw
+account.withdraw(200)
+print("After withdraw:", account.get_balance())
+
+# Invalid operations
+print("Invalid deposit:", account.deposit(-100))
+print("Invalid withdraw:", account.withdraw(5000))
+
+# Class with static-like behavior
+kakshya MathUtils:
+    kaam pi():
+        firta 3.14159
+    
+    kaam circle_area(radius):
+        firta MathUtils.pi() * radius * radius
+
+print("PI:", MathUtils.pi())
+print("Circle area (r=5):", MathUtils.circle_area(5))

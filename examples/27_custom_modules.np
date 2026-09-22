@@ -1,0 +1,70 @@
+# Custom Module Creation
+# Creating and importing your own modules
+
+# This example demonstrates how to create custom modules
+# In a real scenario, you would create a separate .np file
+
+# Example of what a custom module would look like:
+# File: mymath.np
+# kaam add(a, b):
+#     firta a + b
+# 
+# kaam multiply(a, b):
+#     firta a * b
+# 
+# _module_dict = {
+#     "add": add,
+#     "multiply": multiply
+# }
+
+# Import custom module (assuming mymath.np exists)
+# lyau mymath
+# print("Custom add:", mymath.add(5, 3))
+# print("Custom multiply:", mymath.multiply(4, 7))
+
+# For this example, we'll use the standard library modules
+# that are available in the stdlib directory
+
+lyau ganit
+lyau randomlib
+
+# Using custom-like functions from standard library
+kaam custom_calculator(a, b):
+    print("Using ganit module for calculations")
+    print("Add:", ganit.jod(a, b))
+    print("Multiply:", ganit.guna(a, b))
+    print("Power:", ganit.power(a, b))
+
+custom_calculator(5, 3)
+
+# Creating a custom utility
+kaam random_password(length=8):
+    chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    password = ""
+    ko_lagi i ma range(length):
+        index = randomlib.number(0, len(chars) - 1)
+        password += chars[index]
+    firta password
+
+print("Random password:", random_password(12))
+
+# Module-like pattern using functions
+kaam string_utils():
+    kaam reverse(s):
+        firta s[::-1]
+    
+    kaam uppercase(s):
+        firta s.upper()
+    
+    kaam lowercase(s):
+        firta s.lower()
+    
+    firta {
+        "reverse": reverse,
+        "uppercase": uppercase,
+        "lowercase": lowercase
+    }
+
+utils = string_utils()
+print("Reverse 'hello':", utils["reverse"]("hello"))
+print("Uppercase 'world':", utils["uppercase"]("world"))

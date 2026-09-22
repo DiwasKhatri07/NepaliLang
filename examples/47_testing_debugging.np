@@ -1,0 +1,242 @@
+# Testing and Debugging
+# Writing tests and debugging techniques
+
+# Simple test framework
+kakshya TestRunner:
+    kaam __init__(self):
+        self.tests_run = 0
+        self.tests_passed = 0
+        self.tests_failed = 0
+        self.failures = []
+    
+    kaam assert_equals(self, actual, expected, message=""):
+        self.tests_run += 1
+        yedi actual == expected:
+            self.tests_passed += 1
+            print("✓ PASS:", message)
+        natra:
+            self.tests_failed += 1
+            self.failures.append(message)
+            print("✗ FAIL:", message)
+            print("  Expected:", expected, "Got:", actual)
+    
+    kaam assert_true(self, condition, message=""):
+        self.tests_run += 1
+        yedi condition:
+            self.tests_passed += 1
+            print("✓ PASS:", message)
+        natra:
+            self.tests_failed += 1
+            self.failures.append(message)
+            print("✗ FAIL:", message)
+    
+    kaam assert_false(self, condition, message=""):
+        self.tests_run += 1
+        yedi hoina condition:
+            self.tests_passed += 1
+            print("✓ PASS:", message)
+        natra:
+            self.tests_failed += 1
+            self.failures.append(message)
+            print("✗ FAIL:", message)
+    
+    kaam summary(self):
+        print("\n=== Test Summary ===")
+        print("Total:", self.tests_run)
+        print("Passed:", self.tests_passed)
+        print("Failed:", self.tests_failed)
+        yedi self.tests_failed > 0:
+            print("\nFailures:")
+            ko_lagi failure ma self.failures:
+                print("  -", failure)
+        firta self.tests_failed == 0
+
+print("=== Test Framework ===")
+runner = TestRunner()
+
+# Test basic operations
+runner.assert_equals(1 + 1, 2, "Addition")
+runner.assert_equals(2 * 3, 6, "Multiplication")
+runner.assert_equals(10 / 2, 5, "Division")
+
+# Test string operations
+runner.assert_equals("hello".upper(), "HELLO", "String uppercase")
+runner.assert_equals("WORLD".lower(), "world", "String lowercase")
+
+# Test boolean operations
+runner.assert_true(sacho, "True is true")
+runner.assert_false(jhut, "False is false")
+runner.assert_true(5 > 3, "5 > 3")
+runner.assert_false(5 < 3, "5 < 3")
+
+runner.summary()
+
+# Unit testing example
+kaam test_calculator():
+    print("\n=== Calculator Tests ===")
+    
+    kaam add(a, b):
+        firta a + b
+    
+    kaam subtract(a, b):
+        firta a - b
+    
+    kaam multiply(a, b):
+        firta a * b
+    
+    kaam divide(a, b):
+        yedi b == 0:
+            firta khali
+        firta a / b
+    
+    test_runner = TestRunner()
+    
+    # Test addition
+    test_runner.assert_equals(add(2, 3), 5, "Add 2 + 3")
+    test_runner.assert_equals(add(-1, 1), 0, "Add -1 + 1")
+    
+    # Test subtraction
+    test_runner.assert_equals(subtract(5, 3), 2, "Subtract 5 - 3")
+    test_runner.assert_equals(subtract(10, 5), 5, "Subtract 10 - 5")
+    
+    # Test multiplication
+    test_runner.assert_equals(multiply(3, 4), 12, "Multiply 3 * 4")
+    test_runner.assert_equals(multiply(-2, 3), -6, "Multiply -2 * 3")
+    
+    # Test division
+    test_runner.assert_equals(divide(10, 2), 5, "Divide 10 / 2")
+    test_runner.assert_equals(divide(15, 3), 5, "Divide 15 / 3")
+    
+    test_runner.summary()
+
+test_calculator()
+
+# Debugging helper
+kakshya Debugger:
+    kaam __init__(self):
+        self.breakpoints = {}
+        self.variables = {}
+    
+    kaam set_breakpoint(self, line):
+        self.breakpoints[line] = sacho
+        print("Breakpoint set at line:", line)
+    
+    kaam inspect_variable(self, name, value):
+        self.variables[name] = value
+        print("Variable:", name, "=", value)
+    
+    kaam print_stack(self, stack_info):
+        print("=== Stack Trace ===")
+        print(stack_info)
+    
+    kaam watch_expression(self, expression, value):
+        print("Watch:", expression, "=", value)
+
+print("\n=== Debugging Helper ===")
+debugger = Debugger()
+debugger.set_breakpoint(10)
+debugger.inspect_variable("x", 42)
+debugger.watch_expression("x + 1", 43)
+
+# Performance benchmarking
+kakshya Benchmark:
+    kaam __init__(self):
+        self.results = {}
+    
+    kaam time_function(self, func, name, *args):
+        start = 0  # Would use actual time
+        result = func(*args)
+        end = 0  # Would use actual time
+        duration = end - start
+        self.results[name] = duration
+        print(name, ":", duration, "seconds")
+        firta result
+
+print("\n=== Performance Benchmarking ===")
+benchmark = Benchmark()
+
+kaam slow_function():
+    # Simulate slow operation
+    total = 0
+    ko_lagi i ma range(1000):
+        total += i
+    firta total
+
+kaam fast_function():
+    # Simulate fast operation
+    firta 42
+
+benchmark.time_function(slow_function, "Slow function")
+benchmark.time_function(fast_function, "Fast function")
+
+# Logging for debugging
+kakshya DebugLogger:
+    kaam __init__(self):
+        self.logs = []
+    
+    kaam log(self, level, message):
+        entry = {
+            "level": level,
+            "message": message,
+            "timestamp": "2024-01-01 00:00:00"
+        }
+        self.logs.append(entry)
+        print(f"[{level}] {message}")
+    
+    kaam dump_logs(self):
+        print("\n=== Debug Logs ===")
+        ko_lagi entry ma self.logs:
+            print(f"{entry['timestamp']} [{entry['level']}] {entry['message']}")
+
+print("\n=== Debug Logging ===")
+debug_logger = DebugLogger()
+debug_logger.log("INFO", "Starting application")
+debug_logger.log("DEBUG", "Variable x = 42")
+debug_logger.log("WARNING", "Potential issue detected")
+debug_logger.log("ERROR", "Operation failed")
+debug_logger.dump_logs()
+
+# Assertion helper
+kaam assert_condition(condition, message="Assertion failed"):
+    yedi hoina condition:
+        print("✓", message)
+    natra:
+        print("✗", message)
+        uthai ValueError(message)
+
+print("\n=== Assertions ===")
+assert_condition(5 > 3, "5 is greater than 3")
+assert_condition(len("hello") == 5, "String length is 5")
+assert_condition(sacho, "True is truthy")
+
+# Property-based testing (simplified)
+kaam test_property(func, test_cases):
+    print("\n=== Property-Based Testing ===")
+    print("Testing function:", func)
+    
+    passed = 0
+    failed = 0
+    
+    ko_lagi test_case ma test_cases:
+        koshish:
+            result = func(*test_case["input"])
+            yedi result == test_case["expected"]:
+                passed += 1
+            natra:
+                failed += 1
+                print("Failed:", test_case["input"], "expected", test_case["expected"], "got", result)
+        samau error:
+            failed += 1
+            print("Error:", test_case["input"], error)
+    
+    print("Passed:", passed, "Failed:", failed)
+    firta failed == 0
+
+test_property(
+    lambda x, y: x + y,
+    [
+        {"input": [1, 2], "expected": 3},
+        {"input": [5, 5], "expected": 10},
+        {"input": [-1, 1], "expected": 0}
+    ]
+)

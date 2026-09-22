@@ -1,0 +1,67 @@
+# Raising Exceptions - Custom error handling
+# Using uthau keyword
+
+# Basic raise
+kaam check_age(age):
+    yedi age < 0:
+        uthau ValueError("Age cannot be negative")
+    yedi age > 150:
+        uthai ValueError("Age is unrealistic")
+    firta sacho
+
+koshish:
+    check_age(-5)
+samau error:
+    print("Error:", error)
+
+# Custom exception-like behavior
+kaam validate_email(email):
+    yedi "@" hoina ma email:
+        uthau ValueError("Invalid email: missing @")
+    yedi "." hoina ma email:
+        uthau ValueError("Invalid email: missing .")
+    firta sacho
+
+koshish:
+    validate_email("invalid-email")
+samau error:
+    print("Validation error:", error)
+
+# Raise in function
+kaam calculate_square_root(n):
+    yedi n < 0:
+        uthau ValueError("Cannot calculate square root of negative number")
+    firta n ** 0.5
+
+koshish:
+    result = calculate_square_root(-4)
+samau error:
+    print("Calculation error:", error)
+
+# Re-raising exceptions
+kaam process_data(data):
+    koshish:
+        yedi len(data) == 0:
+            uthau ValueError("Empty data")
+        firta data[0]
+    samau error:
+        print("Processing error:", error)
+        uthau  # Re-raise
+
+koshish:
+    process_data([])
+samau error:
+    print("Caught re-raised error:", error)
+
+# Conditional raising
+kaam set_temperature(temp):
+    yedi temp < -273:
+        uthau ValueError("Temperature below absolute zero")
+    yedi temp > 1000:
+        uthau ValueError("Temperature too high")
+    print("Temperature set to:", temp)
+
+koshish:
+    set_temperature(-300)
+samau error:
+    print("Temperature error:", error)

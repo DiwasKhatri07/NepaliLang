@@ -1,0 +1,128 @@
+# File Library (file) - File System Operations
+# Reading, writing, and managing files and directories
+
+lyau file
+
+# File information
+print("File System Information:")
+print("  Current directory:", file.current_directory())
+print("  Home directory:", file.home_directory())
+
+# Check if file/directory exists
+print("\nFile Existence Checks:")
+print("  Examples directory exists:", file.exists("examples"))
+print("  Main.py exists:", file.exists("main.py"))
+
+# File operations
+print("\nFile Operations:")
+print("  File size (main.py):", file.size("main.py"))
+print("  Is file (main.py):", file.is_file("main.py"))
+print("  Is directory (examples):", file.is_directory("examples"))
+
+# Directory listing
+print("\nDirectory Listing:")
+files = file.list_directory(".")
+print("  Files in current directory:", len(files))
+print("  First 5 files:", files[:5])
+
+# Practical example: File reader
+kaam read_file_safely(filename):
+    koshish:
+        content = file.read(filename)
+        print("\n=== Reading:", filename, "===")
+        print(content[:200] + "...")  # First 200 chars
+        firta sacho
+    samau error:
+        print("Error reading file:", error)
+        firta jhut
+
+read_file_safely("main.py")
+
+# Practical example: File writer
+kaam write_demo_file(filename, content):
+    koshish:
+        file.write(filename, content)
+        print("\n=== Wrote to:", filename, "===")
+        print("Content:", content)
+        firta sacho
+    samau error:
+        print("Error writing file:", error)
+        firta jhut
+
+write_demo_file("demo_write.txt", "Hello from NepaliCode!")
+
+# Practical example: File copy
+kaam copy_file(source, destination):
+    koshish:
+        file.copy(source, destination)
+        print("\n=== Copied:", source, "to", destination, "===")
+        firta sacho
+    samau error:
+        print("Error copying file:", error)
+        firta jhut
+
+# copy_file("demo_write.txt", "demo_copy.txt")
+
+# Practical example: Directory operations
+kaam directory_operations():
+    print("\n=== Directory Operations ===")
+    
+    # Create directory
+    test_dir = "test_directory"
+    yedi hoina file.exists(test_dir):
+        file.create_directory(test_dir)
+        print("Created directory:", test_dir)
+    
+    # List directory
+    yedi file.exists(test_dir):
+        contents = file.list_directory(test_dir)
+        print("Contents of", test_dir, ":", contents)
+    
+    # Delete directory
+    yedi file.exists(test_dir):
+        file.delete_directory(test_dir)
+        print("Deleted directory:", test_dir)
+
+directory_operations()
+
+# Practical example: File information
+kaam get_file_info(filename):
+    yedi file.exists(filename):
+        print("\n=== File Info:", filename, "===")
+        print("  Size:", file.size(filename), "bytes")
+        print("  Is file:", file.is_file(filename))
+        print("  Is directory:", file.is_directory(filename))
+        print("  Exists:", file.exists(filename))
+    natra:
+        print("File not found:", filename)
+
+get_file_info("main.py")
+get_file_info("examples")
+
+# Practical example: File search
+kaam find_files(pattern, directory="."):
+    print("\n=== Finding files matching:", pattern, "===")
+    files = file.list_directory(directory)
+    matches = []
+    ko_lagi f ma files:
+        yedi pattern ma f:
+            matches.append(f)
+    print("Found", len(matches), "matches")
+    print("Files:", matches)
+
+find_files(".py")
+find_files(".np", "examples")
+
+# Practical example: File extension filter
+kaam filter_by_extension(directory, extension):
+    print("\n=== Files with extension:", extension, "===")
+    files = file.list_directory(directory)
+    filtered = []
+    ko_lagi f ma files:
+        yedi f.endswith(extension):
+            filtered.append(f)
+    print("Found", len(filtered), "files")
+    print("Files:", filtered)
+
+filter_by_extension(".", ".py")
+filter_by_extension("examples", ".np")

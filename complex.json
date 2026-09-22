@@ -1,0 +1,16 @@
+{
+  "settings": {
+    "language": "nepali",
+    "theme": "dark"
+  },
+  "users": [
+    {
+      "age": 21,
+      "name": "Diwas"
+    },
+    {
+      "age": 20,
+      "name": "Sita"
+    }
+  ]
+}

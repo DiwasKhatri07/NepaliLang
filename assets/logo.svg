@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background gradient with Nepal colors -->
+  <defs>
+    <linearGradient id="nepalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#DC143C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B22222;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main background -->
+  <rect x="0" y="0" width="512" height="512" fill="url(#nepalGradient)" rx="64"/>
+  
+  <!-- Blue border (from Nepal flag) -->
+  <rect x="16" y="16" width="480" height="480" fill="none" stroke="#003893" stroke-width="24" rx="56"/>
+  
+  <!-- Large NP text -->
+  <text x="256" y="340" font-family="Arial, sans-serif" font-size="200" font-weight="bold" fill="white" text-anchor="middle">NP</text>
+  
+  <!-- Nepal flag symbols - Sun and Moon -->
+  <circle cx="140" cy="100" r="40" fill="white"/>
+  <circle cx="372" cy="100" r="35" fill="white"/>
+  
+  <!-- Decorative sun rays -->
+  <g stroke="white" stroke-width="8">
+    <line x1="140" y1="40" x2="140" y2="20"/>
+    <line x1="140" y1="160" x2="140" y2="180"/>
+    <line x1="80" y1="100" x2="60" y2="100"/>
+    <line x1="200" y1="100" x2="220" y2="100"/>
+    <line x1="98" y1="58" x2="82" y2="42"/>
+    <line x1="182" y1="142" x2="198" y2="158"/>
+    <line x1="98" y1="142" x2="82" y2="158"/>
+    <line x1="182" y1="58" x2="198" y2="42"/>
+  </g>
+  
+  <!-- Decorative elements at bottom -->
+  <path d="M 120 400 L 160 440 L 200 400" fill="none" stroke="white" stroke-width="12"/>
+  <path d="M 312 400 L 352 440 L 392 400" fill="none" stroke="white" stroke-width="12"/>
+  
+  <!-- Small accent dots -->
+  <circle cx="256" cy="480" r="8" fill="white"/>
+  <circle cx="256" cy="460" r="6" fill="white"/>
+</svg>
