@@ -48,6 +48,10 @@
   <a href="https://github.com/DiwasKhatri07/NepaliLang"><img src="https://github-readme-stats.vercel.app/api/pin/?username=DiwasKhatri07&repo=NepaliLang&theme=transparent&hide_border=true" alt="NepaliCode repository stats" width="420"></a>
 </p>
 
+<p align="center">
+  <a href="https://github.com/DiwasKhatri07/NepaliLang/actions/workflows/update-metrics.yml"><img src="docs/assets/repo-metrics.svg" alt="Live NepaliCode repository metrics" width="920"></a>
+</p>
+
 ## 🎬 Visual Showcase
 
 <p align="center">

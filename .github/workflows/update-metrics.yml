@@ -1,0 +1,40 @@
+name: Refresh Repository Metrics
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repository-metrics
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    name: Refresh metrics and badges
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Generate metrics SVG and JSON
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: bash scripts/update_repo_metrics.sh
+
+      - name: Commit changed metrics only
+        run: |
+          if git diff --quiet -- docs/assets/repo-metrics.svg docs/assets/repo-metrics.json; then
+            echo "Metrics are unchanged; no commit needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/assets/repo-metrics.svg docs/assets/repo-metrics.json
+          git commit -m "chore: refresh repository metrics [skip ci]"
+          git push
