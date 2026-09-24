@@ -3,13 +3,13 @@
   "repository": "DiwasKhatri07/NepaliLang",
   "refresh_schedule": "every 30 minutes",
   "metrics": {
-    "stars": 2,
+    "stars": 3,
     "forks": 0,
     "watchers": 0,
     "open_issues": 0,
     "open_pull_requests": 0,
-    "commits_last_30_days": 36,
+    "commits_last_30_days": 37,
     "releases": 1,
-    "repository_size_kb": 63951
+    "repository_size_kb": 63954
   }
 }
